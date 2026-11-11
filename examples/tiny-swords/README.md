@@ -44,9 +44,9 @@ Use the walk config to reproduce composition. The prompts for separate idle, wal
 
 ## Compare the original in Godot
 
-![Actual Godot playback of the six extracted sprite sequences](preview/godot-playback.gif)
+![Six cleaned sprite sequences in Godot](preview/godot-clean.webp)
 
-This capture shows six generated sequences playing in Godot. [MP4 capture](preview/godot-playback.mp4) · [Godot project](godot/project.godot)
+This capture shows six generated sequences after automatic magenta despill. [Workflow video](preview/workflow-promo.mp4) · [MP4 capture](preview/godot-playback.mp4) · [Godot project](godot/project.godot)
 
 For the side-by-side review, extract the PNGs to `work/tiny-swords/frames` using the project quick start. Then run from the repository root with Godot 4.5 and your own Tiny Swords Free Pack. The scene plays the original Blue Archer idle on the left and the mixed Warhammer Infantry clip on the right. Both use nearest-neighbor sampling and a shared foot line. The Archer is enlarged 2× to bring the visible body sizes closer. Press Space or Enter to pause. [Extraction command](../../README.md#reproduce-the-example-offline)
 
@@ -54,7 +54,9 @@ For the side-by-side review, extract the PNGs to `work/tiny-swords/frames` using
 godot --path examples/tiny-swords/godot -- --pack="/absolute/path/to/Tiny Swords (Free Pack)"
 ```
 
-Record the comparison locally with Godot Movie Maker by adding `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50` before the `--` separator. The recording with Pixel Frog artwork belongs in the ignored `work/` directory. Compare the outline, feet, palette and pixel density. The Warhammer clip includes several actions and has some magenta spill on the edges.
+Record the comparison locally with Godot Movie Maker by adding `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50` before the `--` separator. The recording with Pixel Frog artwork belongs in the ignored `work/` directory. Compare the outline, feet, palette and pixel density. The Warhammer clip includes several actions. The quick start enables the optional magenta despill pass.
+
+The [Remotion composition](promo/showcase.jsx) uses the same frame before and after despill, followed by actual Godot footage. With Python and Pillow, FFmpeg, Godot, Node.js and npm installed, run `bash examples/tiny-swords/promo/render.sh` from the repository root to rebuild the video, poster and preview GIF. Set `GODOT_BIN` or `REMOTION_CHROME` to use a specific executable.
 
 ## Extending the style across asset types
 

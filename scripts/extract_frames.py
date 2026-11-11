@@ -11,7 +11,7 @@ import subprocess
 import sys
 import tempfile
 
-from PIL import Image, ImageChops
+from PIL import Image, ImageChops, ImageFilter
 
 ACTIONS = {"idle", "walk", "run", "attack", "vfx"}
 
@@ -83,11 +83,23 @@ def regions_for(layout, width, height):
         }
 
 
-def chroma_key(rgb, key, tolerance):
+def chroma_key(rgb, key, tolerance, despill_magenta=False):
     # Max channel distance treats compressed variations of the key as background.
     r, g, b = ImageChops.difference(rgb, key).split()
     distance = ImageChops.lighter(ImageChops.lighter(r, g), b)
     alpha = distance.point([0] * (tolerance + 1) + [255] * (255 - tolerance))
+    if despill_magenta:
+        red, green, blue = rgb.split()
+        tint = ImageChops.subtract(ImageChops.darker(red, blue), green)
+        # Match the magenta cleanup in SpriteFrame: remove strongly tinted
+        # pixels, then neutralize spill where the sprite meets transparency.
+        keep = tint.point(lambda level: 255 if level < max(36, 125 - tolerance) else 0)
+        alpha = ImageChops.darker(alpha, keep)
+        fringe = ImageChops.invert(alpha).filter(ImageFilter.MaxFilter(5))
+        spill = ImageChops.darker(tint.point(lambda level: max(0, level - 8)), fringe)
+        rgb = Image.merge("RGB", (
+            ImageChops.subtract(red, spill), green, ImageChops.subtract(blue, spill),
+        ))
     # Clear RGB in fully transparent pixels too.
     return Image.composite(rgb, Image.new("RGB", rgb.size), alpha), alpha
 
@@ -104,7 +116,7 @@ def probe(video):
     return streams[0]
 
 
-def extract(video, layout_path, out, fps, start, end, tolerance):
+def extract(video, layout_path, out, fps, start, end, tolerance, despill_magenta=False):
     video, out = video.resolve(strict=True), out.resolve()
     if out.exists():
         raise FileExistsError(f"output already exists: {out}")
@@ -116,6 +128,8 @@ def extract(video, layout_path, out, fps, start, end, tolerance):
             or source.get("sample_aspect_ratio") not in (None, "N/A", "1:1", "0:1")):
         raise ValueError("video must match the reference aspect ratio and use square pixels")
     color = layout["color"]
+    if despill_magenta and color.lower() != "#ff00ff":
+        raise ValueError("--despill-magenta requires the #FF00FF layout key")
     regions = list(regions_for(layout, width, height))
     command = ["ffmpeg", "-v", "error", "-nostdin", "-ss", str(start),
                "-noautorotate", "-i", str(video), "-map", "0:v:0"]
@@ -135,7 +149,7 @@ def extract(video, layout_path, out, fps, start, end, tolerance):
                     if len(data) != width * height * 3:
                         raise RuntimeError("FFmpeg returned a partial frame")
                     frame = Image.frombytes("RGB", (width, height), data)
-                    frame, alpha = chroma_key(frame, key, tolerance)
+                    frame, alpha = chroma_key(frame, key, tolerance, despill_magenta)
                     frame.putalpha(alpha)
                     for region in regions:
                         x, y, w, h = region["crop_xywh"]
@@ -165,6 +179,8 @@ def extract(video, layout_path, out, fps, start, end, tolerance):
             "key": {"color": color, "max_channel_tolerance": tolerance},
             "regions": regions,
         }
+        if despill_magenta:
+            manifest["key"]["despill_magenta"] = True
         (staged / "manifest.json").write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         staged.rename(out)
@@ -180,6 +196,8 @@ def main():
     parser.add_argument("--start", type=float, default=0, help="start time in seconds")
     parser.add_argument("--end", type=float, help="exclusive end time in seconds")
     parser.add_argument("--tolerance", type=int, default=48, help="RGB key tolerance (0–254)")
+    parser.add_argument("--despill-magenta", action="store_true",
+                        help="remove compressed magenta spill along transparent edges")
     args = parser.parse_args()
     if not 0 < args.fps <= 120 or not (math.isfinite(args.start) and args.start >= 0):
         parser.error("fps must be in (0, 120] and start must be finite and nonnegative")
@@ -191,7 +209,7 @@ def main():
         parser.error("FFmpeg and ffprobe are required")
     try:
         count, regions = extract(args.video, args.layout, args.out, args.fps,
-                                 args.start, args.end, args.tolerance)
+                                 args.start, args.end, args.tolerance, args.despill_magenta)
     except (OSError, ValueError, RuntimeError, KeyError, subprocess.CalledProcessError) as exc:
         parser.exit(1, f"{exc}\n")
     print(f"{regions} cells × {count} frames → {args.out / 'manifest.json'}")

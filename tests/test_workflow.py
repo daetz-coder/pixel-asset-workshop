@@ -9,6 +9,7 @@ import tempfile
 import unittest
 
 from PIL import Image
+from scripts.extract_frames import chroma_key
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,6 +20,17 @@ def run(script, *args):
 
 
 class TinySwordsWorkflow(unittest.TestCase):
+    def test_optional_magenta_despill_removes_fringe_without_changing_navy(self):
+        rgb = Image.new("RGB", (4, 1))
+        rgb.putdata([(255, 0, 255), (160, 32, 150), (70, 40, 88), (22, 28, 46)])
+        key = Image.new("RGB", rgb.size, "#FF00FF")
+        _, standard = chroma_key(rgb, key, 48)
+        cleaned, alpha = chroma_key(rgb, key, 48, despill_magenta=True)
+        self.assertEqual(list(standard.tobytes()), [0, 255, 255, 255])
+        self.assertEqual(list(alpha.tobytes()), [0, 0, 255, 255])
+        self.assertEqual(cleaned.getpixel((2, 0)), (48, 40, 66))
+        self.assertEqual(cleaned.getpixel((3, 0)), (22, 28, 46))
+
     @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "FFmpeg required")
     def test_real_wan_clip_extracts_six_aligned_transparent_sequences(self):
         with tempfile.TemporaryDirectory() as tmp:

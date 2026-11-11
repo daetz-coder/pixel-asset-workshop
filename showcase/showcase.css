@@ -28,6 +28,7 @@ p{margin:0 0 12px}
 .actions{display:flex;flex-wrap:wrap;gap:8px 17px;font-size:14px}
 pre{margin:12px 0 0;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.6 ui-monospace,monospace;background:#17221d;color:#e7eddf;padding:12px}
 .detail-media{margin:22px 0;max-width:880px}
+.motion.promo{aspect-ratio:16/9}
 .motion{width:100%;display:block;aspect-ratio:880/560;object-fit:contain;background:#192620;border:1px solid #56645a}
 @media(max-width:850px){.layout{gap:22px;grid-template-columns:minmax(0,1fr) 148px}.hero{display:block}.hero p{margin-top:14px}}
 @media(max-width:620px){.layout{display:flex;flex-direction:column;padding:24px 15px 50px}.rail{position:static;order:-1;display:flex;flex-wrap:wrap;gap:3px 14px;border-left:0;padding:0 0 12px;border-bottom:1px solid #44544a}.rail p{flex-basis:100%;margin:0}.rail .external{display:contents}.rail a{padding:4px 0}.top{padding:12px 15px}.section{margin-top:34px}}

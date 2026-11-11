@@ -1,12 +1,12 @@
 # Pixel Asset Workshop
 
-[Chinese](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Project showcase](index.html) · [Contributing](CONTRIBUTING.md)
+[Chinese](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [Contributing](CONTRIBUTING.md)
 
 Extract reusable art direction from a reference game, create original characters and scenery, and animate several characters in a single video. Export each character as a separate transparent PNG sequence. The workflow is intended for indie teams expanding a roster, testing an art direction, or producing repeated animation batches.
 
-![Six generated sprite sequences playing in Godot](examples/tiny-swords/preview/godot-playback.gif)
+![Cleaned Warhammer, Grenadier and Standard Bearer sprites playing in Godot](examples/tiny-swords/preview/godot-playback.gif)
 
-Actual Godot playback of the extracted PNGs. [Playback video](examples/tiny-swords/preview/godot-playback.mp4) · [Original versus generated in Godot](examples/tiny-swords/README.md#compare-the-original-in-godot)
+Actual Godot playback after automatic edge cleanup. [Workflow video](examples/tiny-swords/preview/workflow-promo.mp4) · [Full Godot capture](examples/tiny-swords/preview/godot-playback.mp4) · [Original versus generated in Godot](examples/tiny-swords/README.md#compare-the-original-in-godot)
 
 | Stage | Workflow | Output |
 | --- | --- | --- |
@@ -28,10 +28,10 @@ python -m pip install -r requirements.txt
 python scripts/extract_frames.py \
   --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 \
   --layout examples/tiny-swords/wan-layout.json \
-  --fps 10 --out work/tiny-swords/frames
+  --fps 10 --despill-magenta --out work/tiny-swords/frames
 ```
 
-The output lives in `work/tiny-swords/frames/`, with paths such as `r01c01/attack/0000.png`. The `manifest.json` records the names, cells, fixed canvases, foot anchors, and empty or edge-touching frames. The historical layout uses the `attack` label for a clip that mixes idle, walking and skills. Review the 50 frames in each sequence and split them by action before importing them into a game.
+Use `--despill-magenta` for this magenta-keyed clip to reduce compression spill at the sprite edges. The output lives in `work/tiny-swords/frames/`, with paths such as `r01c01/attack/0000.png`. The `manifest.json` records the names, cells, fixed canvases, foot anchors, and empty or edge-touching frames. The historical layout uses the `attack` label for a clip that mixes idle, walking and skills. Review the 50 frames in each sequence and split them by action before importing them into a game.
 
 ## Create a batch with your own sprites
 
@@ -51,7 +51,7 @@ The output lives in `work/tiny-swords/frames/`, with paths such as `r01c01/attac
 
 | Resource | Use |
 | --- | --- |
-| [Project showcase](index.html) | Open `index.html` from a local checkout to browse the workflow, SpriteFrame captures and Godot playback |
+| [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) | Open `index.html` from a local checkout to browse the workflow, SpriteFrame captures and Godot playback |
 | [Tiny Swords case study](examples/tiny-swords/README.md) | Get the tested clip and layout, and reproduce the original-versus-generated review |
 | [Reference art skill](skills/reference-game-characters/SKILL.en.md) | Reuse art direction, prompts and reference-frame comparison tools |
 | [Wan batch skill](skills/wan-prime-video/SKILL.md) | Compose the first frame, prompt and layout, with optional Wan submission |

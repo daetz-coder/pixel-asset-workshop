@@ -14,8 +14,13 @@
 <main>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Overview</a></li><li aria-current="page">Godot playback</li></ol></nav>
 <h1>Review sprite playback in Godot</h1>
-<p>One five-second clip produced six sequences of 50 candidate frames. Godot plays the exported PNGs with nearest-neighbor sampling. The clip mixes idle, walking and skills, and some frames show magenta edge spill.</p>
-<div class="detail-media"><figure><video class="motion" controls preload="metadata" playsinline aria-label="Six extracted sprite sequences playing in Godot" src="../examples/tiny-swords/preview/godot-playback.mp4"></video><figcaption>Actual Godot capture at 10 fps. The video has no audio.</figcaption></figure></div>
+<p>One five-second clip produced six sequences of 50 candidate frames. An automatic despill pass cleans the magenta fringe before the PNGs are loaded into Godot.</p>
+<div class="detail-media"><figure>
+<video class="motion promo" controls preload="metadata" playsinline aria-label="Video-to-sprite workflow, edge cleanup and Godot playback" src="../examples/tiny-swords/preview/workflow-promo.mp4" poster="../examples/tiny-swords/preview/workflow-poster.webp"></video>
+<figcaption>A 13-second Remotion edit with the source clip, a before-and-after edge comparison and actual Godot footage. No audio.</figcaption>
+</figure></div>
+<section class="section"><h2>Cleaned frames in Godot</h2>
+<div class="detail-media"><figure><img class="media" src="../examples/tiny-swords/preview/godot-clean.webp" width="880" height="560" alt="Six cleaned sprite sequences displayed against dark green panels in Godot"><figcaption>Actual Godot capture of the cleaned PNGs at 10 fps. <a href="../examples/tiny-swords/preview/godot-playback.mp4">Watch the full Godot capture</a></figcaption></figure></div></section>
 <section class="section"><h2>Compare with the original</h2><p>The Godot scene can also load the Blue Archer idle sheet from a local Tiny Swords Free Pack. It aligns the Archer and generated Warhammer Infantry on a shared foot line. <a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/examples/tiny-swords#compare-the-original-in-godot">Run the local comparison ↗</a></p></section>
 <nav class="page-links" aria-label="Adjacent topics"><a rel="prev" href="spriteframe.html">← SpriteFrame</a><a rel="next" href="examples.html">Example files →</a></nav>
 </main>

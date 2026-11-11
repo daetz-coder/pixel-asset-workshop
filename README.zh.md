@@ -1,12 +1,12 @@
 # 像素素材工坊 · Pixel Asset Workshop
 
-[English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [英文项目介绍页](index.html) · [贡献指南](CONTRIBUTING.zh.md)
+[English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [在线项目展示](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [贡献指南](CONTRIBUTING.zh.md)
 
 从参考游戏提炼可复用的画风规则，生成自己游戏的角色和场景素材，再把多名角色的动作放进一次视频任务，拆成独立的透明 PNG 序列。适合需要扩充同一阵营、做小规模美术验证，或反复制作动作批次的独立游戏团队。
 
-![Godot 实际播放六组透明 PNG 序列](examples/tiny-swords/preview/godot-playback.gif)
+![自动去除洋红残边后的三个角色在 Godot 中播放](examples/tiny-swords/preview/godot-playback.gif)
 
-[播放视频](examples/tiny-swords/preview/godot-playback.mp4) · [在 Godot 对照原版与生成角色](examples/tiny-swords/README.zh.md#在-godot-中对照原版)
+[流程宣传片](examples/tiny-swords/preview/workflow-promo.mp4) · [完整 Godot 录像](examples/tiny-swords/preview/godot-playback.mp4) · [在 Godot 对照原版与生成角色](examples/tiny-swords/README.zh.md#在-godot-中对照原版)
 
 | 阶段 | 怎么做 | 交付 |
 | --- | --- | --- |
@@ -28,7 +28,7 @@ python -m pip install -r requirements.txt
 python scripts/extract_frames.py \
   --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 \
   --layout examples/tiny-swords/wan-layout.json \
-  --fps 10 --out work/tiny-swords/frames
+  --fps 10 --despill-magenta --out work/tiny-swords/frames
 ```
 
 输出在 `work/tiny-swords/frames/`，例如 `r01c01/attack/0000.png`。打开 `manifest.json` 查看角色名、格位、固定画布、脚底锚点和异常帧。示例是包含待机、步行和技能的一条混合片，`attack` 只是历史布局标签；导出的 50 帧仍需按动作分别筛选。

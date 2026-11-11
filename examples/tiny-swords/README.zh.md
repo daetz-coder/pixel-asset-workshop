@@ -45,7 +45,7 @@ bash scripts/compare_tiny_swords.sh '/path/to/Tiny Swords (Free Pack)'
 
 ## 在 Godot 中对照原版
 
-![Godot 实际播放生成的六组透明 PNG](preview/godot-playback.gif)
+![Godot 中的六组自动去色边后的透明帧](preview/godot-clean.webp)
 
 先按[快速开始](../../README.zh.md#快速开始已有成片无需密钥)导出透明帧，再从仓库根目录运行 Godot 4.5。左侧是本地 Tiny Swords 蓝队弓手待机，右侧是生成战锤兵的混合动作。两侧使用最近邻采样和同一脚底线，弓手放大 2 倍以接近战锤兵主体尺寸。空格或回车暂停。
 
@@ -53,7 +53,7 @@ bash scripts/compare_tiny_swords.sh '/path/to/Tiny Swords (Free Pack)'
 godot --path examples/tiny-swords/godot -- --pack="/absolute/path/to/Tiny Swords (Free Pack)"
 ```
 
-需要录制时，在 `--` 前添加 `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50`。含原版素材的录制保存在本地 `work/` 目录。仓库内另有[生成角色播放视频](preview/godot-playback.mp4)。
+需要录制时，在 `--` 前添加 `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50`。含原版素材的录制保存在本地 `work/` 目录。仓库内另有[完整 Godot 录像](preview/godot-playback.mp4)和[流程宣传片](preview/workflow-promo.mp4)。
 
 ## 从兵种扩展到整套美术
 
