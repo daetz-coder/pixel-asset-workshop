@@ -1,6 +1,6 @@
 # Pixel Asset Workshop
 
-[Chinese](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Project showcase](index.html) · [Contributing](CONTRIBUTING.en.md)
+[Chinese](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Project showcase](index.html) · [Contributing](CONTRIBUTING.md)
 
 Extract reusable art direction from a reference game, create original characters and scenery, and animate several characters in a single video. Export each character as a separate transparent PNG sequence. The workflow is intended for indie teams expanding a roster, testing an art direction, or producing repeated animation batches.
 
@@ -15,8 +15,6 @@ Actual Godot playback of the extracted PNGs. [Playback video](examples/tiny-swor
 | 3. Generate video and extract frames | Submit one clip per batch, using Wan3.0 Video Prime as an example. Map the layout to the actual video size, sample frames, key out the background and review the results. | RGBA PNG sequences with sampling and edge-contact metadata |
 
 The included example uses **six units, one five-second Wan clip and 300 candidate frames**. At the same duration and resolution, batching takes one submission for the six units. Pricing and retries determine the actual cost. Start with idle or walk cycles. Wide swings, projectiles and large effects may need more space per character.
-
-Open `index.html` in a browser from a local checkout to view the showcase and its media.
 
 ## Reproduce the example offline
 
@@ -49,13 +47,23 @@ The output lives in `work/tiny-swords/frames/`, with paths such as `r01c01/attac
    This produces `walk.png`, `walk-prompt.txt` and `walk-layout.json` for a new walk batch.
 3. Submit the first frame and prompt in a video model's interface or use the Wan runner. After generation, pair the new MP4 with its own layout JSON for command-line extraction or visual review in SpriteFrame. [Wan skill](skills/wan-prime-video/SKILL.md) · [Integrations and layout format](docs/integrations.en.md) · [SpriteFrame on GitHub](https://github.com/daetz-coder/SpriteFrame)
 
-| Tool | Use |
+## Resources
+
+| Resource | Use |
 | --- | --- |
+| [Project showcase](index.html) | Open `index.html` from a local checkout to browse the workflow, SpriteFrame captures and Godot playback |
+| [Tiny Swords case study](examples/tiny-swords/README.md) | Get the tested clip and layout, and reproduce the original-versus-generated review |
 | [Reference art skill](skills/reference-game-characters/SKILL.en.md) | Reuse art direction, prompts and reference-frame comparison tools |
 | [Wan batch skill](skills/wan-prime-video/SKILL.md) | Compose the first frame, prompt and layout, with optional Wan submission |
 | [Frame extraction CLI](scripts/extract_frames.py) | Reproduce the export locally without a model account |
 | [Integration guide](docs/integrations.en.md) | Use SpriteFrame, swap video providers or automate the workflow |
 
 To use a skill in a tool that supports Agent Skills, copy its entire directory into that tool's skills directory. You can also run the scripts directly.
+
+## Contributing
+
+Bug reports and pull requests are welcome. For a cropping or frame extraction issue, include the command, the layout JSON and the affected frame numbers. [Open an issue](https://github.com/daetz-coder/pixel-asset-workshop/issues/new/choose) · [Contributing guide](CONTRIBUTING.md) · [Offline workflow checks](https://github.com/daetz-coder/pixel-asset-workshop/actions/workflows/ci.yml)
+
+## Sources and distribution
 
 Pixel Frog's Tiny Swords is the style reference. Obtain the pack from the author to reproduce the local comparison. The source pack, extracted reference frames and comparisons containing them are for local use. The included clip and showcase images use the project's generated characters. [Pixel Frog's asset pack](https://pixelfrog-assets.itch.io/tiny-swords) · [Sources and distribution](NOTICE.en.md) · [First release checklist](docs/release.en.md)

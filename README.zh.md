@@ -1,6 +1,6 @@
 # 像素素材工坊 · Pixel Asset Workshop
 
-[English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [英文项目介绍页](index.html) · [贡献指南](CONTRIBUTING.md)
+[English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [英文项目介绍页](index.html) · [贡献指南](CONTRIBUTING.zh.md)
 
 从参考游戏提炼可复用的画风规则，生成自己游戏的角色和场景素材，再把多名角色的动作放进一次视频任务，拆成独立的透明 PNG 序列。适合需要扩充同一阵营、做小规模美术验证，或反复制作动作批次的独立游戏团队。
 
@@ -47,13 +47,23 @@ python scripts/extract_frames.py \
    得到 `walk.png`、`walk-prompt.txt` 和 `walk-layout.json`。这套新步行输入与上面的历史混合成片分开使用。
 3. 把首帧与提示词提交到视频模型。可直接使用模型界面，或按 [Wan 技能说明](skills/wan-prime-video/SKILL.zh.md) 用脚本提交和续查。导出 MP4 后，将新成片和它自己的布局交给拆帧脚本。需要可视化逐帧选择时，同一份布局也可导入 **SpriteFrame · 逐帧**。
 
+## 项目资源
+
 | 入口 | 适合什么 |
 | --- | --- |
+| [英文项目介绍](index.html) | 从本地副本打开，浏览流程、SpriteFrame 截图和 Godot 播放演示 |
+| [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) | 下载实测成片和格位，在 Godot 中复现对照 |
 | [风格迁移 Skill](skills/reference-game-characters/SKILL.md) | 在支持 Agent Skills 的环境复用风格档案、提示词和原帧对照工具 |
 | [Wan 合图 Skill](skills/wan-prime-video/SKILL.zh.md) | 准备首帧、提示词、格位 JSON，选择性提交 Wan |
 | [CLI 拆帧](scripts/extract_frames.py) | 无需模型账号，在本地稳定复现导出 |
 | [集成与布局说明](docs/integrations.md) | 使用逐帧工作台、替换视频服务、对接自己的自动化工具 |
 
 要在支持 Agent Skills 的工具中复用，把所需的整个 Skill 目录复制到该工具的技能目录；也可以直接运行这里的脚本。
+
+## 贡献与反馈
+
+遇到裁切或拆帧问题时，请附运行命令、格位 JSON 和受影响的帧号。 [提交问题](https://github.com/daetz-coder/pixel-asset-workshop/issues/new/choose) · [贡献指南](CONTRIBUTING.zh.md) · [离线流程测试](https://github.com/daetz-coder/pixel-asset-workshop/actions/workflows/ci.yml)
+
+## 来源与分发
 
 Tiny Swords 由 [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) 制作。请从作者处获取原包。原包、原帧裁切及包含原图的对照只用于本地；示例成片和展示图使用本项目生成的角色。代码与示例素材的发布范围见 [来源与分发说明](NOTICE.md) 和 [首次发布核对](docs/release.md)。

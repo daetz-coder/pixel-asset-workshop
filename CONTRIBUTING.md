@@ -1,9 +1,9 @@
-# 贡献指南
+# Contributing
 
-[English](CONTRIBUTING.en.md) · [返回项目](README.zh.md)
+[Chinese](CONTRIBUTING.zh.md) · [Project home](README.md)
 
-欢迎提交可复现的问题、画风档案、批次配置与工具改进。请用最小样例说明输入、预期结果和实际结果；拆帧问题附布局、输出清单和对应帧号。视频、提示词和截图只附可以公开分享的内容。
+Reproducible bug reports, style profiles, batch configs and tool improvements are welcome. Include minimal inputs, expected behavior and actual behavior. For extraction issues, include the layout, output manifest and frame numbers. Share videos, prompts and screenshots you have permission to share publicly.
 
-代码改动先安装 [README](README.zh.md) 中的本地依赖，再运行 `python -m unittest discover -s tests -v`。合图改动用六兵种配置试跑；模型请求改动先用 `--dry-run` 校验，本地测试和 CI 都无需 API Key。新增资产示例请记录输入、实际提示词、工具、输出、参考来源和审核状态。用实际游戏尺寸检查比例，别仅比较文件分辨率。
+Install the local dependencies and run `python -m unittest discover -s tests -v`. Try composition changes with the six-unit sample and check video request changes with `--dry-run`. Local tests and CI run without an API key. For new asset examples, record the inputs, exact prompts, tools, outputs, reference sources and review status. Check proportions at the intended in-game size. [Setup](README.md#reproduce-the-example-offline) · [Six-unit sample config](examples/tiny-swords/batch-walk.json)
 
-提交前检查差异中的本地参考、密钥、工作区 ID、任务链接和临时产物。贡献原作对照时，提交复现命令、标注或文字观察，把含原帧的图留在本地。来源与发布范围见 [NOTICE](NOTICE.md)。
+Before committing, check the diff for local references, credentials, workspace IDs, task links and temporary outputs. For comparisons with source art, share the reproduction commands, annotations or written observations and keep the images containing source frames local. [Sources and distribution](NOTICE.en.md)
