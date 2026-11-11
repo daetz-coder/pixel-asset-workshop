@@ -76,6 +76,11 @@ To use a skill in a tool that supports Agent Skills, copy its entire directory i
 
 Bug reports and pull requests are welcome. For a cropping or frame extraction issue, include the command, the layout JSON and the affected frame numbers. [Open an issue](https://github.com/daetz-coder/pixel-asset-workshop/issues/new/choose) · [Contributing guide](CONTRIBUTING.md) · [Offline workflow checks](https://github.com/daetz-coder/pixel-asset-workshop/actions/workflows/ci.yml)
 
-## Sources and distribution
+## License
 
-Pixel Frog's Tiny Swords is the style reference. The training-ground video and screenshot show the pack in the running Godot scene. Obtain the pack from the author to reproduce the comparison locally. The exported sheets and GIFs contain this project's generated characters. [Pixel Frog's asset pack](https://pixelfrog-assets.itch.io/tiny-swords) · [Sources and distribution](NOTICE.en.md) · [First release checklist](docs/release.en.md)
+- **Code and documentation** use the MIT License. Commercial use is allowed. Keep the copyright and permission notices with copies or substantial portions. [MIT License](LICENSE)
+- **Original game assets**, including the exported sprite sheets and GIFs, are available under CC0 1.0. You may use, modify and redistribute them in personal or commercial projects without attribution. [CC0 text](LICENSE-CC0) · [Covered files and third-party terms](NOTICE.en.md)
+
+## Acknowledgments
+
+Thank you to **Pixel Frog** for creating **Tiny Swords**. Its character proportions, palette and animation timing helped shape the workshop. The Godot training-ground comparison uses the original pack under Pixel Frog's terms. [Tiny Swords on itch.io](https://pixelfrog-assets.itch.io/tiny-swords)

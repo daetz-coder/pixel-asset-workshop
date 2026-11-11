@@ -83,6 +83,7 @@ pre{margin:12px 0 0;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;fo
 .export-card .asset-preview{min-height:105px}
 .feature-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,50px);align-items:center}
 .home-footer{display:flex;flex-wrap:wrap;gap:8px 22px;padding:20px 0 28px;margin-top:40px;border-top:1px solid var(--ha-rule);font-size:14px}
+.home-footer p{flex-basis:100%;margin:0;color:var(--ha-muted)}
 @media(max-width:850px){
   .home-shell{padding-top:36px}
   .home-hero{gap:20px}

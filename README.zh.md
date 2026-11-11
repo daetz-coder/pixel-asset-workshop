@@ -76,6 +76,11 @@ python scripts/extract_frames.py \
 
 遇到裁切或拆帧问题时，请附运行命令、格位 JSON 和受影响的帧号。 [提交问题](https://github.com/daetz-coder/pixel-asset-workshop/issues/new/choose) · [贡献指南](CONTRIBUTING.zh.md) · [离线流程测试](https://github.com/daetz-coder/pixel-asset-workshop/actions/workflows/ci.yml)
 
-## 来源与分发
+## 开源协议
 
-Tiny Swords 由 [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) 制作。训练场录像和截屏展示原包素材在 Godot 中的使用效果。请从作者处获取原包以在本地复现。导出的精灵图和 GIF 使用本项目生成的角色。[来源与分发说明](NOTICE.md) · [首次发布核对](docs/release.md)
+- **代码和文档**采用 MIT 协议，可商用。复制或分发全部或主要部分时保留版权和许可声明。[MIT 协议正文](LICENSE)
+- **原创游戏素材**采用 CC0 1.0，包括已导出的精灵图和 GIF。可免费商用、修改和再分发，署名自愿。[CC0 正文](LICENSE-CC0) · [授权范围与第三方条款](NOTICE.md)
+
+## 致谢
+
+感谢 **Pixel Frog** 创作 **Tiny Swords**。工坊参考了它的角色比例、配色与动画节奏。Godot 训练场对照使用的原包素材遵循 Pixel Frog 的条款。[Tiny Swords 作者页](https://pixelfrog-assets.itch.io/tiny-swords)
