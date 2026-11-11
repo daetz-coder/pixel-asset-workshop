@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pair an MP4 with its own crop layout and extract separate PNG sequences.">
+<title>Extract transparent PNGs | Pixel Asset Workshop</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="showcase.css">
+</head>
+<body class="ha-root">
+<header class="top"><a href="../index.html">Pixel Asset Workshop</a><a href="https://github.com/daetz-coder/pixel-asset-workshop">View repository ↗</a></header>
+<div class="layout" id="top">
+<main>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Overview</a></li><li aria-current="page">CLI extraction</li></ol></nav>
+<h1>Extract transparent PNGs</h1>
+<p>Use the generated MP4 and crop layout from the same batch. The JSON records the grid, key color and foot baseline. The extractor maps the saved cells to the decoded video dimensions.</p>
+<section class="section"><h2>Run the sample</h2>
+<p>From the repository root, run the extractor with Python 3.10+, Pillow and FFmpeg installed.</p>
+<pre><code>python scripts/extract_frames.py \
+  --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 \
+  --layout examples/tiny-swords/wan-layout.json \
+  --fps 10 --out work/tiny-swords/frames</code></pre>
+<p>At 10 fps, this five-second sample writes 50 candidate frames per cell and a manifest with crop bounds, foot anchors and edge-contact flags.</p>
+<p><a href="examples.html">Open the example files →</a></p></section>
+<nav class="page-links" aria-label="Adjacent topics"><a rel="prev" href="../index.html">← Overview</a><a rel="next" href="spriteframe.html">SpriteFrame →</a></nav>
+</main>
+<nav class="rail" aria-label="Showcase topics">
+<p>Showcase topics</p>
+<a href="../index.html">Overview</a>
+<a href="cli.html" aria-current="page">CLI extraction</a>
+<a href="spriteframe.html">SpriteFrame</a>
+<a href="godot.html">Godot playback</a>
+<a href="examples.html">Example files</a>
+<div class="external">
+<a href="https://github.com/daetz-coder/pixel-asset-workshop">Project on GitHub ↗</a>
+<a href="https://github.com/daetz-coder/SpriteFrame">SpriteFrame on GitHub ↗</a>
+</div>
+</nav>
+</div>
+</body>
+</html>
