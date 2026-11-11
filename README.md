@@ -1,6 +1,6 @@
 # Pixel Asset Workshop
 
-[Start SpriteFrame](#use-the-spriteframe-workbench) · [Install the CLI](#install) · [简体中文](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [Contributing](CONTRIBUTING.md)
+[Download SpriteFrame (.zip)](https://github.com/daetz-coder/pixel-asset-workshop/archive/refs/heads/main.zip) · [Install SpriteFrame](#use-the-spriteframe-workbench) · [Install the CLI](#install) · [简体中文](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [Contributing](CONTRIBUTING.md)
 
 Extract reusable art direction from a reference game, create original characters and scenery, and animate several characters in a single video. Export each character as a separate transparent PNG sequence. The workflow is intended for indie teams expanding a roster, testing an art direction, or producing repeated animation batches.
 

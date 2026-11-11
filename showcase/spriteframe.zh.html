@@ -16,11 +16,16 @@
 <nav class="crumbs" aria-label="面包屑"><ol><li><a href="../index.zh.html">项目概览</a></li><li aria-current="page">SpriteFrame</li></ol></nav>
 <h1>用 SpriteFrame 逐帧挑选</h1>
 <p>像素素材工坊仓库已内置 SpriteFrame。可以按格裁切和抠像、逐帧检查动作，并导出 PNG、图集和 GIF。</p>
-<section id="install"><h2>启动本地工作台</h2>
-<p>在 macOS 或 Linux 上安装 Python 3.11 或更新版本、FFmpeg 和 ffprobe。然后在仓库根目录运行以下命令。</p>
-<pre><code>./workbench/setup.sh
-./workbench/start.sh</code></pre>
-<p>打开 <code>http://127.0.0.1:8766</code>，切换中文，点击<strong>导入格位 JSON</strong>，打开配套 MP4，再点击<strong>逐帧提取并挑选</strong>。 <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/workbench/README.zh.md">工作台 README ↗</a></p>
+<section id="install"><h2>下载并安装 SpriteFrame</h2>
+<p>项目 ZIP 内含 SpriteFrame、示例 MP4 和配套格位，无需登录 GitHub 即可下载。</p>
+<div class="actions"><a class="button primary" href="https://github.com/daetz-coder/pixel-asset-workshop/archive/refs/heads/main.zip">下载 SpriteFrame（ZIP）</a><a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/workbench/README.zh.md">中文使用说明 ↗</a></div>
+<ol>
+<li>在 macOS 或 Linux 上安装 Python 3.11 或更新版本、FFmpeg 和 ffprobe。macOS 上可用 Homebrew 运行 <code>brew install ffmpeg</code>。Ubuntu 或 Debian 上可运行 <code>sudo apt install python3 python3-venv ffmpeg</code>，并用 <code>python3 --version</code> 确认版本至少为 3.11。</li>
+<li>解压 ZIP，在解压出的 <code>pixel-asset-workshop-main</code> 文件夹打开终端，运行以下命令。
+<pre><code>sh workbench/setup.sh
+sh workbench/start.sh</code></pre></li>
+<li>服务启动后打开 <a href="http://127.0.0.1:8766/">http://127.0.0.1:8766/</a>。可从右上角切换中文。试跑时，点击<strong>导入格位 JSON</strong>，打开配套 MP4，底色选<strong>洋红</strong>，再点击<strong>逐帧提取并挑选</strong>。<a href="examples.html">查看示例 MP4 和格位 →</a></li>
+</ol>
 </section>
 <div class="detail-media"><figure aria-labelledby="capture-caption">
 <img class="media" src="../examples/tiny-swords/preview/blue-squad.zh.png" width="1440" height="1040" alt="SpriteFrame 工作台显示 Wan 成片上的六个角色裁框">

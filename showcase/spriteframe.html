@@ -16,11 +16,16 @@
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Overview</a></li><li aria-current="page">SpriteFrame</li></ol></nav>
 <h1>Choose frames in SpriteFrame</h1>
 <p>SpriteFrame is included in the Pixel Asset Workshop repository. It crops and keys each unit, lets you review the animation frame by frame, and exports PNGs, atlases and GIFs.</p>
-<section id="install"><h2>Start the local workbench</h2>
-<p>On macOS or Linux, install Python 3.11 or newer plus FFmpeg and ffprobe. Run these commands from the repository root.</p>
-<pre><code>./workbench/setup.sh
-./workbench/start.sh</code></pre>
-<p>Open <code>http://127.0.0.1:8766</code>, choose <strong>Import crop layout</strong>, open the matching MP4, then click <strong>Extract every frame and choose</strong>. <a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/workbench">Workbench README ↗</a></p>
+<section id="install"><h2>Download and install SpriteFrame</h2>
+<p>The project ZIP includes SpriteFrame, the sample MP4 and its crop layout. You can download it without a GitHub account.</p>
+<div class="actions"><a class="button primary" href="https://github.com/daetz-coder/pixel-asset-workshop/archive/refs/heads/main.zip">Download SpriteFrame (.zip)</a><a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/workbench">View the workbench source ↗</a></div>
+<ol>
+<li>Install Python 3.11 or newer, FFmpeg and ffprobe on macOS or Linux. With Homebrew, run <code>brew install ffmpeg</code>. On Ubuntu or Debian, run <code>sudo apt install python3 python3-venv ffmpeg</code> and check that <code>python3 --version</code> reports 3.11 or newer.</li>
+<li>Unzip the download and open a terminal in the extracted <code>pixel-asset-workshop-main</code> folder. Run:
+<pre><code>sh workbench/setup.sh
+sh workbench/start.sh</code></pre></li>
+<li>Open <a href="http://127.0.0.1:8766/">http://127.0.0.1:8766/</a> after the server starts. To try the sample, choose <strong>Import crop layout</strong>, open the matching MP4, set the key color to <strong>Magenta</strong>, and click <strong>Extract every frame and choose</strong>. <a href="examples.html">Find the sample MP4 and layout →</a></li>
+</ol>
 </section>
 <div class="detail-media"><figure aria-labelledby="capture-caption">
 <img class="media" src="../examples/tiny-swords/preview/blue-squad.png" width="1440" height="1040" alt="SpriteFrame extraction workspace with six named crops over the actual Wan video">

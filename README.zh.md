@@ -1,6 +1,6 @@
 # 像素素材工坊 · Pixel Asset Workshop
 
-[启动 SpriteFrame](#用-spriteframe-逐帧工作台操作) · [安装命令行工具](#安装) · [English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [在线项目展示](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [贡献指南](CONTRIBUTING.zh.md)
+[下载 SpriteFrame（ZIP）](https://github.com/daetz-coder/pixel-asset-workshop/archive/refs/heads/main.zip) · [安装 SpriteFrame](#用-spriteframe-逐帧工作台操作) · [安装命令行工具](#安装) · [English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [在线项目展示](https://daetz-coder.github.io/projects/pixel-asset-workshop/index.zh.html) · [贡献指南](CONTRIBUTING.zh.md)
 
 从参考游戏提炼可复用的画风规则，生成自己游戏的角色和场景素材，再把多名角色的动作放进一次视频任务，拆成独立的透明 PNG 序列。适合需要扩充同一阵营、做小规模美术验证，或反复制作动作批次的独立游戏团队。
 
