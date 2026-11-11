@@ -5,6 +5,8 @@ description: Learn and reuse a complete 2D game's visual style from reference im
 
 # 根据参考图学习整套游戏画风并生成素材
 
+[English](SKILL.en.md)
+
 从参考图提取可复用的画风档案，再按资产类别生成原创素材。用共用的色彩、形状、光照和像素表现维持整体一致性，用各类素材自己的结构与尺度保证可用。
 
 ## 选择范围

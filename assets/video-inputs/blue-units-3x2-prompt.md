@@ -1,5 +1,7 @@
 # 蓝队六兵种 · 5 秒 480p 视频提示词
 
+[English](blue-units-3x2-prompt.en.md)
+
 视频设置选 **5 秒、480p、横屏 16:9**。每次只复制一个代码块。前三条上传同一张[六兵种参考图](blue-units-3x2-reference.png)作为首帧。第四条上传[纯洋红特效底板](blue-units-3x2-fx-reference.png)作为首帧。
 
 | 批次 | 生成内容 |
@@ -87,7 +89,7 @@
 
 ## 旧片复核
 
-源片为 [3 秒试片](e28543c8c1b84af9bdff6d52be9ae371.mp4)，实测 854 × 480、30 fps，共 90 帧。用本地蓝队 Warrior 的 Idle、Run、Attack、Guard，Archer 的 Shoot、Arrow，以及 Monk 的 Heal_Effect 做姿态和特效分层参考。步行采用较慢的左右交替支撑节奏。
+本地 3 秒试片实测 854 × 480、30 fps，共 90 帧。用本地蓝队 Warrior 的 Idle、Run、Attack、Guard，Archer 的 Shoot、Arrow，以及 Monk 的 Heal_Effect 做姿态和特效分层参考。步行采用较慢的左右交替支撑节奏。
 
 | 观察 | 对拆帧与动作读感的影响 |
 | --- | --- |

@@ -1,31 +1,57 @@
-# AliWenSkill · Pixel Art Production Workflow
+# Pixel Asset Workshop · 像素素材工坊
 
-[简体中文](README.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Contributing](CONTRIBUTING.md)
+[简体中文](README.md) · [Tiny Swords case study](examples/tiny-swords/README.en.md) · [Contributing](CONTRIBUTING.en.md)
 
-Learn a game's visual language, use it to design original assets for your own game, and produce sprite animation drafts in batches.
+Extract reusable art direction from a reference game, create original characters and scenery, and animate several characters in a single video. Export each character as a separate transparent PNG sequence. The workflow is intended for indie teams expanding a roster, testing an art direction, or producing repeated animation batches.
 
-1. **Learn the style.** Record camera angle, proportions, pixel scale and material colors. Review one original sprite next to a reference at the same body scale, then extend the rules to your roster, terrain, buildings or UI.
-2. **Generate and pack.** Make each sprite as its own transparent PNG. Pack compatible characters into one keyed first frame and write one motion instruction per cell. Save a matching layout JSON.
-3. **Generate video and extract frames.** Submit one clip per batch, using Wan3.0 Video Prime as an example. Crop the actual clip with the saved layout, key out the background and curate the transparent PNG sequences.
+![Reference first frame, generated Wan video and SpriteFrame export for six original units](examples/tiny-swords/preview/blue-squad.png)
 
-The checked-in case uses six original units, one five-second Wan clip and six sequences of 50 candidate frames at 10 fps. Batching reduces submissions at the same duration and resolution; actual costs also depend on retries and pricing. Crowded cells reduce available motion space.
+| Stage | Workflow | Output |
+| --- | --- | --- |
+| 1. Learn the style | Record camera angle, body proportions, pixel scale and material colors. Calibrate one sprite, then apply the rules to characters, buildings, terrain and UI. | Style profile, side-by-side comparison and an approved sample |
+| 2. Generate and compose | Create a transparent PNG for each character. Pack compatible sprites into a shared first frame with a common foot baseline and a motion prompt for each cell. | First-frame PNG, per-cell prompts and layout JSON |
+| 3. Generate video and extract frames | Submit one clip per batch, using Wan3.0 Video Prime as an example. Map the layout to the actual video size, sample frames, key out the background and review the results. | RGBA PNG sequences with sampling and edge-contact metadata |
+
+The included example uses **six units, one five-second Wan clip and 300 candidate frames**. At the same duration and resolution, batching takes one submission for the six units. Pricing and retries determine the actual cost. Start with idle or walk cycles. Wide swings, projectiles and large effects may need more space per character.
 
 ## Reproduce the example offline
 
-Install Python 3.10+ and FFmpeg with ffprobe. ImageMagick 7 is also needed to compose new first frames.
+Install Python 3.10+ and FFmpeg with ffprobe. Install ImageMagick 7 (`magick`) to compose new first frames or validate a Wan request locally. Run the following from the repository root.
 
 ```sh
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -r requirements.txt
+
 python scripts/extract_frames.py \
   --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 \
   --layout examples/tiny-swords/wan-layout.json \
   --fps 10 --out work/tiny-swords/frames
 ```
 
-Check `manifest.json` in the output for each cell's anchor, crop, and empty or edge-touching frames. This demo mixes idle, walking and skills in one clip; review and split it before using it in a game.
+The output lives in `work/tiny-swords/frames/`, with paths such as `r01c01/attack/0000.png`. The `manifest.json` records the names, cells, fixed canvases, foot anchors, and empty or edge-touching frames. The historical layout uses the `attack` label for a clip that mixes idle, walking and skills. Review the 50 frames in each sequence and split them by action before importing them into a game.
 
-Use the [style reference skill](skills/reference-game-characters/SKILL.md) to design new sprites, the [Wan skill](skills/wan-prime-video/SKILL.md) to pack and optionally submit a batch, and [the integration guide](docs/integrations.md) to connect another provider or a visual review tool. No API key is required to reproduce the included clip's extraction.
+## Create a batch with your own sprites
 
-[Tiny Swords by Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) is the style reference. Obtain it from the author to reproduce the local side-by-side; the source pack and comparisons containing its frames are kept out of the release. See [NOTICE](NOTICE.md) for distribution boundaries.
+1. Build a style profile and compare one new sprite with a reference at the same body scale. Once the sample is approved, generate the remaining transparent PNGs. GPT Image or another image generator with reference-image support can handle this step. [Reference art skill](skills/reference-game-characters/SKILL.en.md) · [Tiny Swords comparison](examples/tiny-swords/README.en.md#comparison-with-the-original)
+2. Copy the sample config and change the paths, names and motions. Image paths are relative to the config file. Characters fill the grid left to right, then top to bottom. [Walk batch config](examples/tiny-swords/batch-walk.json)
+
+   ```sh
+   python skills/wan-prime-video/scripts/compose_reference.py \
+     --config examples/tiny-swords/batch-walk.json \
+     --output work/tiny-swords/walk.png
+   ```
+
+   This produces `walk.png`, `walk-prompt.txt` and `walk-layout.json` for a new walk batch.
+3. Submit the first frame and prompt in a video model's interface or use the Wan runner. After generation, pair the new MP4 with its own layout JSON for command-line extraction or visual review in SpriteFrame. [Wan skill](skills/wan-prime-video/SKILL.md) · [Integrations and layout format](docs/integrations.en.md)
+
+| Tool | Use |
+| --- | --- |
+| [Reference art skill](skills/reference-game-characters/SKILL.en.md) | Reuse art direction, prompts and reference-frame comparison tools |
+| [Wan batch skill](skills/wan-prime-video/SKILL.md) | Compose the first frame, prompt and layout, with optional Wan submission |
+| [Frame extraction CLI](scripts/extract_frames.py) | Reproduce the export locally without a model account |
+| [Integration guide](docs/integrations.en.md) | Use SpriteFrame, swap video providers or automate the workflow |
+
+To use a skill in a tool that supports Agent Skills, copy its entire directory into that tool's skills directory. You can also run the scripts directly.
+
+Pixel Frog's Tiny Swords is the style reference. Obtain the pack from the author to reproduce the local comparison. The source pack, extracted reference frames and comparisons containing them are for local use. The included clip and showcase images use the project's generated characters. [Pixel Frog's asset pack](https://pixelfrog-assets.itch.io/tiny-swords) · [Sources and distribution](NOTICE.en.md) · [First release checklist](docs/release.en.md)

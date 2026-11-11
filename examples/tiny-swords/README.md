@@ -1,6 +1,6 @@
 # Tiny Swords：从原版画风到原创六兵种
 
-[返回项目](../../README.md) · [Pixel Frog 作者页](https://pixelfrog-assets.itch.io/tiny-swords) · [整套画风档案](../../skills/reference-game-characters/references/tiny-swords-art.md)
+[English](README.en.md) · [返回项目](../../README.md) · [Pixel Frog 作者页](https://pixelfrog-assets.itch.io/tiny-swords) · [整套画风档案](../../skills/reference-game-characters/references/tiny-swords-art.md)
 
 本例把原包的蓝队人形当作画风参照。先看蓝队弓手与枪兵的原始待机帧，校准一张原创战锤兵，再沿用该基准做投弹兵、旗手、战斧兵、弩兵和塔盾兵。
 

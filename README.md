@@ -1,4 +1,4 @@
-# AliWenSkill · 游戏像素素材工作流
+# 像素素材工坊 · Pixel Asset Workshop
 
 [English](README.en.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.md) · [贡献指南](CONTRIBUTING.md)
 
@@ -12,7 +12,7 @@
 | 2. 生图与合图 | 独立生成每名角色的透明 PNG。把同规格角色按格排进同一张首帧，锁定角色顺序和脚底锚点，每格写自己的动作 | 首帧 PNG、逐格提示词、格位 JSON |
 | 3. 视频与批量拆帧 | 以 Wan3.0 Video Prime 为例，每批提交一次。按成片尺寸换算格位，统一抽帧和抠像，再人工挑动作关键帧 | 每格独立的 RGBA PNG 序列、采样和贴边记录 |
 
-实测批次包含 **6 名兵种、1 条 5 秒 Wan 成片、300 张候选透明帧**。如果六个角色原本各提交同规格的一条视频，同一批次的请求数从 6 次变成 1 次；实际花费取决于服务计费和返工，合图也会缩小每个角色可用的画面。先用待机或步行试格，挥武器、飞行物和大范围特效需要时用更少的角色或分批。
+实测批次包含 **6 名兵种、1 条 5 秒 Wan 成片、300 张候选透明帧**。同规格下，六个角色合成一批后，请求数由 6 次降至 1 次。实际花费取决于服务计费和返工。先用待机或步行试格，挥武器、飞行物和大范围特效需要时用更少的角色或分批。
 
 ## 快速开始：已有成片，无需密钥
 
@@ -43,12 +43,12 @@ python scripts/extract_frames.py \
    ```
 
    得到 `walk.png`、`walk-prompt.txt` 和 `walk-layout.json`。这套新步行输入与上面的历史混合成片分开使用。
-3. 把首帧与提示词提交到视频模型。可直接使用模型界面，或按 [Wan 技能说明](skills/wan-prime-video/SKILL.md) 用脚本提交和续查。导出 MP4 后，将新成片和它自己的布局交给拆帧脚本。需要可视化逐帧选择时，同一份布局也可导入 **SpriteFrame · 逐帧**。
+3. 把首帧与提示词提交到视频模型。可直接使用模型界面，或按 [Wan 技能说明](skills/wan-prime-video/SKILL.zh.md) 用脚本提交和续查。导出 MP4 后，将新成片和它自己的布局交给拆帧脚本。需要可视化逐帧选择时，同一份布局也可导入 **SpriteFrame · 逐帧**。
 
 | 入口 | 适合什么 |
 | --- | --- |
 | [风格迁移 Skill](skills/reference-game-characters/SKILL.md) | 在支持 Agent Skills 的环境复用风格档案、提示词和原帧对照工具 |
-| [Wan 合图 Skill](skills/wan-prime-video/SKILL.md) | 准备首帧、提示词、格位 JSON，选择性提交 Wan |
+| [Wan 合图 Skill](skills/wan-prime-video/SKILL.zh.md) | 准备首帧、提示词、格位 JSON，选择性提交 Wan |
 | [CLI 拆帧](scripts/extract_frames.py) | 无需模型账号，在本地稳定复现导出 |
 | [集成与布局说明](docs/integrations.md) | 使用逐帧工作台、替换视频服务、对接自己的自动化工具 |
 

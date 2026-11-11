@@ -1,8 +1,8 @@
-# 角色像素动画素材工作流
+# 像素素材工坊项目工作流
 
 本项目以 Pixel Frog 的 Tiny Swords 原始精灵为画风基准，并参考其动画节奏。先用一个角色确认与原包的画风匹配，再分批制作同风格的独立角色图。用户确认角色后，交付合并参考图和可直接粘贴的视频生成提示词。用户将图和提示词一起输入视频模型，之后从视频中拆出游戏用的逐帧 PNG。
 
-公开项目介绍与启动命令见 [README](README.md)，实测数据与原版对比见 [Tiny Swords 案例](examples/tiny-swords/README.md)，本地参考图的分发约定见 [NOTICE](NOTICE.md)。
+项目介绍与启动命令见 [中文版 README](README.md) 和 [English README](README.en.md)，实测数据与原版对比见 [Tiny Swords 案例](examples/tiny-swords/README.md)，本地参考图的分发约定见 [NOTICE](NOTICE.md)。
 
 ## 整套游戏画风与素材
 
@@ -10,8 +10,8 @@
 
 ## 本地参考素材
 
-- Tiny Swords Free Pack 已解压到 [本地参考素材目录](assets/references/tiny-swords/)。优先查看 `Units/Blue Units/` 下的 Idle、Run 和对应职业的攻击或施法动作。参考其轻俯视四分之三视角、大头短身比例、清晰轮廓、有限色阶和动作节奏。原包标注的动画速度为 10 fps，可作为预览起点。
-- [用户提供的兵种图](assets/references/tiny-swords/units-board.png) 用于对照各兵种共有的手脚比例、服装色板和装备的轮廓差异。
+- Tiny Swords Free Pack 已解压到本地参考素材目录 `assets/references/tiny-swords/`。优先查看 `Units/Blue Units/` 下的 Idle、Run 和对应职业的攻击或施法动作。参考其轻俯视四分之三视角、大头短身比例、清晰轮廓、有限色阶和动作节奏。原包标注的动画速度为 10 fps，可作为预览起点。
+- 本地兵种图 `assets/references/tiny-swords/units-board.png` 用于对照各兵种共有的手脚比例、服装色板和装备的轮廓差异。
 - 资源包由 Pixel Frog 制作。当前免费包允许在个人和商业项目中使用及修改，原始素材和修改后的素材包均受作者页面的再分发限制。将此目录作为本地参考，提交和交付文件使用原创角色素材。[作者页面及许可](https://pixelfrog-assets.itch.io/tiny-swords)
 
 ## 概念图与确认
@@ -106,7 +106,7 @@ New class: Blue Tower Shield Infantry, a dedicated defender. Hold one tall recta
 
 - 输入使用本地 `Units/Blue Units/Warrior/Warrior_Idle.png` 的第一帧。该原帧画布为 192 × 192 像素，以最近邻放大 2 倍后直接传给 ImageGen。
 - [橡果卫兵风格样图](assets/concepts/acorn-guard-tiny-swords-style.png) 是 ImageGen 直接输出的透明 PNG。用户指出腿脚形状不符合原包，同时要求新兵种采用不同的装备轮廓，并沿用原包的手部和配色。此样图仅作存档。
-- [同尺寸对照](assets/references/tiny-swords/warrior-style-comparison.png) 左侧为原包战士，右侧为生成样图。样图在画布中的站位略低，确认后以脚底为基准对齐锚点。
+- 本地同尺寸对照 `assets/references/tiny-swords/warrior-style-comparison.png` 左侧为原包战士，右侧为生成样图。样图在画布中的站位略低，确认后以脚底为基准对齐锚点。
 
 <details>
 <summary>风格样图生图提示词</summary>

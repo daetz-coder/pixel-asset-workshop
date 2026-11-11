@@ -5,6 +5,8 @@ description: Batch multiple local sprite images into one Wan3.0-Video-Prime firs
 
 # Wan Prime Video
 
+[简体中文](SKILL.zh.md)
+
 When given multiple roles for the same video settings, compose them locally into one first frame. Each role gets its own cell and motion text. A batch uses one Wan task, so six roles can share a single submission. Use separate batches when motions need different durations or when the shared canvas leaves too little room for equipment or motion.
 
 ## Prepare a batch locally
@@ -53,4 +55,4 @@ The runner prints the task ID as soon as Alibaba accepts it. Wait for the task a
 
 See [Alibaba Cloud's Wan3.0 API reference](https://help.aliyun.com/en/model-studio/wan3-video-generation-api-reference) for model settings and response details.
 
-When using this skill inside AliWenSkill, [the Tiny Swords case](../../examples/tiny-swords/README.md) includes the exact submitted prompt, source clip and crop layout. It also shows how to extract the saved video locally without submitting another task.
+The Pixel Asset Workshop example includes the exact submitted prompt, source clip and crop layout. It also shows how to extract the saved video locally without submitting another task. [Tiny Swords case study](../../examples/tiny-swords/README.en.md)

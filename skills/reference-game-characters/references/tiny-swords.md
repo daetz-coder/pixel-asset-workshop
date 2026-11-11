@@ -1,5 +1,7 @@
 # Tiny Swords 蓝队示例
 
+[English](tiny-swords.en.md)
+
 整套资源的建筑、地形、UI、敌人和特效见 [Tiny Swords 画风档案](tiny-swords-art.md)。本页提供蓝队人形分支的参考图、尺寸和生图提示词。
 
 这是本 skill 的项目示例，不是其他游戏的默认人体和色板。路径相对使用者的项目根目录；在新项目中先定位实际素材，不能假定这些文件已随 skill 安装。

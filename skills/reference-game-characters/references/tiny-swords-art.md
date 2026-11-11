@@ -1,5 +1,7 @@
 # Tiny Swords 整套画风档案
 
+[English](tiny-swords-art.en.md)
+
 Pixel Frog 的 Tiny Swords 是此档案的参考。已实看本地 Free Pack 的蓝红弓手、蓝红兵营、修道院、塔、矿石、树木、地形图、按钮两态、纸面板、图标、血条和爆炸特效。来源为项目根目录下的 `assets/references/tiny-swords/Tiny Swords (Free Pack)/`。下表文件名相对该目录。另有 [作者资源包说明](https://pixelfrog-assets.itch.io/tiny-swords) 与 [作者 UI 更新说明](https://pixelfrog-assets.itch.io/tiny-swords/devlog/1158927/ui-elements-update)。
 
 ## 从整套图提取的共性
