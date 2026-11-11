@@ -23,7 +23,7 @@ Use [compose_reference.py](scripts/compose_reference.py) with Python 3 and Image
 ```
 
 ```bash
-python3 ~/.codex/skills/wan-prime-video/scripts/compose_reference.py \
+python3 skills/wan-prime-video/scripts/compose_reference.py \
   --config ./batch.json --output ./batch-reference.png
 ```
 
@@ -35,10 +35,10 @@ Local preparation is sufficient when the user asks only for the reference or pro
 
 Resolve the user's image, prompt, output location, and settings from the request and project. Default to 5 seconds, 480P, 16:9, audio off, prompt rewriting off, and a solid magenta fill for transparent sprites and aspect-ratio padding. Honor the supplied settings. Provide prompt text or write just the selected prompt block to a UTF-8 text file.
 
-Run the bundled script by its absolute path. For example, with the default Codex skill location:
+Run the following from the Pixel Asset Workshop repository root. If you installed the skill elsewhere, use the absolute path to its bundled script.
 
 ```bash
-python3 ~/.codex/skills/wan-prime-video/scripts/generate_wan_video.py \
+python3 skills/wan-prime-video/scripts/generate_wan_video.py \
   --image ./reference.png \
   --prompt-file ./run-prompt.txt \
   --resolution 480P --ratio 16:9 --duration 5 \

@@ -278,42 +278,7 @@
       "raw_sha256": "09367b176c327a61e773d38060f02f63bb18881bfc6c94151d3b8bc2905e3f2a"
     }
   },
-  "scene": {
-    "file": "previews/frontier-scene.png",
-    "logical_size_px": [
-      448,
-      320
-    ],
-    "placement_ground_points_px": {
-      "outpost": [
-        115,
-        190
-      ],
-      "supply-crate": [
-        134,
-        223
-      ],
-      "lookout": [
-        201,
-        246
-      ],
-      "stoneback-armadillo": [
-        341,
-        238
-      ],
-      "impact-fx": [
-        291,
-        241
-      ]
-    },
-    "enemy_mirrored_in_preview": true,
-    "terrain_grid": [
-      7,
-      5
-    ]
-  },
   "verification": {
-    "scene": "实际生成并整理后的八类素材合成预览，2× 最近邻。",
     "terrain": "64×64 不透明地块，3×3 实拼检查；边界纹理颜色接近但相对边缘并非逐像素相等。",
     "ui": "常态和按下态共用 112×38 控件画布，在 104×36 按钮预览及 210×91 面板预览中检查九宫格和文字布局。",
     "scope": "静态角色与敌怪、一次性四帧特效及美术皮肤。游戏交互与引擎碰撞参数可由使用项目设定。",

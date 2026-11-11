@@ -69,9 +69,3 @@ godot --path examples/tiny-swords/godot res://comparison.tscn -- --pack="/absolu
 If the pack is already in `assets/references/tiny-swords/Tiny Swords (Free Pack)`, omit the `--pack` argument. Record the comparison locally with Godot Movie Maker by adding `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50` before the `--` separator. [Generated-only Godot capture](preview/godot-playback.mp4) · [Workflow video](preview/workflow-promo.mp4)
 
 The 21.5-second walkthrough uses the actual SpriteFrame screenshots, the before and after keying comparison, the exported Warhammer sheet and the Godot training-ground recording. With Python and Pillow, FFmpeg, Node.js and npm installed, run `bash examples/tiny-swords/promo/render.sh` from the repository root to rebuild the video and poster. Set `REMOTION_CHROME` to use a specific browser executable. [Remotion composition](promo/showcase.jsx) · [Watch with optional Chinese subtitles](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html#workflow-video)
-
-## Extending the style across asset types
-
-The frontier outpost applies the same camera, colors and pixel treatment to a lookout, stoneback armadillo, outpost, supply crate, grass, panel, button and ground-impact effect. Check the building entrance against unit height, tile seams, both button states, and the contact point and timing of the standalone effect. The asset manifest records each item's source and review status. [Frontier outpost asset manifest](../../assets/art-runs/frontier-outpost/manifest.json)
-
-![Frontier outpost composite with a building, unit, enemy, terrain and UI](../../assets/art-runs/frontier-outpost/previews/frontier-scene.png)

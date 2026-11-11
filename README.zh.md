@@ -1,6 +1,6 @@
 # 像素素材工坊 · Pixel Asset Workshop
 
-[English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [在线项目展示](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [贡献指南](CONTRIBUTING.zh.md)
+[安装与使用](#安装) · [English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [在线项目展示](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [贡献指南](CONTRIBUTING.zh.md)
 
 从参考游戏提炼可复用的画风规则，生成自己游戏的角色和场景素材，再把多名角色的动作放进一次视频任务，拆成独立的透明 PNG 序列。适合需要扩充同一阵营、做小规模美术验证，或反复制作动作批次的独立游戏团队。
 
@@ -28,22 +28,79 @@
 
 [查看全部六套精灵图和 GIF](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [帧坐标、脚底锚点与时长](examples/tiny-swords/preview/exports/manifest.json)
 
+## 安装
+
+1. 用 Git 克隆仓库，或下载 ZIP 解压。接下来的项目命令都在包含 `requirements.txt` 的目录运行。[下载项目 ZIP](https://github.com/daetz-coder/pixel-asset-workshop/archive/refs/heads/main.zip)
+
+   ```sh
+   git clone https://github.com/daetz-coder/pixel-asset-workshop.git
+   cd pixel-asset-workshop
+   ```
+
+2. 安装 Python 3.10 或更新版本，以及 FFmpeg。macOS 和 Linux 用 `python3 --version` 检查版本，Windows 用 `py -3 --version`。在终端确认 `ffmpeg -version` 和 `ffprobe -version` 都能运行。[下载 Python](https://www.python.org/downloads/) · [下载 FFmpeg](https://ffmpeg.org/download.html)
+
+   | 系统 | 安装方式 |
+   | --- | --- |
+   | macOS，已安装 Homebrew | 运行 `brew install ffmpeg`。若 `python3` 缺失或低于 3.10，请安装新版 Python。 |
+   | Ubuntu 或 Debian | 运行 `sudo apt install python3 python3-venv ffmpeg`，然后确认 Python 版本。 |
+   | Windows，已安装 WinGet | 运行 `winget install --id Gyan.FFmpeg --exact`。安装 Python 时启用启动器，安装后重新打开 PowerShell。 |
+
+3. 按系统创建 Python 虚拟环境并安装项目依赖。
+
+   **macOS 或 Linux**
+
+   ```sh
+   python3 -m venv .venv
+   . .venv/bin/activate
+   python -m pip install -r requirements.txt
+   ```
+
+   **Windows PowerShell**
+
+   ```powershell
+   py -3 -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   ```
+
+需要重新合图或在本地检查 Wan 请求时，再安装 ImageMagick 7（`magick`）。下方拆帧示例只需上面的依赖。[下载 ImageMagick](https://imagemagick.org/script/download.php)
+
 ## 快速开始：已有成片，无需密钥
 
-需要 Python 3.10+、FFmpeg（含 ffprobe）。重新合图和本地检查 Wan 请求时还需要 ImageMagick 7（`magick`）。从项目根目录执行：
+使用仓库自带的 MP4 和配套格位，运行一次本地拆帧。这个示例无需 API Key。
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-
 python scripts/extract_frames.py \
   --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 \
   --layout examples/tiny-swords/wan-layout.json \
   --fps 10 --despill-magenta --out work/tiny-swords/frames
 ```
 
-输出在 `work/tiny-swords/frames/`，例如 `r01c01/attack/0000.png`。打开 `manifest.json` 查看角色名、格位、固定画布、脚底锚点和异常帧。示例是包含待机、步行和技能的一条混合片，`attack` 只是历史布局标签；导出的 50 帧仍需按动作分别筛选。
+Windows PowerShell 直接使用虚拟环境里的 Python。
+
+```powershell
+.\.venv\Scripts\python.exe scripts/extract_frames.py --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 --layout examples/tiny-swords/wan-layout.json --fps 10 --despill-magenta --out work/tiny-swords/frames
+```
+
+成功后终端会显示 **6 cells × 50 frames**。打开 `work/tiny-swords/frames/r01c01/attack/0000.png` 检查第一张透明帧，打开同一输出目录下的 `manifest.json` 查看格位、脚底锚点和异常帧。重跑时给 `--out` 指定一个新目录。示例是混合动作片，导入游戏前按动作筛选帧。
+
+如需复现示例的精灵图和 GIF，运行 `python examples/tiny-swords/export_previews.py --frames work/tiny-swords/frames --out work/tiny-swords/exports`。在 PowerShell 中把 `python` 换成 `.\.venv\Scripts\python.exe`。
+
+### 用 SpriteFrame 逐帧工作台操作
+
+macOS 或 Linux 上准备 Python 3.11 或更新版本，以及 FFmpeg 和 ffprobe。把 SpriteFrame 克隆到单独的目录，安装并启动工作台。[SpriteFrame 安装文档](https://github.com/daetz-coder/SpriteFrame/tree/main/workbench#启动)
+
+```sh
+git clone https://github.com/daetz-coder/SpriteFrame.git
+cd SpriteFrame/workbench
+./setup.sh
+./start.sh
+```
+
+打开 `http://127.0.0.1:8766`。点击**导入格位 JSON**，再打开同一批的 MP4。背景选**洋红**，采样帧率设为 10 fps，点击**使用 sprite-gen 提取**。选帧并预览后，可以下载 PNG、图集或 GIF。[示例格位](examples/tiny-swords/wan-layout.json) · [示例 MP4](assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [操作演示](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html)
+
+### 安装 Agent Skills
+
+把 `skills/reference-game-characters` 和 `skills/wan-prime-video` 整个目录复制到客户端的技能目录。如果在 Codex 中打开本仓库，复制到仓库根目录下的 `.agents/skills/`。随后在对话中用 `$reference-game-characters` 分析画风，或用 `$wan-prime-video` 准备动画批次。[Codex 技能目录说明](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
 
 ## 用自己的角色建立一批
 
@@ -69,8 +126,6 @@ python scripts/extract_frames.py \
 | [Wan 合图 Skill](skills/wan-prime-video/SKILL.zh.md) | 准备首帧、提示词、格位 JSON，选择性提交 Wan |
 | [CLI 拆帧](scripts/extract_frames.py) | 无需模型账号，在本地稳定复现导出 |
 | [集成与布局说明](docs/integrations.md) | 使用逐帧工作台、替换视频服务、对接自己的自动化工具 |
-
-要在支持 Agent Skills 的工具中复用，把所需的整个 Skill 目录复制到该工具的技能目录；也可以直接运行这里的脚本。
 
 ## 贡献与反馈
 

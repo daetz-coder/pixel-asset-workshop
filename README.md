@@ -1,6 +1,6 @@
 # Pixel Asset Workshop
 
-[Chinese](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [Contributing](CONTRIBUTING.md)
+[Install and run](#install) · [Chinese](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [Contributing](CONTRIBUTING.md)
 
 Extract reusable art direction from a reference game, create original characters and scenery, and animate several characters in a single video. Export each character as a separate transparent PNG sequence. The workflow is intended for indie teams expanding a roster, testing an art direction, or producing repeated animation batches.
 
@@ -28,22 +28,79 @@ The Warhammer Infantry sprite sheet and GIF use the same 12 frames. Read the she
 
 [All six PNG sheets and GIFs](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [Frame coordinates, anchors and durations](examples/tiny-swords/preview/exports/manifest.json)
 
+## Install
+
+1. Clone with Git, or download and unpack the ZIP and open a terminal in the extracted folder. Run the commands below from the folder containing `requirements.txt`. [Download ZIP](https://github.com/daetz-coder/pixel-asset-workshop/archive/refs/heads/main.zip)
+
+   ```sh
+   git clone https://github.com/daetz-coder/pixel-asset-workshop.git
+   cd pixel-asset-workshop
+   ```
+
+2. Install Python 3.10 or newer and FFmpeg. Use `python3 --version` on macOS and Linux or `py -3 --version` on Windows to check Python. Both `ffmpeg -version` and `ffprobe -version` should work in your terminal. [Python downloads](https://www.python.org/downloads/) · [FFmpeg downloads](https://ffmpeg.org/download.html)
+
+   | Platform | Install FFmpeg and Python support |
+   | --- | --- |
+   | macOS with Homebrew | `brew install ffmpeg`. Use the Python installer if `python3` is missing or older than 3.10. |
+   | Ubuntu or Debian | `sudo apt install python3 python3-venv ffmpeg`. Check the installed Python version. |
+   | Windows with WinGet | `winget install --id Gyan.FFmpeg --exact`. Install Python with the launcher, then open a new PowerShell window. |
+
+3. Create a Python environment and install the project dependencies for your platform.
+
+   **macOS or Linux**
+
+   ```sh
+   python3 -m venv .venv
+   . .venv/bin/activate
+   python -m pip install -r requirements.txt
+   ```
+
+   **Windows PowerShell**
+
+   ```powershell
+   py -3 -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   ```
+
+Install ImageMagick 7 (`magick`) if you want to compose a new first frame or validate a Wan request. The included extraction example needs only the dependencies above. [ImageMagick downloads](https://imagemagick.org/script/download.php)
+
 ## Reproduce the example offline
 
-Install Python 3.10+ and FFmpeg with ffprobe. Install ImageMagick 7 (`magick`) to compose new first frames or validate a Wan request locally. Run the following from the repository root.
+Run the first extraction with the included MP4 and its crop layout. It runs locally without an API key.
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-
 python scripts/extract_frames.py \
   --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 \
   --layout examples/tiny-swords/wan-layout.json \
   --fps 10 --despill-magenta --out work/tiny-swords/frames
 ```
 
-Use `--despill-magenta` for this magenta-keyed clip to reduce compression spill at the sprite edges. The output lives in `work/tiny-swords/frames/`, with paths such as `r01c01/attack/0000.png`. The `manifest.json` records the names, cells, fixed canvases, foot anchors, and empty or edge-touching frames. The historical layout uses the `attack` label for a clip that mixes idle, walking and skills. Review the 50 frames in each sequence and split them by action before importing them into a game.
+On Windows PowerShell, use the virtual environment's Python directly.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/extract_frames.py --video assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4 --layout examples/tiny-swords/wan-layout.json --fps 10 --despill-magenta --out work/tiny-swords/frames
+```
+
+A successful run reports **6 cells × 50 frames**. Open `work/tiny-swords/frames/r01c01/attack/0000.png` to inspect the first transparent frame, and read `work/tiny-swords/frames/manifest.json` for the crop, foot anchor and flagged frames. Pick a new `--out` directory for a repeat run. Review each sequence and split the mixed clip by action before using it in a game.
+
+To reproduce the example sprite sheets and GIFs, run `python examples/tiny-swords/export_previews.py --frames work/tiny-swords/frames --out work/tiny-swords/exports`. In PowerShell, replace `python` with `.\.venv\Scripts\python.exe`.
+
+### Use the SpriteFrame workbench
+
+On macOS or Linux, install Python 3.11 or newer plus FFmpeg and ffprobe. Clone SpriteFrame into a separate folder, then start its local workbench. [SpriteFrame installation guide](https://github.com/daetz-coder/SpriteFrame/tree/main/workbench#启动)
+
+```sh
+git clone https://github.com/daetz-coder/SpriteFrame.git
+cd SpriteFrame/workbench
+./setup.sh
+./start.sh
+```
+
+Open `http://127.0.0.1:8766`. Choose **Import crop layout** and open the matching MP4. Set the key color to **Magenta**, set the sample rate to 10 fps and click **Extract with sprite-gen**. Select and preview the frames before downloading the PNGs, atlas or GIF. [Sample layout](examples/tiny-swords/wan-layout.json) · [Sample MP4](assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [Workbench walkthrough](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html)
+
+### Install the agent skills
+
+Copy the complete `skills/reference-game-characters` and `skills/wan-prime-video` directories into your client's skills folder. For Codex in this repository, use `.agents/skills/` under the repository root. Open the project in Codex and invoke `$reference-game-characters` for art direction or `$wan-prime-video` for batch composition. [Codex skill discovery](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
 
 ## Create a batch with your own sprites
 
@@ -69,8 +126,6 @@ Use `--despill-magenta` for this magenta-keyed clip to reduce compression spill 
 | [Wan batch skill](skills/wan-prime-video/SKILL.md) | Compose the first frame, prompt and layout, with optional Wan submission |
 | [Frame extraction CLI](scripts/extract_frames.py) | Reproduce the export locally without a model account |
 | [Integration guide](docs/integrations.en.md) | Use SpriteFrame, swap video providers or automate the workflow |
-
-To use a skill in a tool that supports Agent Skills, copy its entire directory into that tool's skills directory. You can also run the scripts directly.
 
 ## Contributing
 

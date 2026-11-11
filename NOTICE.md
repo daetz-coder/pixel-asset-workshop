@@ -9,7 +9,7 @@
 像素素材工坊将下列原创美术与动画素材中由本项目持有的版权及相关权利按 [CC0 1.0 Universal](LICENSE-CC0) 向公众开放。可免费商用、修改和再分发，署名自愿。
 
 - [角色概念 PNG](assets/concepts)，其中存档的 Tiny Swords 战士风格样图 `acorn-guard-tiny-swords-style.png` 除外。
-- [边境哨站美术](assets/art-runs/frontier-outpost)，包括游戏素材、生成图和预览，其中存档的参考场景 `raw/scene-concept.png` 除外。
+- [边境哨站美术](assets/art-runs/frontier-outpost)，包括游戏素材、生成图和预览。
 - [蓝队合成首帧和 Wan 示例视频](assets/video-inputs)，以及[导出的 PNG 精灵图和 GIF](examples/tiny-swords/preview/exports)。
 - [预览目录](examples/tiny-swords/preview)中仅展示自制角色的 Godot 文件 `godot-clean.webp`、`godot-playback.gif` 和 `godot-playback.mp4`。
 

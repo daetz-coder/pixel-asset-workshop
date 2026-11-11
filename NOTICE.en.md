@@ -9,7 +9,7 @@ The project's code, scripts, skills, website source, documentation and example c
 Pixel Asset Workshop dedicates the copyright and related rights it holds in the following original artwork and animation assets under [CC0 1.0 Universal](LICENSE-CC0). You may use, modify and redistribute these assets for personal or commercial projects. Attribution is optional.
 
 - [Character concept PNGs](assets/concepts), except the archived Tiny Swords Warrior style study `acorn-guard-tiny-swords-style.png`.
-- [Frontier Outpost artwork](assets/art-runs/frontier-outpost), including game assets, generated artwork and previews, except the archived `raw/scene-concept.png` reference study.
+- [Frontier Outpost artwork](assets/art-runs/frontier-outpost), including game assets, generated artwork and previews.
 - [Blue-unit reference boards and Wan sample video](assets/video-inputs), and the [exported PNG sprite sheets and GIFs](examples/tiny-swords/preview/exports).
 - The generated-only Godot previews `godot-clean.webp`, `godot-playback.gif` and `godot-playback.mp4` in [the preview directory](examples/tiny-swords/preview).
 
