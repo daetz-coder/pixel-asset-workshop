@@ -1,8 +1,10 @@
 # Pixel Asset Workshop
 
-[Install and run](#install) · [Chinese](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [Contributing](CONTRIBUTING.md)
+[Start SpriteFrame](#use-the-spriteframe-workbench) · [Install the CLI](#install) · [简体中文](README.zh.md) · [Tiny Swords case study](examples/tiny-swords/README.md) · [Live showcase](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [Contributing](CONTRIBUTING.md)
 
 Extract reusable art direction from a reference game, create original characters and scenery, and animate several characters in a single video. Export each character as a separate transparent PNG sequence. The workflow is intended for indie teams expanding a roster, testing an art direction, or producing repeated animation batches.
+
+This repository includes the **SpriteFrame** browser workbench and a command-line extractor. Start the workbench locally to crop and key the footage, choose frames, and export PNGs, sprite sheets and GIFs.
 
 [![Godot training-ground screenshot with the original Tiny Swords units above the generated units](examples/tiny-swords/preview/training-ground.png)](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html)
 
@@ -16,7 +18,7 @@ The five-second Godot 4.5.1 recording shows the original Tiny Swords units idlin
 | 2. Generate and compose | Create a transparent PNG for each character. Pack compatible sprites into a shared first frame with a common foot baseline and a motion prompt for each cell. | First-frame PNG, per-cell prompts and layout JSON |
 | 3. Generate video and extract frames | Submit one clip per batch, using Wan3.0 Video Prime as an example. Map the layout to the actual video size, sample frames, key out the background and review the results. | RGBA PNG sequences with sampling and edge-contact metadata |
 
-The included example uses **six units, one five-second Wan clip and 300 candidate frames**. At the same duration and resolution, batching takes one submission for the six units. Pricing and retries determine the actual cost. Start with idle or walk cycles. Wide swings, projectiles and large effects may need more space per character.
+The included example uses **six units and one five-second Wan clip**. SpriteFrame preserves 900 candidate frames at the video's original frame rate. The 10 fps command-line example samples 300. At the same duration and resolution, batching takes one submission for the six units. Pricing and retries determine the actual cost. Start with idle or walk cycles. Wide swings, projectiles and large effects may need more space per character.
 
 ## Exported sprites
 
@@ -85,22 +87,22 @@ A successful run reports **6 cells × 50 frames**. Open `work/tiny-swords/frames
 
 To reproduce the example sprite sheets and GIFs, run `python examples/tiny-swords/export_previews.py --frames work/tiny-swords/frames --out work/tiny-swords/exports`. In PowerShell, replace `python` with `.\.venv\Scripts\python.exe`.
 
-### Use the SpriteFrame workbench
+## Use the SpriteFrame workbench
 
-On macOS or Linux, install Python 3.11 or newer plus FFmpeg and ffprobe. Clone SpriteFrame into a separate folder, then start its local workbench. [SpriteFrame installation guide](https://github.com/daetz-coder/SpriteFrame/tree/main/workbench#启动)
+On macOS or Linux, clone or unzip this repository and install Python 3.11 or newer plus FFmpeg and ffprobe. Run these commands from the repository root. [Workbench guide](workbench/README.md)
 
 ```sh
-git clone https://github.com/daetz-coder/SpriteFrame.git
-cd SpriteFrame/workbench
-./setup.sh
-./start.sh
+./workbench/setup.sh
+./workbench/start.sh
 ```
 
-Open `http://127.0.0.1:8766`. Choose **Import crop layout** and open the matching MP4. Set the key color to **Magenta**, set the sample rate to 10 fps and click **Extract with sprite-gen**. Select and preview the frames before downloading the PNGs, atlas or GIF. [Sample layout](examples/tiny-swords/wan-layout.json) · [Sample MP4](assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [Workbench walkthrough](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html)
+Open `http://127.0.0.1:8766`. English is the default, and the language menu also offers 中文. Choose **Import crop layout** and open the matching MP4. Set the key color to **Magenta** and click **Extract every frame and choose**. In **Curate**, review the suggested sequence and save the PNGs, atlas or GIF. [Sample layout](examples/tiny-swords/wan-layout.json) · [Sample MP4](assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [Workbench walkthrough](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html)
 
-### Install the agent skills
+[![SpriteFrame final atlas and six GIF previews](examples/tiny-swords/preview/spriteframe-atlas.png)](workbench/README.md)
 
-Copy the complete `skills/reference-game-characters` and `skills/wan-prime-video` directories into your client's skills folder. For Codex in this repository, use `.agents/skills/` under the repository root. Open the project in Codex and invoke `$reference-game-characters` for art direction or `$wan-prime-video` for batch composition. [Codex skill discovery](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
+## Install the agent skills
+
+Copy the complete skill directories you need from `skills/` into your client's skills folder. For Codex in this repository, use `.agents/skills/` under the repository root. Open the project in Codex and invoke `$reference-game-characters` for art direction, `$wan-prime-video` for batch composition, or `$spriteframe` for reviewed Godot exports. [Codex skill discovery](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
 
 ## Create a batch with your own sprites
 
@@ -114,7 +116,7 @@ Copy the complete `skills/reference-game-characters` and `skills/wan-prime-video
    ```
 
    This produces `walk.png`, `walk-prompt.txt` and `walk-layout.json` for a new walk batch.
-3. Submit the first frame and prompt in a video model's interface or use the Wan runner. After generation, pair the new MP4 with its own layout JSON for command-line extraction or visual review in SpriteFrame. [Wan skill](skills/wan-prime-video/SKILL.md) · [Integrations and layout format](docs/integrations.en.md) · [SpriteFrame on GitHub](https://github.com/daetz-coder/SpriteFrame)
+3. Submit the first frame and prompt in a video model's interface or use the Wan runner. After generation, pair the new MP4 with its own layout JSON for command-line extraction or visual review in SpriteFrame. [Wan skill](skills/wan-prime-video/SKILL.md) · [Integrations and layout format](docs/integrations.en.md) · [SpriteFrame guide](workbench/README.md)
 
 ## Resources
 
@@ -133,7 +135,7 @@ Bug reports and pull requests are welcome. For a cropping or frame extraction is
 
 ## License
 
-- **Code and documentation** use the MIT License. Commercial use is allowed. Keep the copyright and permission notices with copies or substantial portions. [MIT License](LICENSE)
+- **Project code and documentation** use the MIT License. Commercial use is allowed. Keep the copyright and permission notices with copies or substantial portions. Bundled third-party components retain their own licenses. [MIT License](LICENSE) · [Third-party terms](NOTICE.en.md)
 - **Original game assets**, including the exported sprite sheets and GIFs, are available under CC0 1.0. You may use, modify and redistribute them in personal or commercial projects without attribution. [CC0 text](LICENSE-CC0) · [Covered files and third-party terms](NOTICE.en.md)
 
 ## Acknowledgments

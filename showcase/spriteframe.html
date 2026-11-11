@@ -7,21 +7,31 @@
 <title>Choose frames in SpriteFrame | Pixel Asset Workshop</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="showcase.css">
+<link rel="alternate" hreflang="zh-CN" href="spriteframe.zh.html">
 </head>
 <body class="ha-root">
-<header class="top"><a href="../index.html">Pixel Asset Workshop</a><a href="https://github.com/daetz-coder/pixel-asset-workshop">View repository ↗</a></header>
+<header class="top"><a href="../index.html">Pixel Asset Workshop</a><nav class="actions" aria-label="Language and repository"><a href="spriteframe.zh.html" lang="zh-CN">简体中文</a><a href="https://github.com/daetz-coder/pixel-asset-workshop">View repository ↗</a></nav></header>
 <div class="layout" id="top">
 <main>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Overview</a></li><li aria-current="page">SpriteFrame</li></ol></nav>
 <h1>Choose frames in SpriteFrame</h1>
-<p>Choose <strong>Import crop layout</strong>, open the matching MP4, then choose <strong>Extract every frame and choose</strong>. Review the source frames, reorder the selected poses and export the PNGs. <a href="#exports">Jump to the final PNG and GIF exports →</a></p>
+<p>SpriteFrame is included in the Pixel Asset Workshop repository. It crops and keys each unit, lets you review the animation frame by frame, and exports PNGs, atlases and GIFs.</p>
+<section id="install"><h2>Start the local workbench</h2>
+<p>On macOS or Linux, install Python 3.11 or newer plus FFmpeg and ffprobe. Run these commands from the repository root.</p>
+<pre><code>./workbench/setup.sh
+./workbench/start.sh</code></pre>
+<p>Open <code>http://127.0.0.1:8766</code>, choose <strong>Import crop layout</strong>, open the matching MP4, then click <strong>Extract every frame and choose</strong>. <a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/workbench">Workbench README ↗</a></p>
+</section>
 <div class="detail-media"><figure aria-labelledby="capture-caption">
 <img class="media" src="../examples/tiny-swords/preview/blue-squad.png" width="1440" height="1040" alt="SpriteFrame extraction workspace with six named crops over the actual Wan video">
 <figcaption id="capture-caption">SpriteFrame with the actual 854 × 480 Wan clip and its imported 3 × 2 layout.</figcaption>
 </figure></div>
 <section class="section"><h2>Review the selection</h2>
-<div class="detail-media"><figure><a href="../examples/tiny-swords/preview/spriteframe-curate.png"><img class="media" loading="lazy" src="../examples/tiny-swords/preview/spriteframe-curate.png" width="1440" height="1040" alt="SpriteFrame frame selection editor with source frames and playback preview"></a><figcaption>Actual SpriteFrame frame-selection editor for the same clip.</figcaption></figure></div>
-<div class="actions"><a href="https://github.com/daetz-coder/SpriteFrame/tree/main/workbench">Workbench setup ↗</a><a href="examples.html">Open the matching clip and layout →</a></div></section>
+<div class="detail-media"><figure><a href="../examples/tiny-swords/preview/spriteframe-curate.png"><img class="media" loading="lazy" src="../examples/tiny-swords/preview/spriteframe-curate.png" width="1440" height="1040" alt="SpriteFrame frame selection editor with source frames and playback preview"></a><figcaption>The bundled workbench keeps 150 decoded frames per unit and suggests a sequence to review.</figcaption></figure></div>
+<div class="actions"><a href="examples.html">Open the matching clip and layout →</a><a href="#exports">See the PNG and GIF exports →</a></div></section>
+<section class="section"><h2>Preview the atlas and GIFs</h2>
+<div class="detail-media"><figure><a href="../examples/tiny-swords/preview/spriteframe-atlas.png"><img class="media" loading="lazy" src="../examples/tiny-swords/preview/spriteframe-atlas.png" width="1002" height="799" alt="SpriteFrame final atlas with a row of poses and a GIF preview for each of the six units"></a><figcaption>Generate a transparent atlas and preview the six selected sequences as GIFs before exporting.</figcaption></figure></div>
+</section>
 <section class="section" id="exports"><h2>Exported sprite sheets and GIFs</h2>
 <p>Each pair uses the same 12 frames from the cleaned PNG sequence. Read the PNG left to right, then top to bottom. The GIF shows the selected poses at 200 ms per frame.</p>
 <p>Use, modify or share these original sheets and GIFs in personal or commercial projects. Attribution is optional. <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/NOTICE.en.md#cc0-assets">CC0 1.0 asset terms ↗</a></p>
@@ -70,7 +80,7 @@
 <a href="examples.html">Example files</a>
 <div class="external">
 <a href="https://github.com/daetz-coder/pixel-asset-workshop">Project on GitHub ↗</a>
-<a href="https://github.com/daetz-coder/SpriteFrame">SpriteFrame on GitHub ↗</a>
+<a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/workbench">SpriteFrame setup ↗</a>
 </div>
 </nav>
 </div>

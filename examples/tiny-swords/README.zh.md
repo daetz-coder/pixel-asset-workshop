@@ -30,13 +30,13 @@ bash scripts/compare_tiny_swords.sh '/path/to/Tiny Swords (Free Pack)'
 | 战锤兵 · 投弹兵 · 旗手 | 战斧兵 · 弩兵 · 塔盾兵 |
 | 举锤下砸 · 过肩抛弹 · 举旗展开 | 横扫 · 发射弩矢 · 举盾格挡 |
 
-![SpriteFrame 英文工作台实拍，显示成片和导入的六个裁框](preview/blue-squad.png)
+![SpriteFrame 中文工作台实拍，显示成片和导入的六个裁框](preview/blue-squad.zh.png)
 
-[英文筛帧工作台实拍](preview/spriteframe-curate.png)
+[启动本仓库内置的工作台](../../workbench/README.zh.md) · [中文筛帧实拍](preview/spriteframe-curate.zh.png)
 
 - **输入**：[实际首帧](../../assets/video-inputs/blue-units-3x2-reference.png)，1280×720、3 列 2 行、洋红底 `#FF00FF`；[实际提交提示词](../../assets/video-inputs/blue-units-3x2-wan-prime-prompt.txt) 依次要求待机、原地步行和技能。
 - **成片**：[实际 Wan MP4](../../assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4)，854×480、30 fps、5 秒；配套使用 [这条成片的格位](wan-layout.json)。
-- **结果**：[SpriteFrame 工作台导出记录](spriteframe-export.json)。使用[本项目命令行](../../README.zh.md#快速开始已有成片无需密钥)也复现了 6×50 张透明 PNG。列宽按视频为 285 / 284 / 285 px，高度为 240 px；六组都没有空帧。CLI 标记塔盾兵 `0041.png` 触及右边界，工作台历史记录标记的是帧索引 37 触及左边界。两套实现的抠像和取样判定有差异，建议把两个片段都加入人工检查。
+- **结果**：命令行按 10 fps 提取，每个兵种得到 50 张透明 PNG。内置 SpriteFrame 使用逐帧模式时，每个兵种保留 150 张解码帧，可直接进入筛帧。工作台记录了弩兵 1 张、塔盾兵 3 张贴边帧，导出动作前可在筛帧界面复查。[命令行示例](../../README.zh.md#快速开始已有成片无需密钥) · [工作台导出记录](spriteframe-export.json)
 - **动作审查**：可在成片中看到战锤下砸、圆弹脱手、旗面抬升和盾面火星。提示词的时间段是生成目标，动作出现时间以成片为准。固定格位不会修复跨格的武器，也不会自动将弹道与角色分层。成片需要逐组确认装备连续性、接触姿势、去色边缘和循环点。
 
 六名角色若逐个生成 5 秒视频，理论上需 6 次提交、共 30 秒成片；本例一批为 1 次、5 秒。这个对比只计算相同规格、无重试的视频用量，未计独立生图、返工和各平台定价。
@@ -49,7 +49,7 @@ bash scripts/compare_tiny_swords.sh '/path/to/Tiny Swords (Free Pack)'
 
 ![使用同一组帧的战锤兵 GIF](preview/exports/warhammer.gif)
 
-每个示例从已去色边的 10 fps 序列中选取动作附近的 12 帧，每隔一帧取一张。同一兵种使用统一裁切范围并保留脚底锚点。PNG 保留原透明度，GIF 使用二值透明。[全部六套导出](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [帧坐标与时长清单](preview/exports/manifest.json)
+每个示例从已去色边的 10 fps 序列中选取动作附近的 12 帧，每隔一帧取一张。同一兵种使用统一裁切范围并保留脚底锚点。PNG 保留原透明度，GIF 使用二值透明。[全部六套导出](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.zh.html#exports) · [帧坐标与时长清单](preview/exports/manifest.json)
 
 ```sh
 python examples/tiny-swords/export_previews.py --frames work/tiny-swords/frames --out work/tiny-swords/exports

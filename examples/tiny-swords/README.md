@@ -31,11 +31,11 @@ Open `work/tiny-swords/comparison/archer-vs-warhammer.png`. The comparison conta
 
 ![Actual SpriteFrame workspace with the generated clip and six imported crops](preview/blue-squad.png)
 
-The screenshots show the actual English workbench during [extraction](preview/blue-squad.png) and [frame curation](preview/spriteframe-curate.png).
+The screenshots show the bundled English workbench during extraction and frame curation. [Start SpriteFrame](../../workbench/README.md) · [Curation screenshot](preview/spriteframe-curate.png)
 
 - **Input.** A 1280 × 720 first frame with three columns, two rows and a magenta key (`#FF00FF`). The submitted prompt sequences idle, walking and a skill. [First frame](../../assets/video-inputs/blue-units-3x2-reference.png) · [Exact submitted prompt](../../assets/video-inputs/blue-units-3x2-wan-prime-prompt.txt)
 - **Video.** The generated Wan MP4 is 854 × 480 at 30 fps and lasts five seconds. [Actual Wan MP4](../../assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [Matching layout](wan-layout.json)
-- **Output.** The CLI reproduced six sequences of 50 transparent PNGs each. The columns are 285, 284 and 285 px wide, and both rows are 240 px tall. All six sequences had zero empty frames. The CLI flagged Tower Shield frame `0041.png` touching the right boundary. SpriteFrame's historical export flagged index 37 touching the left boundary. The two implementations use different keying and sampling, so review both moments. [CLI command](../../README.md#reproduce-the-example-offline) · [SpriteFrame export record](spriteframe-export.json)
+- **Output.** At 10 fps, the CLI exports 50 transparent PNGs per unit. The bundled SpriteFrame's native-frame mode retains 150 decoded frames per unit and opens them in the curation editor. The workbench flagged one Crossbow Infantry frame and three Tower Shield Infantry frames for edge contact. Review those frames before exporting an action. [CLI command](../../README.md#reproduce-the-example-offline) · [SpriteFrame export record](spriteframe-export.json)
 - **Motion review.** The clip contains the hammer strike, bomb release, flag raise and shield sparks. Check the actual timing in the clip. A fixed cell can clip weapons that cross into another cell. Isolate projectiles manually and review equipment continuity, contact poses, keying edges and loop joins.
 
 At the same settings with no retries, separate five-second clips would take six submissions and 30 generated seconds. The batch takes one submission and five generated seconds. Image generation, rework and provider pricing affect the total cost.

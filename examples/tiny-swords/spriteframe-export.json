@@ -4,17 +4,18 @@
   "sampling": {
     "start": 0.0,
     "end": 5.0,
-    "fps": 10.0
+    "mode": "native",
+    "fps": null
   },
   "background": "magenta",
   "regions": [
     {
-      "name": "01_战锤兵",
+      "name": "01_Warhammer Infantry",
       "x": 0,
       "y": 0,
       "width": 285,
       "height": 240,
-      "frames": 50,
+      "frames": 150,
       "cell": {
         "row": 0,
         "col": 0
@@ -26,12 +27,12 @@
       }
     },
     {
-      "name": "02_投弹兵",
+      "name": "02_Grenadier",
       "x": 285,
       "y": 0,
       "width": 284,
       "height": 240,
-      "frames": 50,
+      "frames": 150,
       "cell": {
         "row": 0,
         "col": 1
@@ -43,12 +44,12 @@
       }
     },
     {
-      "name": "03_旗手",
+      "name": "03_Standard Bearer",
       "x": 569,
       "y": 0,
       "width": 285,
       "height": 240,
-      "frames": 50,
+      "frames": 150,
       "cell": {
         "row": 0,
         "col": 2
@@ -60,12 +61,12 @@
       }
     },
     {
-      "name": "04_战斧兵",
+      "name": "04_Axe Infantry",
       "x": 0,
       "y": 240,
       "width": 285,
       "height": 240,
-      "frames": 50,
+      "frames": 150,
       "cell": {
         "row": 1,
         "col": 0
@@ -77,12 +78,19 @@
       }
     },
     {
-      "name": "05_弩兵",
+      "name": "05_Crossbow Infantry",
       "x": 285,
       "y": 240,
       "width": 284,
       "height": 240,
-      "frames": 50,
+      "frames": 150,
+      "edgeContact": {
+        "frameCount": 1,
+        "firstFrameIndex": 111,
+        "sides": [
+          "right"
+        ]
+      },
       "cell": {
         "row": 1,
         "col": 1
@@ -94,17 +102,18 @@
       }
     },
     {
-      "name": "06_塔盾兵",
+      "name": "06_Tower Shield Infantry",
       "x": 569,
       "y": 240,
       "width": 285,
       "height": 240,
-      "frames": 50,
+      "frames": 150,
       "edgeContact": {
-        "frameCount": 1,
-        "firstFrameIndex": 37,
+        "frameCount": 3,
+        "firstFrameIndex": 111,
         "sides": [
-          "left"
+          "left",
+          "right"
         ]
       },
       "cell": {

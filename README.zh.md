@@ -1,8 +1,10 @@
 # 像素素材工坊 · Pixel Asset Workshop
 
-[安装与使用](#安装) · [English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [在线项目展示](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [贡献指南](CONTRIBUTING.zh.md)
+[启动 SpriteFrame](#用-spriteframe-逐帧工作台操作) · [安装命令行工具](#安装) · [English](README.md) · [Tiny Swords 实测案例](examples/tiny-swords/README.zh.md) · [在线项目展示](https://daetz-coder.github.io/projects/pixel-asset-workshop/) · [贡献指南](CONTRIBUTING.zh.md)
 
 从参考游戏提炼可复用的画风规则，生成自己游戏的角色和场景素材，再把多名角色的动作放进一次视频任务，拆成独立的透明 PNG 序列。适合需要扩充同一阵营、做小规模美术验证，或反复制作动作批次的独立游戏团队。
+
+本仓库内置 **SpriteFrame 逐帧工作台**和命令行拆帧工具。启动本地工作台即可分格、抠像、挑帧，并导出透明 PNG、精灵图和 GIF。
 
 [![Godot 训练场实机截图，上排为 Tiny Swords 原版，下排为自制兵种](examples/tiny-swords/preview/training-ground.png)](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html)
 
@@ -16,7 +18,7 @@
 | 2. 生图与合图 | 独立生成每名角色的透明 PNG。把同规格角色按格排进同一张首帧，锁定角色顺序和脚底锚点，每格写自己的动作 | 首帧 PNG、逐格提示词、格位 JSON |
 | 3. 视频与批量拆帧 | 以 Wan3.0 Video Prime 为例，每批提交一次。按成片尺寸换算格位，统一抽帧和抠像，再人工挑动作关键帧 | 每格独立的 RGBA PNG 序列、采样和贴边记录 |
 
-实测批次包含 **6 名兵种、1 条 5 秒 Wan 成片、300 张候选透明帧**。同规格下，六个角色合成一批后，请求数由 6 次降至 1 次。实际花费取决于服务计费和返工。先用待机或步行试格，挥武器、飞行物和大范围特效需要时用更少的角色或分批。
+实测批次包含 **6 名兵种、1 条 5 秒 Wan 成片**。SpriteFrame 按源帧率保留 900 张候选帧，10 fps 命令行示例抽取 300 张。同规格下，六个角色合成一批后，请求数由 6 次降至 1 次。实际花费取决于服务计费和返工。先用待机或步行试格，挥武器、飞行物和大范围特效需要时用更少的角色或分批。
 
 ## 导出的精灵图与 GIF
 
@@ -26,7 +28,7 @@
 
 ![战锤兵挥锤 GIF](examples/tiny-swords/preview/exports/warhammer.gif)
 
-[查看全部六套精灵图和 GIF](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [帧坐标、脚底锚点与时长](examples/tiny-swords/preview/exports/manifest.json)
+[查看全部六套精灵图和 GIF](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.zh.html#exports) · [帧坐标、脚底锚点与时长](examples/tiny-swords/preview/exports/manifest.json)
 
 ## 安装
 
@@ -85,22 +87,22 @@ Windows PowerShell 直接使用虚拟环境里的 Python。
 
 如需复现示例的精灵图和 GIF，运行 `python examples/tiny-swords/export_previews.py --frames work/tiny-swords/frames --out work/tiny-swords/exports`。在 PowerShell 中把 `python` 换成 `.\.venv\Scripts\python.exe`。
 
-### 用 SpriteFrame 逐帧工作台操作
+## 用 SpriteFrame 逐帧工作台操作
 
-macOS 或 Linux 上准备 Python 3.11 或更新版本，以及 FFmpeg 和 ffprobe。把 SpriteFrame 克隆到单独的目录，安装并启动工作台。[SpriteFrame 安装文档](https://github.com/daetz-coder/SpriteFrame/tree/main/workbench#启动)
+macOS 或 Linux 上先克隆仓库或解压 ZIP，准备 Python 3.11 或更新版本，以及 FFmpeg 和 ffprobe。在仓库根目录运行以下命令。[工作台使用说明](workbench/README.zh.md)
 
 ```sh
-git clone https://github.com/daetz-coder/SpriteFrame.git
-cd SpriteFrame/workbench
-./setup.sh
-./start.sh
+./workbench/setup.sh
+./workbench/start.sh
 ```
 
-打开 `http://127.0.0.1:8766`。点击**导入格位 JSON**，再打开同一批的 MP4。背景选**洋红**，采样帧率设为 10 fps，点击**使用 sprite-gen 提取**。选帧并预览后，可以下载 PNG、图集或 GIF。[示例格位](examples/tiny-swords/wan-layout.json) · [示例 MP4](assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [操作演示](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html)
+打开 `http://127.0.0.1:8766`。工作台默认英文，可从右上角切换中文。点击**导入格位 JSON**，再打开同一批的 MP4。底色选**洋红**，点击**逐帧提取并挑选**。在**筛帧**里检查自动初选的序列，再保存 PNG、图集或 GIF。[示例格位](examples/tiny-swords/wan-layout.json) · [示例 MP4](assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [操作演示](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.zh.html)
 
-### 安装 Agent Skills
+[![SpriteFrame 最终图集与六个 GIF 预览](examples/tiny-swords/preview/spriteframe-atlas.zh.png)](workbench/README.zh.md)
 
-把 `skills/reference-game-characters` 和 `skills/wan-prime-video` 整个目录复制到客户端的技能目录。如果在 Codex 中打开本仓库，复制到仓库根目录下的 `.agents/skills/`。随后在对话中用 `$reference-game-characters` 分析画风，或用 `$wan-prime-video` 准备动画批次。[Codex 技能目录说明](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
+## 安装 Agent Skills
+
+把 `skills/` 下需要的技能目录完整复制到客户端的技能目录。如果在 Codex 中打开本仓库，复制到仓库根目录下的 `.agents/skills/`。在对话中用 `$reference-game-characters` 分析画风、`$wan-prime-video` 准备动画批次，或用 `$spriteframe` 导出审核通过的 Godot 动作资源。[Codex 技能目录说明](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
 
 ## 用自己的角色建立一批
 

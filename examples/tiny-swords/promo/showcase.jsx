@@ -158,8 +158,8 @@ function Extract() {
     }}>
       <Outline rect={[1144, 450, 253, 35]} start={8} color="#22a667"/>
       <Click x={1158} y={467} at={22}/>
-      <Outline rect={[1146, 912, 251, 52]} start={65} color="#22a667"/>
-      <Click x={1271} y={936} at={79}/>
+      <Outline rect={[1146, 913, 251, 52]} start={65} color="#22a667"/>
+      <Click x={1272} y={939} at={79}/>
     </Workbench>
     <At x={647} y={177} width={581} height={420} style={{
       background: checker, borderRadius: 10, outline: `1px solid ${rule}`, display: 'grid', placeItems: 'center',
@@ -183,13 +183,13 @@ function Curate() {
   return <Stage label="CHOOSE POSES" footer="Step through the preview, then download the selected transparent PNGs.">
     <At x={52} y={91}><Heading>Choose and reorder the poses</Heading></At>
     <Workbench file="curate.png" rect={[52, 168, 1176, 452]} camera={{
-      left: 375 + 21 * pan, top: 441 + 12 * pan, scale: 1.105 + 0.025 * pan,
+      left: 375 + 21 * pan, top: 419 + 12 * pan, scale: 1.105 + 0.025 * pan,
     }}>
-      <Outline rect={[398, 541, 782, 274]} start={7} color="#22a667"/>
-      <Outline rect={[1193, 540, 178, 242]} start={27} color="#22a667"/>
-      <Click x={1287} y={763} at={46}/>
-      <Outline rect={[1298, 507, 78, 34]} start={57} color="#22a667"/>
-      <Click x={1337} y={524} at={74}/>
+      <Outline rect={[398, 518, 782, 274]} start={7} color="#22a667"/>
+      <Outline rect={[1193, 517, 178, 242]} start={27} color="#22a667"/>
+      <Click x={1287} y={740} at={46}/>
+      <Outline rect={[1298, 484, 78, 34]} start={57} color="#22a667"/>
+      <Click x={1337} y={501} at={74}/>
     </Workbench>
   </Stage>;
 }

@@ -15,6 +15,7 @@
 
 ## 第三方素材与演示
 
+- SpriteFrame 随附 Apache-2.0 的 sprite-gen 引擎、OFL 授权的 Inter 字体及 Lucide 图标，分别遵循各自的条款。[sprite-gen 许可证](workbench/vendor/sprite-gen/LICENSE) · [sprite-gen 声明](workbench/vendor/sprite-gen/NOTICE) · [Inter 许可证](workbench/assets/LICENSE-Inter.txt) · [Lucide 许可证](workbench/assets/LICENSE-Lucide.txt)
 - Pixel Frog 的现行 **Tiny Swords Free Pack** 允许个人和商业项目使用、修改。作者限制再分发、转售和重新打包，包括修改后的素材。作者另行提供的旧版 CC0 素材包适用独立条款。[Tiny Swords 作者页](https://pixelfrog-assets.itch.io/tiny-swords)
 - 原包、参考裁图与逐帧对照图属于本地工作材料。复现 Godot 场景时请从 Pixel Frog 获取原包。[Tiny Swords 实测案例](examples/tiny-swords/README.zh.md#原版和我们的对比)
 - Godot 训练场录像和截屏中的地形、场景物件和上排角色来自 Pixel Frog。流程短片及封面、SpriteFrame 截图和存档参考样图属于演示资料，均在上述 MIT 和 CC0 授权范围之外。

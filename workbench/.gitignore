@@ -1,0 +1,6 @@
+.DS_Store
+*.zip
+.playwright-cli/
+.venv/
+__pycache__/
+data/

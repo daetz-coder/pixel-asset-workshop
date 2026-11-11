@@ -17,7 +17,7 @@ If your environment has image or video MCP tools, use them to generate art or su
 
 ## SpriteFrame
 
-In SpriteFrame, select “Import crop layout” in the media panel, then open the MP4 from the same batch. Check the grid and key color. Choose “Extract every frame and choose” to review the source frames, or set the time range first. Use the full cell or inspect the motion envelope if auto-detection clips weapons or particles. The command-line tools and included clip can reproduce the export independently. [Local example](../README.md#reproduce-the-example-offline)
+Start the bundled SpriteFrame workbench from this repository. Select **Import crop layout**, then open the MP4 from the same batch. Check the grid and key color. Set a time range and choose **Extract every frame and choose** to keep every decoded frame in that range. Use the full cell or scan the motion bounds if the crop clips weapons or particles. [Workbench setup](../workbench/README.md) · [Command-line example](../README.md#reproduce-the-example-offline)
 
 ## Layout format v1
 

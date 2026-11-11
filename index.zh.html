@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="演示如何从一条生成视频中提取六个原创像素兵种，导出透明精灵图和 GIF，再在 Godot 训练场里查看。">
+<title>像素素材工坊 | Pixel Asset Workshop</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="showcase/showcase.css">
+<link rel="alternate" hreflang="en" href="index.html">
+</head>
+<body class="ha-root">
+<header class="top home-top">
+  <a class="brand" href="index.zh.html">像素素材工坊</a>
+  <nav aria-label="主导航">
+    <a href="#workflow">制作流程</a>
+    <a href="#exports">导出素材</a>
+    <a href="showcase/godot.html">Godot</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop">GitHub ↗</a>
+    <a href="index.html" lang="en">English</a>
+  </nav>
+</header>
+<main class="home-shell">
+  <section class="home-hero" aria-labelledby="intro">
+    <div class="hero-copy">
+      <h1 id="intro">从视频到<span>游戏精灵图</span></h1>
+      <p>从参考游戏提炼画风，把多名角色的动作放进同一条视频，用 SpriteFrame 拆成透明帧，再到 Godot 中查看实机效果。</p>
+      <div class="hero-actions">
+        <a class="button primary" href="showcase/spriteframe.zh.html#install">安装 SpriteFrame</a>
+        <a class="button" href="#exports">查看导出素材</a>
+      </div>
+    </div>
+    <figure class="hero-capture">
+      <video class="motion" controls preload="metadata" playsinline width="880" height="560"
+        aria-label="原版与原创兵种同场展示的 Godot 训练场录像"
+        src="examples/tiny-swords/preview/training-ground.mp4"
+        poster="examples/tiny-swords/preview/training-ground.png">
+        <a href="examples/tiny-swords/preview/training-ground.mp4">播放 Godot 训练场录像</a>
+      </video>
+      <figcaption>Godot 4.5.1 实机录像。上排为 Tiny Swords 原版兵种，下排为生成兵种。原版素材由 <a href="https://pixelfrog-assets.itch.io/tiny-swords">Pixel Frog</a> 制作。</figcaption>
+    </figure>
+  </section>
+
+  <dl class="batch-stats" aria-label="Tiny Swords 示例批次">
+    <div><dt>6</dt><dd>个生成兵种</dd></div>
+    <div><dt>5 秒</dt><dd>一条 Wan 成片</dd></div>
+    <div><dt>900</dt><dd>张逐帧提取的候选帧</dd></div>
+  </dl>
+
+  <section class="section" id="workflow" aria-labelledby="workflow-title">
+    <h2 id="workflow-title">一批角色的制作流程</h2>
+    <p class="section-copy">用同一批六个兵种演示从首帧合图到成品导出的过程。使用示例 MP4 和格位 JSON 即可复现拆帧。</p>
+    <figure class="detail-media" id="workflow-video">
+      <video class="motion promo" controls preload="none" playsinline
+        aria-label="从生成视频到精灵图导出与 Godot 验证的流程短片"
+        src="examples/tiny-swords/preview/workflow-promo.mp4"
+        poster="examples/tiny-swords/preview/workflow-poster.webp">
+        <track kind="subtitles" srclang="zh-CN" label="简体中文" src="examples/tiny-swords/preview/workflow.zh-CN.vtt" default>
+        <a href="examples/tiny-swords/preview/workflow-promo.mp4">打开流程短片 MP4</a>
+      </video>
+      <figcaption>21.5 秒流程短片 · 提供简体中文字幕</figcaption>
+    </figure>
+    <div class="workflow-grid">
+      <article class="workflow-card">
+        <a href="showcase/examples.html"><img src="assets/video-inputs/blue-units-3x2-reference.png" width="1280" height="720" loading="lazy" alt="六个生成兵种按三列两行排在洋红背景上"></a>
+        <div><h3>合成一张首帧</h3><p>给每个兵种固定格位和脚底锚点。合图与每格对应的动作提示词一起提交。</p><a href="showcase/examples.html">查看示例输入 →</a></div>
+      </article>
+      <article class="workflow-card">
+        <a href="showcase/spriteframe.zh.html"><img src="examples/tiny-swords/preview/blue-squad.zh.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame 显示 Wan 成片与六个裁框"></a>
+        <div><h3>提取透明 PNG</h3><p>导入格位并去除洋红背景，可逐帧提取，也可按指定帧率抽样。</p><a href="showcase/spriteframe.zh.html">查看工作台 →</a></div>
+      </article>
+      <article class="workflow-card">
+        <a href="showcase/spriteframe.zh.html"><img src="examples/tiny-swords/preview/spriteframe-curate.zh.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame 筛帧与播放预览"></a>
+        <div><h3>挑选动作帧</h3><p>在 SpriteFrame 里逐帧查看，保留能清楚表现动作的姿势。</p><a href="showcase/spriteframe.zh.html">查看筛帧和导出 →</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="exports" aria-labelledby="exports-title">
+    <h2 id="exports-title">导出的精灵图与 GIF</h2>
+    <p class="section-copy">战锤兵的精灵图和 GIF 使用混合成片里的同一组 12 帧。各透明单元格保持统一尺寸和脚底锚点，导出清单记录了每帧的源编号、坐标和时长。</p>
+    <div class="export-feature">
+      <figure>
+        <a class="asset-preview" href="examples/tiny-swords/preview/exports/warhammer-sheet.png">
+          <img src="examples/tiny-swords/preview/exports/warhammer-sheet.png" width="1380" height="344" loading="lazy" alt="战锤兵透明精灵图，两行共 12 个动作姿势">
+        </a>
+        <figcaption>战锤兵 · PNG 精灵图 · 6 × 2 格</figcaption>
+      </figure>
+      <figure>
+        <a class="asset-preview" href="examples/tiny-swords/preview/exports/warhammer.gif">
+          <img src="examples/tiny-swords/preview/exports/warhammer.gif" width="230" height="172" loading="lazy" alt="循环播放的战锤兵挥锤动作">
+        </a>
+        <figcaption>战锤兵 · GIF 预览 · 2.4 秒</figcaption>
+      </figure>
+    </div>
+    <div class="actions"><a href="showcase/spriteframe.zh.html#exports">查看六套 PNG 精灵图和 GIF →</a><a href="examples/tiny-swords/preview/exports/manifest.json" download>下载导出清单</a></div>
+  </section>
+
+  <section class="section" id="godot" aria-labelledby="godot-title">
+    <div class="feature-split">
+      <div>
+        <h2 id="godot-title">在训练场对比</h2>
+        <p>两排角色在同一个运行中的 Godot 场景里站在 Tiny Swords 地形上。对齐脚底后，可以观察比例、装备轮廓和武器快速移动时的边缘。</p>
+        <p>上排循环播放原版待机，下排播放生成的混合动作。可在本地场景中暂停或逐帧检查。</p>
+        <div class="actions"><a href="showcase/godot.html">查看 Godot 对比 →</a></div>
+      </div>
+      <figure>
+        <a href="examples/tiny-swords/preview/training-ground.png"><img class="media" src="examples/tiny-swords/preview/training-ground.png" width="880" height="560" loading="lazy" alt="Godot 训练场截图，上排六个 Tiny Swords 原版兵种，下排六个生成兵种"></a>
+        <figcaption>Godot 实机截图。地形、场景物件及上排兵种由 Pixel Frog 制作。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer class="home-footer">
+    <a href="showcase/examples.html">示例文件</a>
+    <a href="showcase/spriteframe.zh.html#install">安装 SpriteFrame</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/README.md">English README ↗</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/README.zh.md" lang="zh-CN">中文 README ↗</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/LICENSE">代码 · MIT</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/NOTICE.md#cc0-素材">原创素材 · CC0</a>
+    <p>感谢 Pixel Frog 创作 Tiny Swords，为本项目提供画风参考。 <a href="https://pixelfrog-assets.itch.io/tiny-swords">访问素材包页面 ↗</a></p>
+  </footer>
+</main>
+</body>
+</html>

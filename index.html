@@ -7,6 +7,7 @@
 <title>Pixel Asset Workshop</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="showcase/showcase.css">
+<link rel="alternate" hreflang="zh-CN" href="index.zh.html">
 </head>
 <body class="ha-root">
 <header class="top home-top">
@@ -16,6 +17,7 @@
     <a href="#exports">Exports</a>
     <a href="showcase/godot.html">Godot</a>
     <a href="https://github.com/daetz-coder/pixel-asset-workshop">GitHub ↗</a>
+    <a href="index.zh.html" lang="zh-CN">简体中文</a>
   </nav>
 </header>
 <main class="home-shell">
@@ -24,8 +26,8 @@
       <h1 id="intro">From video to <span>game sprites.</span></h1>
       <p>Learn a pixel-art style, animate a roster in one clip, and turn the footage into transparent frames. Then see how the new units look in Godot.</p>
       <div class="hero-actions">
-        <a class="button primary" href="#exports">See the exports</a>
-        <a class="button" href="showcase/examples.html">Get the example files</a>
+        <a class="button primary" href="showcase/spriteframe.html#install">Set up SpriteFrame</a>
+        <a class="button" href="#exports">See the exports</a>
       </div>
     </div>
     <figure class="hero-capture">
@@ -42,7 +44,7 @@
   <dl class="batch-stats" aria-label="Tiny Swords sample batch">
     <div><dt>6</dt><dd>Generated units</dd></div>
     <div><dt>5 s</dt><dd>One Wan clip</dd></div>
-    <div><dt>300</dt><dd>Candidate PNG frames</dd></div>
+    <div><dt>900</dt><dd>Frames in native extraction</dd></div>
   </dl>
 
   <section class="section" id="workflow" aria-labelledby="workflow-title">
@@ -64,8 +66,8 @@
         <div><h3>Compose one first frame</h3><p>Give each unit a fixed cell and foot anchor. Submit the board with a motion prompt for each cell.</p><a href="showcase/examples.html">Open the source files →</a></div>
       </article>
       <article class="workflow-card">
-        <a href="showcase/cli.html"><img src="examples/tiny-swords/preview/blue-squad.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame showing the Wan clip and six mapped crop rectangles"></a>
-        <div><h3>Extract transparent PNGs</h3><p>Map the grid to the video, sample at 10 fps and remove the magenta key and edge spill.</p><a href="showcase/cli.html">Run the extraction →</a></div>
+        <a href="showcase/spriteframe.html"><img src="examples/tiny-swords/preview/blue-squad.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame showing the Wan clip and six mapped crop rectangles"></a>
+        <div><h3>Extract transparent PNGs</h3><p>Import the grid, remove the magenta background and extract every frame or sample at a set frame rate.</p><a href="showcase/spriteframe.html">See the workbench →</a></div>
       </article>
       <article class="workflow-card">
         <a href="showcase/spriteframe.html"><img src="examples/tiny-swords/preview/spriteframe-curate.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame frame selection and playback editor"></a>
@@ -111,7 +113,7 @@
 
   <footer class="home-footer">
     <a href="showcase/examples.html">Example files</a>
-    <a href="https://github.com/daetz-coder/pixel-asset-workshop#install">Install and run ↗</a>
+    <a href="showcase/spriteframe.html#install">Set up SpriteFrame</a>
     <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/README.md">English README ↗</a>
     <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/README.zh.md" lang="zh-CN">中文 README ↗</a>
     <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/LICENSE">Code · MIT</a>

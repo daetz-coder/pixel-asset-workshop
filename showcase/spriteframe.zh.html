@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="用内置 SpriteFrame 拆帧、挑帧，查看六个兵种的透明精灵图和 GIF。">
+<title>SpriteFrame 逐帧工作台 | 像素素材工坊</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="showcase.css">
+<link rel="alternate" hreflang="en" href="spriteframe.html">
+</head>
+<body class="ha-root">
+<header class="top"><a href="../index.zh.html">像素素材工坊</a><nav class="actions" aria-label="语言和仓库"><a href="spriteframe.html" lang="en">English</a><a href="https://github.com/daetz-coder/pixel-asset-workshop">查看仓库 ↗</a></nav></header>
+<div class="layout" id="top">
+<main>
+<nav class="crumbs" aria-label="面包屑"><ol><li><a href="../index.zh.html">项目概览</a></li><li aria-current="page">SpriteFrame</li></ol></nav>
+<h1>用 SpriteFrame 逐帧挑选</h1>
+<p>像素素材工坊仓库已内置 SpriteFrame。可以按格裁切和抠像、逐帧检查动作，并导出 PNG、图集和 GIF。</p>
+<section id="install"><h2>启动本地工作台</h2>
+<p>在 macOS 或 Linux 上安装 Python 3.11 或更新版本、FFmpeg 和 ffprobe。然后在仓库根目录运行以下命令。</p>
+<pre><code>./workbench/setup.sh
+./workbench/start.sh</code></pre>
+<p>打开 <code>http://127.0.0.1:8766</code>，切换中文，点击<strong>导入格位 JSON</strong>，打开配套 MP4，再点击<strong>逐帧提取并挑选</strong>。 <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/workbench/README.zh.md">工作台 README ↗</a></p>
+</section>
+<div class="detail-media"><figure aria-labelledby="capture-caption">
+<img class="media" src="../examples/tiny-swords/preview/blue-squad.zh.png" width="1440" height="1040" alt="SpriteFrame 工作台显示 Wan 成片上的六个角色裁框">
+<figcaption id="capture-caption">导入 854 × 480 的 Wan 成片和配套的 3 × 2 格位。</figcaption>
+</figure></div>
+<section class="section"><h2>挑选并预览动作帧</h2>
+<div class="detail-media"><figure><a href="../examples/tiny-swords/preview/spriteframe-curate.zh.png"><img class="media" loading="lazy" src="../examples/tiny-swords/preview/spriteframe-curate.zh.png" width="1440" height="1040" alt="SpriteFrame 筛帧界面显示候选帧、播放序列和预览"></a><figcaption>逐帧模式保留每个兵种的 150 张解码帧，并自动初选一组动作帧。</figcaption></figure></div>
+<div class="actions"><a href="examples.html">打开配套成片和格位 →</a><a href="#exports">查看 PNG 和 GIF 导出 →</a></div></section>
+<section class="section"><h2>预览图集和 GIF</h2>
+<div class="detail-media"><figure><a href="../examples/tiny-swords/preview/spriteframe-atlas.zh.png"><img class="media" loading="lazy" src="../examples/tiny-swords/preview/spriteframe-atlas.zh.png" width="1002" height="802" alt="SpriteFrame 最终图集和六个兵种的 GIF 预览"></a><figcaption>将选中的帧排成透明图集，导出前可逐个查看六段 GIF。</figcaption></figure></div>
+</section>
+<section class="section" id="exports"><h2>可下载的精灵图和 GIF</h2>
+<p>每套精灵图和 GIF 使用同一组 12 帧。精灵图按从左到右、从上到下排列，GIF 每帧播放 200 毫秒。</p>
+<p>这些原创精灵图和 GIF 可用于个人或商业项目，可修改和分享，署名自愿。 <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/NOTICE.md#cc0-素材">CC0 1.0 授权说明 ↗</a></p>
+<div class="actions"><a href="../examples/tiny-swords/preview/exports/manifest.json" download>下载帧坐标、时长和锚点</a></div>
+<div class="export-list">
+<article class="export-card"><h3>战锤兵</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/warhammer-sheet.png"><img src="../examples/tiny-swords/preview/exports/warhammer-sheet.png" width="1380" height="344" loading="lazy" alt="战锤兵 12 帧 PNG 精灵图"></a><figcaption><a href="../examples/tiny-swords/preview/exports/warhammer-sheet.png" download>下载 PNG 精灵图</a> · 230 × 172 像素单元格</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/warhammer.gif"><img src="../examples/tiny-swords/preview/exports/warhammer.gif" width="230" height="172" loading="lazy" alt="战锤兵循环动作预览"></a><figcaption><a href="../examples/tiny-swords/preview/exports/warhammer.gif" download>下载 GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>投弹兵</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/grenadier-sheet.png"><img src="../examples/tiny-swords/preview/exports/grenadier-sheet.png" width="1368" height="276" loading="lazy" alt="投弹兵 12 帧 PNG 精灵图"></a><figcaption><a href="../examples/tiny-swords/preview/exports/grenadier-sheet.png" download>下载 PNG 精灵图</a> · 228 × 138 像素单元格</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/grenadier.gif"><img src="../examples/tiny-swords/preview/exports/grenadier.gif" width="228" height="138" loading="lazy" alt="投弹兵循环动作预览"></a><figcaption><a href="../examples/tiny-swords/preview/exports/grenadier.gif" download>下载 GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>旗手</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/standard-bearer-sheet.png"><img src="../examples/tiny-swords/preview/exports/standard-bearer-sheet.png" width="1344" height="396" loading="lazy" alt="旗手 12 帧 PNG 精灵图"></a><figcaption><a href="../examples/tiny-swords/preview/exports/standard-bearer-sheet.png" download>下载 PNG 精灵图</a> · 224 × 198 像素单元格</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/standard-bearer.gif"><img src="../examples/tiny-swords/preview/exports/standard-bearer.gif" width="224" height="198" loading="lazy" alt="旗手循环动作预览"></a><figcaption><a href="../examples/tiny-swords/preview/exports/standard-bearer.gif" download>下载 GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>战斧兵</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/axe-sheet.png"><img src="../examples/tiny-swords/preview/exports/axe-sheet.png" width="1488" height="252" loading="lazy" alt="战斧兵 12 帧 PNG 精灵图"></a><figcaption><a href="../examples/tiny-swords/preview/exports/axe-sheet.png" download>下载 PNG 精灵图</a> · 248 × 126 像素单元格</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/axe.gif"><img src="../examples/tiny-swords/preview/exports/axe.gif" width="248" height="126" loading="lazy" alt="战斧兵循环动作预览"></a><figcaption><a href="../examples/tiny-swords/preview/exports/axe.gif" download>下载 GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>弩兵</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/crossbow-sheet.png"><img src="../examples/tiny-swords/preview/exports/crossbow-sheet.png" width="1128" height="240" loading="lazy" alt="弩兵 12 帧 PNG 精灵图"></a><figcaption><a href="../examples/tiny-swords/preview/exports/crossbow-sheet.png" download>下载 PNG 精灵图</a> · 188 × 120 像素单元格</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/crossbow.gif"><img src="../examples/tiny-swords/preview/exports/crossbow.gif" width="188" height="120" loading="lazy" alt="弩兵循环动作预览"></a><figcaption><a href="../examples/tiny-swords/preview/exports/crossbow.gif" download>下载 GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>塔盾兵</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/tower-shield-sheet.png"><img src="../examples/tiny-swords/preview/exports/tower-shield-sheet.png" width="1200" height="288" loading="lazy" alt="塔盾兵 12 帧 PNG 精灵图"></a><figcaption><a href="../examples/tiny-swords/preview/exports/tower-shield-sheet.png" download>下载 PNG 精灵图</a> · 200 × 144 像素单元格</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/tower-shield.gif"><img src="../examples/tiny-swords/preview/exports/tower-shield.gif" width="200" height="144" loading="lazy" alt="塔盾兵循环动作预览"></a><figcaption><a href="../examples/tiny-swords/preview/exports/tower-shield.gif" download>下载 GIF</a></figcaption></figure>
+</div></article>
+</div>
+</section>
+<nav class="page-links" aria-label="相邻主题"><a rel="prev" href="cli.html">← 命令行拆帧</a><a rel="next" href="godot.html">Godot 实机 →</a></nav>
+</main>
+<nav class="rail" aria-label="展示主题">
+<p>展示主题</p>
+<a href="../index.zh.html">项目概览</a>
+<a href="cli.html">命令行拆帧</a>
+<a href="spriteframe.zh.html" aria-current="page">SpriteFrame</a>
+<a href="godot.html">Godot 实机</a>
+<a href="examples.html">示例文件</a>
+<div class="external">
+<a href="https://github.com/daetz-coder/pixel-asset-workshop">GitHub 项目 ↗</a>
+<a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/workbench/README.zh.md">SpriteFrame 安装 ↗</a>
+</div>
+</nav>
+</div>
+</body>
+</html>
