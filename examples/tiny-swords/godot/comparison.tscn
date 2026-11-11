@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://comparison.gd" id="1"]
+
+[node name="TinySwordsTrainingGround" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1")
+
+[node name="Water" type="TileMapLayer" parent="."]
+
+[node name="Island" type="TileMapLayer" parent="."]
+position = Vector2(24, 82)
+
+[node name="Scenery" type="Node2D" parent="."]
+
+[node name="Originals" type="Node2D" parent="."]
+
+[node name="Generated" type="Node2D" parent="."]
+
+[node name="Overlay" type="Node2D" parent="."]

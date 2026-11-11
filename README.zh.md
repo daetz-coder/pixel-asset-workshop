@@ -4,9 +4,9 @@
 
 从参考游戏提炼可复用的画风规则，生成自己游戏的角色和场景素材，再把多名角色的动作放进一次视频任务，拆成独立的透明 PNG 序列。适合需要扩充同一阵营、做小规模美术验证，或反复制作动作批次的独立游戏团队。
 
-![自动去除洋红残边后的三个角色在 Godot 中播放](examples/tiny-swords/preview/godot-playback.gif)
+[![Godot 训练场实机截图，上排为 Tiny Swords 原版，下排为自制兵种](examples/tiny-swords/preview/training-ground.png)](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html)
 
-[流程宣传片](examples/tiny-swords/preview/workflow-promo.mp4) · [完整 Godot 录像](examples/tiny-swords/preview/godot-playback.mp4) · [在 Godot 对照原版与生成角色](examples/tiny-swords/README.zh.md#在-godot-中对照原版)
+这段 5 秒录像由 Godot 4.5.1 录制。上排播放 Tiny Swords 原版待机，下排播放自制六兵种的混合动作。原版美术由 [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) 制作。[在线播放实机录像](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html) · [MP4 文件](examples/tiny-swords/preview/training-ground.mp4) · [本地运行 Godot 对照](examples/tiny-swords/README.zh.md#在-godot-中对照原版)
 
 | 阶段 | 怎么做 | 交付 |
 | --- | --- | --- |
@@ -15,6 +15,16 @@
 | 3. 视频与批量拆帧 | 以 Wan3.0 Video Prime 为例，每批提交一次。按成片尺寸换算格位，统一抽帧和抠像，再人工挑动作关键帧 | 每格独立的 RGBA PNG 序列、采样和贴边记录 |
 
 实测批次包含 **6 名兵种、1 条 5 秒 Wan 成片、300 张候选透明帧**。同规格下，六个角色合成一批后，请求数由 6 次降至 1 次。实际花费取决于服务计费和返工。先用待机或步行试格，挥武器、飞行物和大范围特效需要时用更少的角色或分批。
+
+## 导出的精灵图与 GIF
+
+战锤兵的透明精灵图和 GIF 使用同一组 12 帧。精灵图按从左到右、从上到下排列，GIF 每帧播放 200 毫秒。
+
+[![战锤兵 12 帧透明精灵图](examples/tiny-swords/preview/exports/warhammer-sheet.png)](examples/tiny-swords/preview/exports/warhammer-sheet.png)
+
+![战锤兵挥锤 GIF](examples/tiny-swords/preview/exports/warhammer.gif)
+
+[查看全部六套精灵图和 GIF](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [帧坐标、脚底锚点与时长](examples/tiny-swords/preview/exports/manifest.json)
 
 ## 快速开始：已有成片，无需密钥
 
@@ -66,4 +76,4 @@ python scripts/extract_frames.py \
 
 ## 来源与分发
 
-Tiny Swords 由 [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) 制作。请从作者处获取原包。原包、原帧裁切及包含原图的对照只用于本地；示例成片和展示图使用本项目生成的角色。代码与示例素材的发布范围见 [来源与分发说明](NOTICE.md) 和 [首次发布核对](docs/release.md)。
+Tiny Swords 由 [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) 制作。训练场录像和截屏展示原包素材在 Godot 中的使用效果。请从作者处获取原包以在本地复现。导出的精灵图和 GIF 使用本项目生成的角色。[来源与分发说明](NOTICE.md) · [首次发布核对](docs/release.md)

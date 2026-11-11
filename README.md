@@ -4,9 +4,9 @@
 
 Extract reusable art direction from a reference game, create original characters and scenery, and animate several characters in a single video. Export each character as a separate transparent PNG sequence. The workflow is intended for indie teams expanding a roster, testing an art direction, or producing repeated animation batches.
 
-![Cleaned Warhammer, Grenadier and Standard Bearer sprites playing in Godot](examples/tiny-swords/preview/godot-playback.gif)
+[![Godot training-ground screenshot with the original Tiny Swords units above the generated units](examples/tiny-swords/preview/training-ground.png)](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html)
 
-Actual Godot playback after automatic edge cleanup. [Workflow video](examples/tiny-swords/preview/workflow-promo.mp4) · [Full Godot capture](examples/tiny-swords/preview/godot-playback.mp4) · [Original versus generated in Godot](examples/tiny-swords/README.md#compare-the-original-in-godot)
+The five-second Godot 4.5.1 recording shows the original Tiny Swords units idling above the six generated units. Tiny Swords art by [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords). [Play the recording](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html) · [MP4 file](examples/tiny-swords/preview/training-ground.mp4) · [Run the Godot comparison](examples/tiny-swords/README.md#compare-the-original-in-godot)
 
 | Stage | Workflow | Output |
 | --- | --- | --- |
@@ -15,6 +15,16 @@ Actual Godot playback after automatic edge cleanup. [Workflow video](examples/ti
 | 3. Generate video and extract frames | Submit one clip per batch, using Wan3.0 Video Prime as an example. Map the layout to the actual video size, sample frames, key out the background and review the results. | RGBA PNG sequences with sampling and edge-contact metadata |
 
 The included example uses **six units, one five-second Wan clip and 300 candidate frames**. At the same duration and resolution, batching takes one submission for the six units. Pricing and retries determine the actual cost. Start with idle or walk cycles. Wide swings, projectiles and large effects may need more space per character.
+
+## Exported sprites
+
+The Warhammer Infantry sprite sheet and GIF use the same 12 frames. Read the sheet from left to right, then top to bottom. The GIF displays each frame for 200 ms.
+
+[![Warhammer Infantry sprite sheet with 12 poses](examples/tiny-swords/preview/exports/warhammer-sheet.png)](examples/tiny-swords/preview/exports/warhammer-sheet.png)
+
+![Warhammer Infantry hammer strike GIF](examples/tiny-swords/preview/exports/warhammer.gif)
+
+[All six PNG sheets and GIFs](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [Frame coordinates, anchors and durations](examples/tiny-swords/preview/exports/manifest.json)
 
 ## Reproduce the example offline
 
@@ -66,4 +76,4 @@ Bug reports and pull requests are welcome. For a cropping or frame extraction is
 
 ## Sources and distribution
 
-Pixel Frog's Tiny Swords is the style reference. Obtain the pack from the author to reproduce the local comparison. The source pack, extracted reference frames and comparisons containing them are for local use. The included clip and showcase images use the project's generated characters. [Pixel Frog's asset pack](https://pixelfrog-assets.itch.io/tiny-swords) · [Sources and distribution](NOTICE.en.md) · [First release checklist](docs/release.en.md)
+Pixel Frog's Tiny Swords is the style reference. The training-ground video and screenshot show the pack in the running Godot scene. Obtain the pack from the author to reproduce the comparison locally. The exported sheets and GIFs contain this project's generated characters. [Pixel Frog's asset pack](https://pixelfrog-assets.itch.io/tiny-swords) · [Sources and distribution](NOTICE.en.md) · [First release checklist](docs/release.en.md)

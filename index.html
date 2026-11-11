@@ -3,37 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Follow the workflow from generated video and crop layout to selected game frames.">
+<meta name="description" content="See six original pixel units go from one generated video to transparent sprite sheets, GIFs and a Godot training ground.">
 <title>Pixel Asset Workshop</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="showcase/showcase.css">
 </head>
 <body class="ha-root">
-<header class="top"><a href="index.html">Pixel Asset Workshop</a><a href="https://github.com/daetz-coder/pixel-asset-workshop">View repository ↗</a></header>
-<div class="layout" id="top">
-<main>
-<div class="hero"><h1>From video to <span>sprite frames.</span></h1><p>Give each generated clip its own crop layout. Export transparent PNGs in batches or review and select individual frames in SpriteFrame.</p></div>
-<figure aria-labelledby="capture-caption">
-<a href="showcase/godot.html"><img class="media" src="examples/tiny-swords/preview/godot-clean.webp" width="880" height="560" alt="Six cleaned sprites running in Godot. Open the workflow video."></a>
-<figcaption id="capture-caption">Actual Godot capture after automatic edge cleanup. <a href="showcase/godot.html">Watch the workflow video →</a></figcaption>
-</figure>
-<section class="section" aria-labelledby="topics"><h2 id="topics">Explore the workflow</h2><ul class="chapter-list"><li id="handoff"><a href="showcase/cli.html">CLI extraction →</a><p>Pair an MP4 with its own crop layout and extract separate PNG sequences.</p></li>
-<li id="spriteframe"><a href="showcase/spriteframe.html">SpriteFrame →</a><p>Import the video and matching layout, then review and select individual frames.</p></li>
-<li id="review"><a href="showcase/godot.html">Godot playback →</a><p>Watch the six exported sequences and reproduce the original-versus-generated review.</p></li>
-<li id="files"><a href="showcase/examples.html">Example files →</a><p>Download the matching video and layout or open the case study and Godot project.</p></li></ul></section>
+<header class="top home-top">
+  <a class="brand" href="index.html">Pixel Asset Workshop</a>
+  <nav aria-label="Main navigation">
+    <a href="#workflow">Workflow</a>
+    <a href="#exports">Exports</a>
+    <a href="showcase/godot.html">Godot</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop">GitHub ↗</a>
+  </nav>
+</header>
+<main class="home-shell">
+  <section class="home-hero" aria-labelledby="intro">
+    <div class="hero-copy">
+      <h1 id="intro">From video to <span>game sprites.</span></h1>
+      <p>Learn a pixel-art style, animate a roster in one clip, and turn the footage into transparent frames. Then see how the new units look in Godot.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#exports">See the exports</a>
+        <a class="button" href="showcase/examples.html">Get the example files</a>
+      </div>
+    </div>
+    <figure class="hero-capture">
+      <video class="motion" controls preload="metadata" playsinline width="880" height="560"
+        aria-label="Godot training ground recording with original and generated units"
+        src="examples/tiny-swords/preview/training-ground.mp4"
+        poster="examples/tiny-swords/preview/training-ground.png">
+        <a href="examples/tiny-swords/preview/training-ground.mp4">Watch the Godot training ground recording</a>
+      </video>
+      <figcaption>Godot 4.5.1 capture. Original Tiny Swords units on top, generated units below. Tiny Swords art by <a href="https://pixelfrog-assets.itch.io/tiny-swords">Pixel Frog</a>.</figcaption>
+    </figure>
+  </section>
+
+  <dl class="batch-stats" aria-label="Tiny Swords sample batch">
+    <div><dt>6</dt><dd>Generated units</dd></div>
+    <div><dt>5 s</dt><dd>One Wan clip</dd></div>
+    <div><dt>300</dt><dd>Candidate PNG frames</dd></div>
+  </dl>
+
+  <section class="section" id="workflow" aria-labelledby="workflow-title">
+    <h2 id="workflow-title">How the batch works</h2>
+    <p class="section-copy">This example follows the same six units from the reference board to the final export. Reproduce the extraction with the included MP4 and layout JSON.</p>
+    <div class="workflow-grid">
+      <article class="workflow-card">
+        <a href="showcase/examples.html"><img src="assets/video-inputs/blue-units-3x2-reference.png" width="1280" height="720" loading="lazy" alt="Six generated units arranged in a three by two grid on a magenta background"></a>
+        <div><h3>Compose one first frame</h3><p>Give each unit a fixed cell and foot anchor. Submit the board with a motion prompt for each cell.</p><a href="showcase/examples.html">Open the source files →</a></div>
+      </article>
+      <article class="workflow-card">
+        <a href="showcase/cli.html"><img src="examples/tiny-swords/preview/blue-squad.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame showing the Wan clip and six mapped crop rectangles"></a>
+        <div><h3>Extract transparent PNGs</h3><p>Map the grid to the video, sample at 10 fps and remove the magenta key and edge spill.</p><a href="showcase/cli.html">Run the extraction →</a></div>
+      </article>
+      <article class="workflow-card">
+        <a href="showcase/spriteframe.html"><img src="examples/tiny-swords/preview/spriteframe-curate.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame frame selection and playback editor"></a>
+        <div><h3>Choose the action poses</h3><p>Review the sequence in SpriteFrame and keep the poses that show the action clearly.</p><a href="showcase/spriteframe.html">See frame review and exports →</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="exports" aria-labelledby="exports-title">
+    <h2 id="exports-title">What gets exported</h2>
+    <p class="section-copy">The Warhammer Infantry sheet and GIF use the same 12 selected frames from the mixed clip. Each transparent cell keeps a fixed size and foot anchor. The export manifest records the source index, rectangle and duration of each frame.</p>
+    <div class="export-feature">
+      <figure>
+        <a class="asset-preview" href="examples/tiny-swords/preview/exports/warhammer-sheet.png">
+          <img src="examples/tiny-swords/preview/exports/warhammer-sheet.png" width="1380" height="344" loading="lazy" alt="Transparent Warhammer Infantry sprite sheet with 12 action poses in two rows">
+        </a>
+        <figcaption>Warhammer Infantry · PNG sheet · 6 × 2 cells</figcaption>
+      </figure>
+      <figure>
+        <a class="asset-preview" href="examples/tiny-swords/preview/exports/warhammer.gif">
+          <img src="examples/tiny-swords/preview/exports/warhammer.gif" width="230" height="172" loading="lazy" alt="Looping Warhammer Infantry hammer strike">
+        </a>
+        <figcaption>Warhammer Infantry · GIF preview · 2.4 s</figcaption>
+      </figure>
+    </div>
+    <div class="actions"><a href="showcase/spriteframe.html#exports">Browse all six PNG sheets and GIFs →</a><a href="examples/tiny-swords/preview/exports/manifest.json" download>Download export metadata</a></div>
+  </section>
+
+  <section class="section" id="godot" aria-labelledby="godot-title">
+    <div class="feature-split">
+      <div>
+        <h2 id="godot-title">Compare on the training ground</h2>
+        <p>Both rows stand on Tiny Swords terrain in the running Godot scene. Line up their feet to inspect proportions, equipment silhouettes and the edges around a fast-moving weapon.</p>
+        <p>The top row loops original idle animations. The bottom row plays the generated mixed-action clip. Pause or step through the local scene to inspect any pose.</p>
+        <div class="actions"><a href="showcase/godot.html">See the Godot comparison →</a></div>
+      </div>
+      <figure>
+        <a href="examples/tiny-swords/preview/training-ground.png"><img class="media" src="examples/tiny-swords/preview/training-ground.png" width="880" height="560" loading="lazy" alt="Godot training ground screenshot with six Tiny Swords originals above six generated units"></a>
+        <figcaption>Actual Godot screenshot. Terrain, scenery and upper row by Pixel Frog.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="style-title">
+    <div class="feature-split">
+      <div>
+        <h2 id="style-title">Use the style beyond units</h2>
+        <p>The Frontier Outpost example carries the same camera angle and material palette into a building, an enemy, props, terrain, UI and an impact effect.</p>
+        <div class="actions"><a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/examples/tiny-swords#extending-the-style-across-asset-types">Read the style case study ↗</a></div>
+      </div>
+      <figure>
+        <img class="media" src="assets/art-runs/frontier-outpost/previews/frontier-scene.png" width="896" height="640" loading="lazy" alt="Frontier Outpost composite showing a lookout, an armadillo enemy, a building and game UI">
+        <figcaption>Frontier Outpost · generated art and scene composition</figcaption>
+      </figure>
+    </div>
+  </section>
+  <footer class="home-footer">
+    <a href="showcase/examples.html">Example files</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/README.md">English README ↗</a>
+    <a href="https://github.com/daetz-coder/pixel-asset-workshop/blob/main/README.zh.md" lang="zh-CN">中文 README ↗</a>
+  </footer>
 </main>
-<nav class="rail" aria-label="Showcase topics">
-<p>Showcase topics</p>
-<a href="index.html" aria-current="page">Overview</a>
-<a href="showcase/cli.html">CLI extraction</a>
-<a href="showcase/spriteframe.html">SpriteFrame</a>
-<a href="showcase/godot.html">Godot playback</a>
-<a href="showcase/examples.html">Example files</a>
-<div class="external">
-<a href="https://github.com/daetz-coder/pixel-asset-workshop">Project on GitHub ↗</a>
-<a href="https://github.com/daetz-coder/SpriteFrame">SpriteFrame on GitHub ↗</a>
-</div>
-</nav>
-</div>
 </body>
 </html>

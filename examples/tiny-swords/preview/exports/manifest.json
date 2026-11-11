@@ -1,0 +1,818 @@
+{
+  "source": "blue-units-3x2-wan-prime-480p.mp4",
+  "source_fps": 10.0,
+  "columns": 6,
+  "rows": 2,
+  "sequences": [
+    {
+      "name": "Warhammer Infantry",
+      "sheet": "warhammer-sheet.png",
+      "gif": "warhammer.gif",
+      "cell_size": [
+        230,
+        172
+      ],
+      "anchor_xy": [
+        92,
+        157
+      ],
+      "frames": [
+        {
+          "source_index": 14,
+          "rect_xywh": [
+            0,
+            0,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 16,
+          "rect_xywh": [
+            230,
+            0,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 18,
+          "rect_xywh": [
+            460,
+            0,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 20,
+          "rect_xywh": [
+            690,
+            0,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 22,
+          "rect_xywh": [
+            920,
+            0,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 24,
+          "rect_xywh": [
+            1150,
+            0,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 26,
+          "rect_xywh": [
+            0,
+            172,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 28,
+          "rect_xywh": [
+            230,
+            172,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 30,
+          "rect_xywh": [
+            460,
+            172,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 32,
+          "rect_xywh": [
+            690,
+            172,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 34,
+          "rect_xywh": [
+            920,
+            172,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 36,
+          "rect_xywh": [
+            1150,
+            172,
+            230,
+            172
+          ],
+          "duration_ms": 200
+        }
+      ]
+    },
+    {
+      "name": "Grenadier",
+      "sheet": "grenadier-sheet.png",
+      "gif": "grenadier.gif",
+      "cell_size": [
+        228,
+        138
+      ],
+      "anchor_xy": [
+        99,
+        123
+      ],
+      "frames": [
+        {
+          "source_index": 16,
+          "rect_xywh": [
+            0,
+            0,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 18,
+          "rect_xywh": [
+            228,
+            0,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 20,
+          "rect_xywh": [
+            456,
+            0,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 22,
+          "rect_xywh": [
+            684,
+            0,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 24,
+          "rect_xywh": [
+            912,
+            0,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 26,
+          "rect_xywh": [
+            1140,
+            0,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 28,
+          "rect_xywh": [
+            0,
+            138,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 30,
+          "rect_xywh": [
+            228,
+            138,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 32,
+          "rect_xywh": [
+            456,
+            138,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 34,
+          "rect_xywh": [
+            684,
+            138,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 36,
+          "rect_xywh": [
+            912,
+            138,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 38,
+          "rect_xywh": [
+            1140,
+            138,
+            228,
+            138
+          ],
+          "duration_ms": 200
+        }
+      ]
+    },
+    {
+      "name": "Standard Bearer",
+      "sheet": "standard-bearer-sheet.png",
+      "gif": "standard-bearer.gif",
+      "cell_size": [
+        224,
+        198
+      ],
+      "anchor_xy": [
+        108,
+        161
+      ],
+      "frames": [
+        {
+          "source_index": 20,
+          "rect_xywh": [
+            0,
+            0,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 22,
+          "rect_xywh": [
+            224,
+            0,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 24,
+          "rect_xywh": [
+            448,
+            0,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 26,
+          "rect_xywh": [
+            672,
+            0,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 28,
+          "rect_xywh": [
+            896,
+            0,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 30,
+          "rect_xywh": [
+            1120,
+            0,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 32,
+          "rect_xywh": [
+            0,
+            198,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 34,
+          "rect_xywh": [
+            224,
+            198,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 36,
+          "rect_xywh": [
+            448,
+            198,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 38,
+          "rect_xywh": [
+            672,
+            198,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 40,
+          "rect_xywh": [
+            896,
+            198,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 42,
+          "rect_xywh": [
+            1120,
+            198,
+            224,
+            198
+          ],
+          "duration_ms": 200
+        }
+      ]
+    },
+    {
+      "name": "Axe Infantry",
+      "sheet": "axe-sheet.png",
+      "gif": "axe.gif",
+      "cell_size": [
+        248,
+        126
+      ],
+      "anchor_xy": [
+        120,
+        123
+      ],
+      "frames": [
+        {
+          "source_index": 24,
+          "rect_xywh": [
+            0,
+            0,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 26,
+          "rect_xywh": [
+            248,
+            0,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 28,
+          "rect_xywh": [
+            496,
+            0,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 30,
+          "rect_xywh": [
+            744,
+            0,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 32,
+          "rect_xywh": [
+            992,
+            0,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 34,
+          "rect_xywh": [
+            1240,
+            0,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 36,
+          "rect_xywh": [
+            0,
+            126,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 38,
+          "rect_xywh": [
+            248,
+            126,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 40,
+          "rect_xywh": [
+            496,
+            126,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 42,
+          "rect_xywh": [
+            744,
+            126,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 44,
+          "rect_xywh": [
+            992,
+            126,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 46,
+          "rect_xywh": [
+            1240,
+            126,
+            248,
+            126
+          ],
+          "duration_ms": 200
+        }
+      ]
+    },
+    {
+      "name": "Crossbow Infantry",
+      "sheet": "crossbow-sheet.png",
+      "gif": "crossbow.gif",
+      "cell_size": [
+        188,
+        120
+      ],
+      "anchor_xy": [
+        69,
+        117
+      ],
+      "frames": [
+        {
+          "source_index": 24,
+          "rect_xywh": [
+            0,
+            0,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 26,
+          "rect_xywh": [
+            188,
+            0,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 28,
+          "rect_xywh": [
+            376,
+            0,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 30,
+          "rect_xywh": [
+            564,
+            0,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 32,
+          "rect_xywh": [
+            752,
+            0,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 34,
+          "rect_xywh": [
+            940,
+            0,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 36,
+          "rect_xywh": [
+            0,
+            120,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 38,
+          "rect_xywh": [
+            188,
+            120,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 40,
+          "rect_xywh": [
+            376,
+            120,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 42,
+          "rect_xywh": [
+            564,
+            120,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 44,
+          "rect_xywh": [
+            752,
+            120,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 46,
+          "rect_xywh": [
+            940,
+            120,
+            188,
+            120
+          ],
+          "duration_ms": 200
+        }
+      ]
+    },
+    {
+      "name": "Tower Shield Infantry",
+      "sheet": "tower-shield-sheet.png",
+      "gif": "tower-shield.gif",
+      "cell_size": [
+        200,
+        144
+      ],
+      "anchor_xy": [
+        84,
+        141
+      ],
+      "frames": [
+        {
+          "source_index": 26,
+          "rect_xywh": [
+            0,
+            0,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 28,
+          "rect_xywh": [
+            200,
+            0,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 30,
+          "rect_xywh": [
+            400,
+            0,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 32,
+          "rect_xywh": [
+            600,
+            0,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 34,
+          "rect_xywh": [
+            800,
+            0,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 36,
+          "rect_xywh": [
+            1000,
+            0,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 38,
+          "rect_xywh": [
+            0,
+            144,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 40,
+          "rect_xywh": [
+            200,
+            144,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 42,
+          "rect_xywh": [
+            400,
+            144,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 44,
+          "rect_xywh": [
+            600,
+            144,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 46,
+          "rect_xywh": [
+            800,
+            144,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        },
+        {
+          "source_index": 48,
+          "rect_xywh": [
+            1000,
+            144,
+            200,
+            144
+          ],
+          "duration_ms": 200
+        }
+      ]
+    }
+  ]
+}

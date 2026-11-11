@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Watch the six exported sequences and reproduce the original-versus-generated review.">
+<meta name="description" content="Watch the Godot training-ground recording, inspect the original and generated units, and run the scene locally.">
 <title>Review sprite playback in Godot | Pixel Asset Workshop</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="showcase.css">
@@ -13,15 +13,31 @@
 <div class="layout" id="top">
 <main>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Overview</a></li><li aria-current="page">Godot playback</li></ol></nav>
-<h1>Review sprite playback in Godot</h1>
-<p>One five-second clip produced six sequences of 50 candidate frames. An automatic despill pass cleans the magenta fringe before the PNGs are loaded into Godot.</p>
+<h1>Compare sprites in Godot</h1>
+<p>See the six generated units in a running Godot 4.5.1 scene. The upper row loops Tiny Swords idle animations. The lower row plays the 50 extracted frames per unit from the mixed-action clip.</p>
 <div class="detail-media"><figure>
-<video class="motion promo" controls preload="metadata" playsinline aria-label="Video-to-sprite workflow, edge cleanup and Godot playback" src="../examples/tiny-swords/preview/workflow-promo.mp4" poster="../examples/tiny-swords/preview/workflow-poster.webp"></video>
-<figcaption>A 13-second Remotion edit with the source clip, a before-and-after edge comparison and actual Godot footage. No audio.</figcaption>
+<video class="motion" controls preload="metadata" playsinline aria-label="Five-second Godot training ground recording"
+  src="../examples/tiny-swords/preview/training-ground.mp4" poster="../examples/tiny-swords/preview/training-ground.png">
+  <a href="../examples/tiny-swords/preview/training-ground.mp4">Watch the Godot recording</a>
+</video>
+<figcaption>Five seconds captured in Godot at 880 × 560 and 10 fps. Tiny Swords terrain, scenery and upper-row sprites by <a href="https://pixelfrog-assets.itch.io/tiny-swords">Pixel Frog</a>.</figcaption>
 </figure></div>
-<section class="section"><h2>Cleaned frames in Godot</h2>
-<div class="detail-media"><figure><img class="media" src="../examples/tiny-swords/preview/godot-clean.webp" width="880" height="560" alt="Six cleaned sprite sequences displayed against dark green panels in Godot"><figcaption>Actual Godot capture of the cleaned PNGs at 10 fps. <a href="../examples/tiny-swords/preview/godot-playback.mp4">Watch the full Godot capture</a></figcaption></figure></div></section>
-<section class="section"><h2>Compare with the original</h2><p>The Godot scene can also load the Blue Archer idle sheet from a local Tiny Swords Free Pack. It aligns the Archer and generated Warhammer Infantry on a shared foot line. <a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/examples/tiny-swords#compare-the-original-in-godot">Run the local comparison ↗</a></p></section>
+<section class="section"><h2>Inspect the training ground</h2>
+<div class="detail-media"><figure>
+<a href="../examples/tiny-swords/preview/training-ground.png"><img class="media" loading="lazy" src="../examples/tiny-swords/preview/training-ground.png" width="880" height="560" alt="Godot screenshot showing the grass and cliff terrain, tower, and two aligned rows of sprites"></a>
+<figcaption>First frame of the actual Godot scene. Open the PNG for the full-resolution screenshot.</figcaption>
+</figure></div>
+<p>The generated row carries over the blue-green palette and compact proportions. The originals have crisper contours and visible ground shadows. In the generated sequence, the feet have no contact shadow and some fast weapon and effect edges soften.</p>
+<p>The scene renders both rows with nearest-neighbor filtering and aligns each column horizontally. It displays the original sprites at 1× and the extracted frames at 0.5× to bring visible body heights closer. Space or Enter pauses the local scene. Left and Right step through frames.</p>
+<div class="actions"><a href="https://github.com/daetz-coder/pixel-asset-workshop/tree/main/examples/tiny-swords#compare-the-original-in-godot">Run the local comparison ↗</a><a href="../examples/tiny-swords/preview/training-ground.mp4">Open the MP4</a></div>
+</section>
+<section class="section"><h2>From keying to playback</h2>
+<p>The workflow edit shows the input clip, the effect of magenta despill, and the cleaned sprites playing in Godot.</p>
+<div class="detail-media"><figure>
+<video class="motion promo" controls preload="none" playsinline aria-label="Workflow video with edge cleanup and Godot playback" src="../examples/tiny-swords/preview/workflow-promo.mp4" poster="../examples/tiny-swords/preview/workflow-poster.webp"></video>
+<figcaption>13-second workflow edit. <a href="../examples/tiny-swords/preview/godot-playback.mp4">Watch the generated-only Godot capture</a>.</figcaption>
+</figure></div>
+</section>
 <nav class="page-links" aria-label="Adjacent topics"><a rel="prev" href="spriteframe.html">← SpriteFrame</a><a rel="next" href="examples.html">Example files →</a></nav>
 </main>
 <nav class="rail" aria-label="Showcase topics">

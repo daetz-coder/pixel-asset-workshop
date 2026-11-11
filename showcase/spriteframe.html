@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Import the video and matching layout, then review and select individual frames.">
+<meta name="description" content="Review the mixed-action clip in SpriteFrame and see the final six transparent sprite sheets and GIF previews.">
 <title>Choose frames in SpriteFrame | Pixel Asset Workshop</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="showcase.css">
@@ -14,7 +14,7 @@
 <main>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Overview</a></li><li aria-current="page">SpriteFrame</li></ol></nav>
 <h1>Choose frames in SpriteFrame</h1>
-<p>Choose <strong>Import crop layout</strong>, open the matching MP4, then choose <strong>Extract every frame and choose</strong>. Review the source frames, reorder the selected poses and export the PNGs.</p>
+<p>Choose <strong>Import crop layout</strong>, open the matching MP4, then choose <strong>Extract every frame and choose</strong>. Review the source frames, reorder the selected poses and export the PNGs. <a href="#exports">Jump to the final PNG and GIF exports →</a></p>
 <div class="detail-media"><figure aria-labelledby="capture-caption">
 <img class="media" src="../examples/tiny-swords/preview/blue-squad.png" width="1440" height="1040" alt="SpriteFrame extraction workspace with six named crops over the actual Wan video">
 <figcaption id="capture-caption">SpriteFrame with the actual 854 × 480 Wan clip and its imported 3 × 2 layout.</figcaption>
@@ -22,6 +22,42 @@
 <section class="section"><h2>Review the selection</h2>
 <div class="detail-media"><figure><a href="../examples/tiny-swords/preview/spriteframe-curate.png"><img class="media" loading="lazy" src="../examples/tiny-swords/preview/spriteframe-curate.png" width="1440" height="1040" alt="SpriteFrame frame selection editor with source frames and playback preview"></a><figcaption>Actual SpriteFrame frame-selection editor for the same clip.</figcaption></figure></div>
 <div class="actions"><a href="https://github.com/daetz-coder/SpriteFrame/tree/main/workbench">Workbench setup ↗</a><a href="examples.html">Open the matching clip and layout →</a></div></section>
+<section class="section" id="exports"><h2>Exported sprite sheets and GIFs</h2>
+<p>Each pair uses the same 12 frames from the cleaned PNG sequence. Read the PNG left to right, then top to bottom. The GIF shows the selected poses at 200 ms per frame.</p>
+<div class="actions"><a href="../examples/tiny-swords/preview/exports/manifest.json" download>Download frame coordinates, durations and anchors</a></div>
+<div class="export-list">
+<article class="export-card"><h3>Warhammer Infantry</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/warhammer-sheet.png"><img src="../examples/tiny-swords/preview/exports/warhammer-sheet.png" width="1380" height="344" loading="lazy" alt="Warhammer Infantry PNG sprite sheet with 12 poses"></a><figcaption><a href="../examples/tiny-swords/preview/exports/warhammer-sheet.png" download>Download PNG sheet</a> · 230 × 172 px cells</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/warhammer.gif"><img src="../examples/tiny-swords/preview/exports/warhammer.gif" width="230" height="172" loading="lazy" alt="Warhammer Infantry looping action preview"></a><figcaption><a href="../examples/tiny-swords/preview/exports/warhammer.gif" download>Download GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>Grenadier</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/grenadier-sheet.png"><img src="../examples/tiny-swords/preview/exports/grenadier-sheet.png" width="1368" height="276" loading="lazy" alt="Grenadier PNG sprite sheet with 12 poses"></a><figcaption><a href="../examples/tiny-swords/preview/exports/grenadier-sheet.png" download>Download PNG sheet</a> · 228 × 138 px cells</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/grenadier.gif"><img src="../examples/tiny-swords/preview/exports/grenadier.gif" width="228" height="138" loading="lazy" alt="Grenadier looping action preview"></a><figcaption><a href="../examples/tiny-swords/preview/exports/grenadier.gif" download>Download GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>Standard Bearer</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/standard-bearer-sheet.png"><img src="../examples/tiny-swords/preview/exports/standard-bearer-sheet.png" width="1344" height="396" loading="lazy" alt="Standard Bearer PNG sprite sheet with 12 poses"></a><figcaption><a href="../examples/tiny-swords/preview/exports/standard-bearer-sheet.png" download>Download PNG sheet</a> · 224 × 198 px cells</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/standard-bearer.gif"><img src="../examples/tiny-swords/preview/exports/standard-bearer.gif" width="224" height="198" loading="lazy" alt="Standard Bearer looping action preview"></a><figcaption><a href="../examples/tiny-swords/preview/exports/standard-bearer.gif" download>Download GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>Axe Infantry</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/axe-sheet.png"><img src="../examples/tiny-swords/preview/exports/axe-sheet.png" width="1488" height="252" loading="lazy" alt="Axe Infantry PNG sprite sheet with 12 poses"></a><figcaption><a href="../examples/tiny-swords/preview/exports/axe-sheet.png" download>Download PNG sheet</a> · 248 × 126 px cells</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/axe.gif"><img src="../examples/tiny-swords/preview/exports/axe.gif" width="248" height="126" loading="lazy" alt="Axe Infantry looping action preview"></a><figcaption><a href="../examples/tiny-swords/preview/exports/axe.gif" download>Download GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>Crossbow Infantry</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/crossbow-sheet.png"><img src="../examples/tiny-swords/preview/exports/crossbow-sheet.png" width="1128" height="240" loading="lazy" alt="Crossbow Infantry PNG sprite sheet with 12 poses"></a><figcaption><a href="../examples/tiny-swords/preview/exports/crossbow-sheet.png" download>Download PNG sheet</a> · 188 × 120 px cells</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/crossbow.gif"><img src="../examples/tiny-swords/preview/exports/crossbow.gif" width="188" height="120" loading="lazy" alt="Crossbow Infantry looping action preview"></a><figcaption><a href="../examples/tiny-swords/preview/exports/crossbow.gif" download>Download GIF</a></figcaption></figure>
+</div></article>
+<article class="export-card"><h3>Tower Shield Infantry</h3>
+<div class="export-pair">
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/tower-shield-sheet.png"><img src="../examples/tiny-swords/preview/exports/tower-shield-sheet.png" width="1200" height="288" loading="lazy" alt="Tower Shield Infantry PNG sprite sheet with 12 poses"></a><figcaption><a href="../examples/tiny-swords/preview/exports/tower-shield-sheet.png" download>Download PNG sheet</a> · 200 × 144 px cells</figcaption></figure>
+<figure><a class="asset-preview" href="../examples/tiny-swords/preview/exports/tower-shield.gif"><img src="../examples/tiny-swords/preview/exports/tower-shield.gif" width="200" height="144" loading="lazy" alt="Tower Shield Infantry looping action preview"></a><figcaption><a href="../examples/tiny-swords/preview/exports/tower-shield.gif" download>Download GIF</a></figcaption></figure>
+</div></article>
+</div>
+</section>
 <nav class="page-links" aria-label="Adjacent topics"><a rel="prev" href="cli.html">← CLI extraction</a><a rel="next" href="godot.html">Godot playback →</a></nav>
 </main>
 <nav class="rail" aria-label="Showcase topics">

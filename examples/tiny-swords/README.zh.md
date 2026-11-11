@@ -43,17 +43,31 @@ bash scripts/compare_tiny_swords.sh '/path/to/Tiny Swords (Free Pack)'
 
 [步行批次配置](batch-walk.json) 用于复现合图；[待机、步行、技能、独立特效的提示词](../../assets/video-inputs/blue-units-3x2-prompt.md) 是拆分制作方案。两者都独立于这条实测混合片。
 
-## 在 Godot 中对照原版
+## 导出精灵图和 GIF
 
-![Godot 中的六组自动去色边后的透明帧](preview/godot-clean.webp)
+![战锤兵透明精灵图](preview/exports/warhammer-sheet.png)
 
-先按[快速开始](../../README.zh.md#快速开始已有成片无需密钥)导出透明帧，再从仓库根目录运行 Godot 4.5。左侧是本地 Tiny Swords 蓝队弓手待机，右侧是生成战锤兵的混合动作。两侧使用最近邻采样和同一脚底线，弓手放大 2 倍以接近战锤兵主体尺寸。空格或回车暂停。
+![使用同一组帧的战锤兵 GIF](preview/exports/warhammer.gif)
+
+每个示例从已去色边的 10 fps 序列中选取动作附近的 12 帧，每隔一帧取一张。同一兵种使用统一裁切范围并保留脚底锚点。PNG 保留原透明度，GIF 使用二值透明。[全部六套导出](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [帧坐标与时长清单](preview/exports/manifest.json)
 
 ```sh
-godot --path examples/tiny-swords/godot -- --pack="/absolute/path/to/Tiny Swords (Free Pack)"
+python examples/tiny-swords/export_previews.py --frames work/tiny-swords/frames --out work/tiny-swords/exports
 ```
 
-需要录制时，在 `--` 前添加 `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50`。含原版素材的录制保存在本地 `work/` 目录。仓库内另有[完整 Godot 录像](preview/godot-playback.mp4)和[流程宣传片](preview/workflow-promo.mp4)。
+## 在 Godot 中对照原版
+
+[![Godot 训练场实机截屏，上方原版，下方自制](preview/training-ground.png)](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html)
+
+这段录像由 Godot 以 10 fps 直接录制。场地、摆件和上排 Tiny Swords 角色由 [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) 制作。[在线播放](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html) · [训练场 MP4](preview/training-ground.mp4)
+
+先按快速开始将透明帧导出到 `work/tiny-swords/frames`，再从仓库根目录运行 Godot 4.5。训练场使用 Tiny Swords 原包的草地、岩壁和场景物件。上排是蓝队六个原版兵种的待机，下排是六个自制兵种的混合动作。每列对齐横向锚点，每排共用一条脚底线。原版以 1 倍显示，视频拆帧以 0.5 倍显示，让两排主体尺寸接近。两排均使用最近邻采样。空格或回车切换播放和暂停，左右方向键逐帧查看。[拆帧命令](../../README.zh.md#快速开始已有成片无需密钥)
+
+```sh
+godot --path examples/tiny-swords/godot res://comparison.tscn -- --pack="/absolute/path/to/Tiny Swords (Free Pack)"
+```
+
+原包已放在 `assets/references/tiny-swords/Tiny Swords (Free Pack)` 时可省略 `--pack`。需要录制时，在 `--` 前添加 `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50`。[生成角色播放录像](preview/godot-playback.mp4) · [流程宣传片](preview/workflow-promo.mp4)
 
 ## 从兵种扩展到整套美术
 

@@ -42,19 +42,31 @@ At the same settings with no retries, separate five-second clips would take six 
 
 Use the walk config to reproduce composition. The prompts for separate idle, walk, skill and standalone effects batches are production inputs for new clips. [Walk batch config](batch-walk.json) · [Five-second prompt set](../../assets/video-inputs/blue-units-3x2-prompt.en.md)
 
-## Compare the original in Godot
+## Export sprite sheets and GIFs
 
-![Six cleaned sprite sequences in Godot](preview/godot-clean.webp)
+![Warhammer Infantry sprite sheet](preview/exports/warhammer-sheet.png)
 
-This capture shows six generated sequences after automatic magenta despill. [Workflow video](preview/workflow-promo.mp4) · [MP4 capture](preview/godot-playback.mp4) · [Godot project](godot/project.godot)
+![Warhammer Infantry GIF from the same frames](preview/exports/warhammer.gif)
 
-For the side-by-side review, extract the PNGs to `work/tiny-swords/frames` using the project quick start. Then run from the repository root with Godot 4.5 and your own Tiny Swords Free Pack. The scene plays the original Blue Archer idle on the left and the mixed Warhammer Infantry clip on the right. Both use nearest-neighbor sampling and a shared foot line. The Archer is enlarged 2× to bring the visible body sizes closer. Press Space or Enter to pause. [Extraction command](../../README.md#reproduce-the-example-offline)
+Each sample selects 12 frames around the action, using one frame out of every two from the cleaned 10 fps sequence. The exporter crops each sequence to a shared canvas and preserves the foot anchor. The PNG stores the original alpha channel and the GIF uses binary transparency. [All six exports](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/spriteframe.html#exports) · [Manifest](preview/exports/manifest.json)
 
 ```sh
-godot --path examples/tiny-swords/godot -- --pack="/absolute/path/to/Tiny Swords (Free Pack)"
+python examples/tiny-swords/export_previews.py --frames work/tiny-swords/frames --out work/tiny-swords/exports
 ```
 
-Record the comparison locally with Godot Movie Maker by adding `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50` before the `--` separator. The recording with Pixel Frog artwork belongs in the ignored `work/` directory. Compare the outline, feet, palette and pixel density. The Warhammer clip includes several actions. The quick start enables the optional magenta despill pass.
+## Compare the original in Godot
+
+[![Godot training ground with original and generated units](preview/training-ground.png)](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html)
+
+The training-ground recording shows the running scene at 10 fps. Tiny Swords terrain, scenery and upper-row sprites by [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords). [Watch online](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html) · [Training-ground MP4](preview/training-ground.mp4) · [Godot project](godot/project.godot)
+
+Extract the PNGs to `work/tiny-swords/frames` using the project quick start, then run the training ground from the repository root with Godot 4.5 and a local Tiny Swords Free Pack. The field uses the pack’s grass, cliffs and scenery. The six original blue units idle on the upper row and the six generated units play the mixed-action clip below. Every column shares a horizontal anchor. Each row has a common foot line. The original sprites are shown at 1× and the video frames at 0.5× to bring their body sizes closer. Both use nearest-neighbor sampling. Space or Enter pauses and resumes, and Left and Right step one frame at a time. [Extraction command](../../README.md#reproduce-the-example-offline)
+
+```sh
+godot --path examples/tiny-swords/godot res://comparison.tscn -- --pack="/absolute/path/to/Tiny Swords (Free Pack)"
+```
+
+If the pack is already in `assets/references/tiny-swords/Tiny Swords (Free Pack)`, omit the `--pack` argument. Record the comparison locally with Godot Movie Maker by adding `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50` before the `--` separator. [Generated-only Godot capture](preview/godot-playback.mp4) · [Workflow video](preview/workflow-promo.mp4)
 
 The [Remotion composition](promo/showcase.jsx) uses the same frame before and after despill, followed by actual Godot footage. With Python and Pillow, FFmpeg, Godot, Node.js and npm installed, run `bash examples/tiny-swords/promo/render.sh` from the repository root to rebuild the video, poster and preview GIF. Set `GODOT_BIN` or `REMOTION_CHROME` to use a specific executable.
 
