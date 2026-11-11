@@ -69,6 +69,8 @@ godot --path examples/tiny-swords/godot res://comparison.tscn -- --pack="/absolu
 
 原包已放在 `assets/references/tiny-swords/Tiny Swords (Free Pack)` 时可省略 `--pack`。需要录制时，在 `--` 前添加 `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50`。[生成角色播放录像](preview/godot-playback.mp4) · [流程宣传片](preview/workflow-promo.mp4)
 
+21.5 秒流程演示串起成片导入、抠像、挑帧、导出和实机对照。安装 Python 与 Pillow、FFmpeg、Node.js 和 npm 后，从仓库根目录运行 `bash examples/tiny-swords/promo/render.sh` 可重建视频和封面。[观看演示，可开启中文字幕](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html#workflow-video)
+
 ## 从兵种扩展到整套美术
 
 边境哨站场景把同一套视角、色彩和像素处理应用到瞭望兵、裂石犰狳、哨站、补给箱、草地、面板、按钮和地面特效。建筑看入口与单位的相对尺度，地形看拼接，UI 看常态与按下态，独立特效看接触点和节奏。此图是场景合成预览，资产逐项来源和验收状态见[清单](../../assets/art-runs/frontier-outpost/manifest.json)。

@@ -8,6 +8,8 @@
 
 这段 5 秒录像由 Godot 4.5.1 录制。上排播放 Tiny Swords 原版待机，下排播放自制六兵种的混合动作。原版美术由 [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords) 制作。[在线播放实机录像](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html) · [MP4 文件](examples/tiny-swords/preview/training-ground.mp4) · [本地运行 Godot 对照](examples/tiny-swords/README.zh.md#在-godot-中对照原版)
 
+[观看 21.5 秒流程演示，可开启中文字幕](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html#workflow-video)
+
 | 阶段 | 怎么做 | 交付 |
 | --- | --- | --- |
 | 1. 学习画风 | 从原图记录镜头、头身比例、像素尺度和材质色。先校准一张样图，再把规则迁移到自己的角色、建筑、地形和 UI | 画风档案、原版与新图对照、确认的样图 |

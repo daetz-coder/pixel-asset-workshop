@@ -8,6 +8,8 @@ Extract reusable art direction from a reference game, create original characters
 
 The five-second Godot 4.5.1 recording shows the original Tiny Swords units idling above the six generated units. Tiny Swords art by [Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords). [Play the recording](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html) · [MP4 file](examples/tiny-swords/preview/training-ground.mp4) · [Run the Godot comparison](examples/tiny-swords/README.md#compare-the-original-in-godot)
 
+[Watch the 21.5-second workflow walkthrough](https://daetz-coder.github.io/projects/pixel-asset-workshop/showcase/godot.html#workflow-video)
+
 | Stage | Workflow | Output |
 | --- | --- | --- |
 | 1. Learn the style | Record camera angle, body proportions, pixel scale and material colors. Calibrate one sprite, then apply the rules to characters, buildings, terrain and UI. | Style profile, side-by-side comparison and an approved sample |
