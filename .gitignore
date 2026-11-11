@@ -1,0 +1,18 @@
+# Local Tiny Swords reference pack
+/assets/references/tiny-swords/
+
+# Local credentials, app state and generated runs
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+/.rendez/
+/logs/
+/work/
+/dist/
+/assets/video-outputs/
+/assets/video-inputs/e28543c8c1b84af9bdff6d52be9ae371.mp4
+/assets/art-runs/*/*.zip

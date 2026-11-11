@@ -1,0 +1,128 @@
+{
+  "engine": "sprite-gen",
+  "sourceType": "video",
+  "sampling": {
+    "start": 0.0,
+    "end": 5.0,
+    "fps": 10.0
+  },
+  "background": "magenta",
+  "regions": [
+    {
+      "name": "01_战锤兵",
+      "x": 0,
+      "y": 0,
+      "width": 285,
+      "height": 240,
+      "frames": 50,
+      "cell": {
+        "row": 0,
+        "col": 0
+      },
+      "action": "attack",
+      "anchor": {
+        "x": 142,
+        "y": 167
+      }
+    },
+    {
+      "name": "02_投弹兵",
+      "x": 285,
+      "y": 0,
+      "width": 284,
+      "height": 240,
+      "frames": 50,
+      "cell": {
+        "row": 0,
+        "col": 1
+      },
+      "action": "attack",
+      "anchor": {
+        "x": 142,
+        "y": 167
+      }
+    },
+    {
+      "name": "03_旗手",
+      "x": 569,
+      "y": 0,
+      "width": 285,
+      "height": 240,
+      "frames": 50,
+      "cell": {
+        "row": 0,
+        "col": 2
+      },
+      "action": "attack",
+      "anchor": {
+        "x": 143,
+        "y": 167
+      }
+    },
+    {
+      "name": "04_战斧兵",
+      "x": 0,
+      "y": 240,
+      "width": 285,
+      "height": 240,
+      "frames": 50,
+      "cell": {
+        "row": 1,
+        "col": 0
+      },
+      "action": "attack",
+      "anchor": {
+        "x": 142,
+        "y": 167
+      }
+    },
+    {
+      "name": "05_弩兵",
+      "x": 285,
+      "y": 240,
+      "width": 284,
+      "height": 240,
+      "frames": 50,
+      "cell": {
+        "row": 1,
+        "col": 1
+      },
+      "action": "attack",
+      "anchor": {
+        "x": 142,
+        "y": 167
+      }
+    },
+    {
+      "name": "06_塔盾兵",
+      "x": 569,
+      "y": 240,
+      "width": 285,
+      "height": 240,
+      "frames": 50,
+      "edgeContact": {
+        "frameCount": 1,
+        "firstFrameIndex": 37,
+        "sides": [
+          "left"
+        ]
+      },
+      "cell": {
+        "row": 1,
+        "col": 2
+      },
+      "action": "attack",
+      "anchor": {
+        "x": 143,
+        "y": 167
+      }
+    }
+  ],
+  "referenceLayout": {
+    "width": 1280,
+    "height": 720,
+    "rows": 2,
+    "cols": 3,
+    "color": "#ff00ff"
+  }
+}

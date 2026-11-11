@@ -1,0 +1,43 @@
+{
+  "name": "医护兵",
+  "character_id": "field-medic",
+  "role": "蓝队医护支援兵",
+  "pose": "idle",
+  "equipment": [
+    "圆顶短沿护耳盔",
+    "米金十字标记手提药箱"
+  ],
+  "palette": [
+    "灰蓝",
+    "青蓝",
+    "鼠尾草绿",
+    "浅薄荷",
+    "米金",
+    "深蓝黑"
+  ],
+  "status": "reviewed",
+  "asset": "assets/concepts/field-medic.png",
+  "original_generation_file": "/Users/zhanyong/.codex/generated_images/01a1c844-e726-72f0-9f66-c37635732492/exec-abddb3db-6b43-41d5-89d5-383c706a70a3.png",
+  "reference_inputs": [
+    "assets/concepts/warhammer-infantry.png"
+  ],
+  "prompt": "assets/character-runs/blue-field-medic/prompts/field-medic.txt",
+  "generator": {
+    "tool": "内置 GPT Image",
+    "requested_version": "GPT Image 2.6（项目约定）",
+    "reported_backend_version": null,
+    "transparent_background": true
+  },
+  "verification": {
+    "dimensions_px": [
+      1254,
+      1254
+    ],
+    "format": "PNG RGBA",
+    "copied_byte_for_byte": true,
+    "sha256": "cb496e7c2985aae5f80b2889135af4e32836b3e84a701944784359cf1cb98e03",
+    "reference_comparison": "assets/character-runs/blue-field-medic/comparisons/warhammer-vs-field-medic.png",
+    "local_pack_comparison": "assets/references/tiny-swords/archer-vs-field-medic.png",
+    "observations": "原生比例和四倍预览中药箱与握把可读，双脚分离，主体和装备完整。原图可见范围外有少量低 alpha 像素，最大为 12/255。"
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "title": "蓝队边境哨站",
+  "style_profile": "skills/reference-game-characters/references/tiny-swords-art.md",
+  "generation": "generation.json",
+  "design_scale": "64 px world grid; lookout visible height 67 px; scene preview at 2× nearest",
+  "entries": {
+    "lookout": {
+      "files": [
+        "assets/units/lookout-idle.png"
+      ],
+      "size_px": [
+        96,
+        96
+      ],
+      "pivot_px": [
+        48,
+        83
+      ],
+      "source_alpha_extent": [
+        330,
+        401,
+        936,
+        997
+      ],
+      "source_crop": [
+        327,
+        398,
+        939,
+        1000
+      ],
+      "source_pivot_px": [
+        598,
+        997
+      ],
+      "scale": 0.11241610738255034,
+      "category": "兵种",
+      "name": "蓝队瞭望兵",
+      "status": "preview_reviewed",
+      "raw_sha256": "e6578bd8d00bf692d9050fab12250426db233110a9c73ede2ce8ade8b375156a"
+    },
+    "stoneback-armadillo": {
+      "files": [
+        "assets/enemies/stoneback-armadillo-idle.png"
+      ],
+      "size_px": [
+        96,
+        64
+      ],
+      "pivot_px": [
+        48,
+        54
+      ],
+      "source_alpha_extent": [
+        369,
+        164,
+        1409,
+        733
+      ],
+      "source_crop": [
+        366,
+        161,
+        1412,
+        736
+      ],
+      "source_pivot_px": [
+        889.0,
+        733
+      ],
+      "scale": 0.06923076923076923,
+      "category": "敌怪",
+      "name": "裂石犰狳",
+      "status": "preview_reviewed",
+      "raw_sha256": "7cdae7f527dd9e72c49f85f5586a7402765573e7c619085d7ca266fb661c1c4f"
+    },
+    "outpost": {
+      "files": [
+        "assets/buildings/frontier-outpost.png"
+      ],
+      "size_px": [
+        192,
+        192
+      ],
+      "pivot_px": [
+        96,
+        174
+      ],
+      "source_alpha_extent": [
+        164,
+        84,
+        1111,
+        1167
+      ],
+      "source_crop": [
+        161,
+        81,
+        1114,
+        1170
+      ],
+      "source_pivot_px": [
+        637.5,
+        1167
+      ],
+      "scale": 0.15205913410770855,
+      "preview_footprint_tiles": [
+        2,
+        2
+      ],
+      "category": "建筑",
+      "name": "边境哨站",
+      "status": "preview_reviewed",
+      "raw_sha256": "794dc7c33dbb3cc94d518bbf1c7aa9a5bf37092f638b59503adfc8751425f723"
+    },
+    "supply-crate": {
+      "files": [
+        "assets/props/supply-crate.png"
+      ],
+      "size_px": [
+        48,
+        48
+      ],
+      "pivot_px": [
+        24,
+        39
+      ],
+      "source_alpha_extent": [
+        387,
+        246,
+        1136,
+        882
+      ],
+      "source_crop": [
+        384,
+        243,
+        1139,
+        885
+      ],
+      "source_pivot_px": [
+        761.5,
+        882
+      ],
+      "scale": 0.04539385847797063,
+      "category": "道具",
+      "name": "包铁补给箱",
+      "status": "preview_reviewed",
+      "raw_sha256": "8a4b028c232ec2e41dfbf9a3a2d3e1913f5350b28a64ae8c37052f1c855d75e3"
+    },
+    "terrain": {
+      "files": [
+        "assets/terrain/moss-meadow.png"
+      ],
+      "size_px": [
+        64,
+        64
+      ],
+      "mode": "RGB opaque",
+      "preview": "previews/terrain-3x3.png",
+      "mean_edge_rgb_delta_xy": [
+        7.979166666666666,
+        4.791666666666667
+      ],
+      "mean_interior_rgb_delta_xy": [
+        6.665013227513228,
+        8.749834656084657
+      ],
+      "category": "地形",
+      "name": "苔草地块",
+      "status": "preview_reviewed",
+      "raw_sha256": "cef4c68ed375944d58f3cd0e07922e356b17dc69cbb798a2736b470f642d1d96"
+    },
+    "impact-fx": {
+      "files": [
+        "assets/fx/ground-impact/0000.png",
+        "assets/fx/ground-impact/0001.png",
+        "assets/fx/ground-impact/0002.png",
+        "assets/fx/ground-impact/0003.png",
+        "assets/fx/ground-impact-strip.png"
+      ],
+      "frame_size_px": [
+        64,
+        48
+      ],
+      "source_cell_size_px": [
+        627,
+        627
+      ],
+      "source_cell_bounds": [
+        [
+          261,
+          383,
+          365,
+          473
+        ],
+        [
+          186,
+          329,
+          424,
+          475
+        ],
+        [
+          193,
+          335,
+          436,
+          459
+        ],
+        [
+          238,
+          419,
+          444,
+          454
+        ]
+      ],
+      "pivot_px": [
+        32,
+        40
+      ],
+      "duration_ms": [
+        80,
+        100,
+        120,
+        100
+      ],
+      "loop": false,
+      "preview": "previews/ground-impact.gif",
+      "category": "特效",
+      "name": "触地尘花",
+      "status": "preview_reviewed",
+      "raw_sha256": "274d3b3ccc704e91711c72ad48b3d07ad0346a471786591b67f83526ffbc1bed"
+    },
+    "alert-button": {
+      "files": [
+        "assets/ui/alert-button-normal.png",
+        "assets/ui/alert-button-pressed.png"
+      ],
+      "size_px": [
+        112,
+        38
+      ],
+      "states": [
+        "normal",
+        "pressed"
+      ],
+      "nine_slice_insets_ltrb_px": [
+        10,
+        8,
+        10,
+        8
+      ],
+      "interaction_rect_xywh_px": [
+        0,
+        0,
+        112,
+        38
+      ],
+      "preview": "previews/ui-states.png",
+      "category": "按钮",
+      "name": "警戒按钮",
+      "status": "preview_reviewed",
+      "raw_sha256": "82131012f448152166f5011c24ff5c52889fc61703aca627c56e754e38596ca4"
+    },
+    "command-panel": {
+      "files": [
+        "assets/ui/command-panel.png"
+      ],
+      "size_px": [
+        202,
+        70
+      ],
+      "nine_slice_insets_ltrb_px": [
+        10,
+        15,
+        10,
+        8
+      ],
+      "preview": "previews/ui-states.png",
+      "category": "UI",
+      "name": "哨站指令面板",
+      "status": "preview_reviewed",
+      "raw_sha256": "09367b176c327a61e773d38060f02f63bb18881bfc6c94151d3b8bc2905e3f2a"
+    }
+  },
+  "scene": {
+    "file": "previews/frontier-scene.png",
+    "logical_size_px": [
+      448,
+      320
+    ],
+    "placement_ground_points_px": {
+      "outpost": [
+        115,
+        190
+      ],
+      "supply-crate": [
+        134,
+        223
+      ],
+      "lookout": [
+        201,
+        246
+      ],
+      "stoneback-armadillo": [
+        341,
+        238
+      ],
+      "impact-fx": [
+        291,
+        241
+      ]
+    },
+    "enemy_mirrored_in_preview": true,
+    "terrain_grid": [
+      7,
+      5
+    ]
+  },
+  "verification": {
+    "scene": "实际生成并整理后的八类素材合成预览，2× 最近邻。",
+    "terrain": "64×64 不透明地块，3×3 实拼检查；边界纹理颜色接近但相对边缘并非逐像素相等。",
+    "ui": "常态和按下态共用 112×38 控件画布，在 104×36 按钮预览及 210×91 面板预览中检查九宫格和文字布局。",
+    "scope": "静态角色与敌怪、一次性四帧特效及美术皮肤。游戏交互与引擎碰撞参数可由使用项目设定。",
+    "user_approval": "pending"
+  }
+}

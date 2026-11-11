@@ -1,0 +1,50 @@
+{
+  "project": "Tiny Swords 蓝队",
+  "character": "医护兵",
+  "reference": {
+    "path": "assets/concepts/warhammer-infantry.png",
+    "role": "直接生图参考，锁定画风、人体与画布",
+    "approval": "用户选定第一版战锤兵"
+  },
+  "view": "朝右，轻俯视四分之三，单人全身待机",
+  "anatomy": "大头短圆身，小米金手，深蓝黑描边，两条分开的深蓝黑短细腿脚",
+  "palette": {
+    "cloth": [
+      "灰蓝",
+      "青蓝"
+    ],
+    "metal": [
+      "鼠尾草绿",
+      "浅薄荷"
+    ],
+    "skin": [
+      "米金"
+    ],
+    "outline": [
+      "深蓝黑"
+    ]
+  },
+  "pixel_treatment": "沿用基准的粗方像素、有限色阶和光照",
+  "canvas_px": [
+    1254,
+    1254
+  ],
+  "background": "原生透明，无地面投影",
+  "body_boxes_xywh": {
+    "reference": [
+      326,
+      391,
+      464,
+      604
+    ],
+    "medic": [
+      371,
+      394,
+      389,
+      603
+    ],
+    "method": "目测框定主体，排除手持装备，框底为脚底线"
+  },
+  "review_display_body_height_px": 67,
+  "new_silhouette": "圆顶短沿护耳盔，手提矩形药箱。握持手配合箱把微调。"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "参考图游戏画风与素材生成"
+  short_description: "从参考图学习整套游戏画风，生成同风格兵种、敌人、建筑、地形、按钮和界面素材"
+  default_prompt: "使用 $reference-game-characters，学习这套游戏参考图的整体画风，记录共用规则和各类素材的差异，再制作我指定的资产。"

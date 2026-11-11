@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "width": 1280,
+  "height": 720,
+  "cols": 3,
+  "rows": 2,
+  "color": "#ff00ff",
+  "baseline": 0.6944,
+  "action": "attack",
+  "cells": [
+    {
+      "row": 0,
+      "col": 0,
+      "name": "战锤兵",
+      "action": "attack"
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "name": "投弹兵",
+      "action": "attack"
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "name": "旗手",
+      "action": "attack"
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "name": "战斧兵",
+      "action": "attack"
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "name": "弩兵",
+      "action": "attack"
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "name": "塔盾兵",
+      "action": "attack"
+    }
+  ]
+}

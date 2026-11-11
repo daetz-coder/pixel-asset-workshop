@@ -1,0 +1,84 @@
+{
+  "tool": "内置 GPT Image",
+  "requested_model": "GPT Image 2.6（项目偏好）",
+  "reported_backend_version": null,
+  "items": [
+    {
+      "id": "outpost",
+      "raw": "raw/outpost-building.png",
+      "prompt": "prompts/outpost.txt",
+      "input_images": [
+        "assets/references/tiny-swords/frontier-outpost-prepared/tower.png",
+        "assets/references/tiny-swords/frontier-outpost-prepared/barracks.png"
+      ],
+      "native_alpha_requested": true
+    },
+    {
+      "id": "supply-crate",
+      "raw": "raw/supply-chest.png",
+      "prompt": "prompts/supply-crate.txt",
+      "input_images": [
+        "assets/references/tiny-swords/frontier-outpost-prepared/wood.png",
+        "assets/references/tiny-swords/frontier-outpost-prepared/barracks.png"
+      ],
+      "native_alpha_requested": true
+    },
+    {
+      "id": "impact-fx",
+      "raw": "raw/dust-sequence.png",
+      "prompt": "prompts/impact-fx.txt",
+      "input_images": [
+        "assets/references/tiny-swords/frontier-outpost-prepared/dust.png"
+      ],
+      "native_alpha_requested": true
+    },
+    {
+      "id": "alert-button",
+      "raw": "raw/button-states.png",
+      "prompt": "prompts/alert-button.txt",
+      "input_images": [
+        "assets/references/tiny-swords/frontier-outpost-prepared/button-normal.png",
+        "assets/references/tiny-swords/frontier-outpost-prepared/button-pressed.png"
+      ],
+      "native_alpha_requested": true
+    },
+    {
+      "id": "command-panel",
+      "raw": "raw/panel.png",
+      "prompt": "prompts/command-panel.txt",
+      "input_images": [
+        "assets/references/tiny-swords/frontier-outpost-prepared/paper.png",
+        "assets/references/tiny-swords/frontier-outpost-prepared/ribbon.png"
+      ],
+      "native_alpha_requested": true
+    },
+    {
+      "id": "stoneback-armadillo",
+      "raw": "raw/stoneback-armadillo.png",
+      "prompt": "prompts/stoneback-armadillo.txt",
+      "input_images": [
+        "assets/references/tiny-swords/frontier-outpost-prepared/enemy-shapes.png",
+        "assets/references/tiny-swords/frontier-outpost-prepared/enemy-board.png"
+      ],
+      "native_alpha_requested": true
+    },
+    {
+      "id": "lookout",
+      "raw": "raw/lookout.png",
+      "prompt": "prompts/lookout.txt",
+      "input_images": [
+        "assets/concepts/warhammer-infantry.png"
+      ],
+      "native_alpha_requested": true
+    },
+    {
+      "id": "terrain",
+      "raw": "raw/terrain.png",
+      "prompt": "prompts/terrain.txt",
+      "input_images": [
+        "assets/references/tiny-swords/frontier-outpost-prepared/tilemap.png"
+      ],
+      "native_alpha_requested": false
+    }
+  ]
+}
