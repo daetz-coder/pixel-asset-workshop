@@ -11,37 +11,37 @@
     {
       "row": 0,
       "col": 0,
-      "name": "战锤兵",
+      "name": "Warhammer Infantry",
       "action": "attack"
     },
     {
       "row": 0,
       "col": 1,
-      "name": "投弹兵",
+      "name": "Grenadier",
       "action": "attack"
     },
     {
       "row": 0,
       "col": 2,
-      "name": "旗手",
+      "name": "Standard Bearer",
       "action": "attack"
     },
     {
       "row": 1,
       "col": 0,
-      "name": "战斧兵",
+      "name": "Axe Infantry",
       "action": "attack"
     },
     {
       "row": 1,
       "col": 1,
-      "name": "弩兵",
+      "name": "Crossbow Infantry",
       "action": "attack"
     },
     {
       "row": 1,
       "col": 2,
-      "name": "塔盾兵",
+      "name": "Tower Shield Infantry",
       "action": "attack"
     }
   ]

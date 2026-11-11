@@ -50,4 +50,4 @@ python3 scripts/generate_wan_video.py \
 
 服务接受请求后，脚本会打印任务 ID。任务完成后交付已保存的 MP4。轮询或下载中断时，使用同一工作空间和 `--task-id <id> --output <path>` 继续。如果请求状态不明且没有收到任务 ID，先到 Model Studio 核对。每次接受请求都会创建一个新生成任务。 [Alibaba Cloud Wan3.0 API 参考](https://help.aliyun.com/en/model-studio/wan3-video-generation-api-reference)
 
-项目实测案例包含实际提交的提示词、源视频、裁切格位，以及用已有成片本地复现拆帧的方法。 [Tiny Swords 实测案例](../../examples/tiny-swords/README.md)
+项目实测案例包含实际提交的提示词、源视频、裁切格位，以及用已有成片本地复现拆帧的方法。 [Tiny Swords 实测案例](../../examples/tiny-swords/README.zh.md)

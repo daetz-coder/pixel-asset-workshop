@@ -1,6 +1,6 @@
 # 工具与集成
 
-[English](integrations.en.md) · [返回项目](../README.md)
+[English](integrations.en.md) · [返回项目](../README.zh.md)
 
 | 部件 | 输入 → 输出 | 是否需要账号 |
 | --- | --- | --- |

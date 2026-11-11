@@ -55,4 +55,4 @@ The runner prints the task ID as soon as Alibaba accepts it. Wait for the task a
 
 See [Alibaba Cloud's Wan3.0 API reference](https://help.aliyun.com/en/model-studio/wan3-video-generation-api-reference) for model settings and response details.
 
-The Pixel Asset Workshop example includes the exact submitted prompt, source clip and crop layout. It also shows how to extract the saved video locally without submitting another task. [Tiny Swords case study](../../examples/tiny-swords/README.en.md)
+The Pixel Asset Workshop example includes the exact submitted prompt, source clip and crop layout. It also shows how to extract the saved video locally without submitting another task. [Tiny Swords case study](../../examples/tiny-swords/README.md)

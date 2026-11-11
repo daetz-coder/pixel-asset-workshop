@@ -16,3 +16,7 @@ __pycache__/
 /assets/video-outputs/
 /assets/video-inputs/e28543c8c1b84af9bdff6d52be9ae371.mp4
 /assets/art-runs/*/*.zip
+
+# Godot import cache
+.godot/
+.playwright-cli/

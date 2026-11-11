@@ -1,6 +1,6 @@
 # Six blue units · Five-second 480p video prompts
 
-[简体中文](blue-units-3x2-prompt.md) · [Tiny Swords case study](../../examples/tiny-swords/README.en.md)
+[简体中文](blue-units-3x2-prompt.md) · [Tiny Swords case study](../../examples/tiny-swords/README.md)
 
 Set the video to **5 seconds, 480p, landscape 16:9**. Copy one code block per submission. Use the six-unit reference for batches A through C and the blank magenta plate for batch D. [Six-unit first frame](blue-units-3x2-reference.png) · [Effects first frame](blue-units-3x2-fx-reference.png)
 

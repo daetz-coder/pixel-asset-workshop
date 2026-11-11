@@ -1,48 +1,63 @@
-# Tiny Swords：从原版画风到原创六兵种
+# From Tiny Swords to six original units
 
-[English](README.en.md) · [返回项目](../../README.md) · [Pixel Frog 作者页](https://pixelfrog-assets.itch.io/tiny-swords) · [整套画风档案](../../skills/reference-game-characters/references/tiny-swords-art.md)
+[Chinese](README.zh.md) · [Project home](../../README.md) · [Pixel Frog's asset pack](https://pixelfrog-assets.itch.io/tiny-swords) · [Style profile](../../skills/reference-game-characters/references/tiny-swords-art.en.md)
 
-本例把原包的蓝队人形当作画风参照。先看蓝队弓手与枪兵的原始待机帧，校准一张原创战锤兵，再沿用该基准做投弹兵、旗手、战斧兵、弩兵和塔盾兵。
+The Blue Archer and Lancer idle frames provided the visual baseline. The first Warhammer Infantry sample established the shared body shape and materials for the Grenadier, Standard Bearer, Axe Infantry, Crossbow Infantry and Tower Shield Infantry.
 
-## 原版和我们的对比
+## Comparison with the original
 
-| 对照项 | Tiny Swords 原版 | 本项目原创与取舍 |
+| Aspect | Tiny Swords reference | Original units in this project |
 | --- | --- | --- |
-| 镜头与头身 | 蓝队弓手和枪兵采用轻俯视的四分之三角度，头大身短 | 保留镜头和头身节奏；第一版战锤兵是后续五个角色的生图基准 |
-| 手脚与接地 | 小米金手有深色轮廓，短深色腿脚露出；弓手有接地投影 | 延续小手和分开的细腿，样图省去投影，便于检查脚底和透明边 |
-| 材质与配色 | 灰蓝、青蓝布料配绿灰金属、浅薄荷高光和米金肤色 | 沿用材质的明暗关系和蓝队识别色；生图色值与像素簇由目视校准 |
-| 职业轮廓 | 弓手靠尖盔、弓和背部箭袋辨认；枪兵靠长枪辨认 | 战锤兵改用宽檐盔和短柄双面锤，其他五名各用独立装备轮廓区分 |
-| 原生尺寸与动作 | 蓝队弓手待机单帧画布为 192×192，作者标注 10 fps | 原创概念图为 1254×1254 透明 PNG，文件尺寸与逻辑像素不同；比较时按主体高度对齐，成片按 10 fps 抽样后再挑关键帧 |
+| Camera and proportions | The Blue Archer and Lancer use a slightly overhead three-quarter view, large heads and short bodies. | The first Warhammer Infantry sample carries those proportions into the five other units. |
+| Hands, feet and contact | Tiny cream-gold hands have dark outlines. Short dark feet show beneath the body. The Archer has a contact shadow. | The new samples use small hands and separate thin legs. They omit the shadow to expose feet and transparent edges for inspection. |
+| Materials and colors | Slate and teal cloth, sage metal, pale mint highlights and cream-gold skin. | The generated sprites carry over the material contrast and blue faction colors. The team reviewed colors and pixel clusters visually. |
+| Class silhouettes | The Archer reads through a pointed helmet, bow and quiver. The Lancer reads through a spear. | The Warhammer Infantry uses a wide-brim helmet and compact two-faced hammer. Each of the other five has its own equipment silhouette. |
+| Size and timing | Each Blue Archer idle frame is 192 × 192. The author specifies 10 fps. | The original concepts are 1254 × 1254 transparent PNGs. The comparison aligns visible body heights. The video export samples at 10 fps before manual selection. |
 
-同尺度并排预览：左侧取原版弓手第 0 帧，右侧取第一版战锤兵；按目测框将主体统一到 67 px、对齐脚底线，再最近邻放大 4 倍。武器与盔顶羽饰不用于计算主体高度，仍会完整显示。使用项目根目录已安装 Pillow 的 Python 环境：
+The side-by-side places the original Archer's first idle frame on the left and the first Warhammer Infantry on the right. It aligns their foot baselines and scales the annotated bodies to 67 px before enlarging both by 4× with nearest-neighbor sampling. Equipment and helmet ornaments remain visible outside the body boxes. From the repository root, run with Pillow installed.
 
 ```sh
-# 下载并解压 Free Pack，参数指向包含 Units/ 的目录。
 bash scripts/compare_tiny_swords.sh '/path/to/Tiny Swords (Free Pack)'
 ```
 
-打开本地的 `work/tiny-swords/comparison/archer-vs-warhammer.png`。原帧与对照图包含作者素材，因此示例只分发复现脚本。若下载版本的画布或姿势不同，请按 [蓝队角色示例](../../skills/reference-game-characters/references/tiny-swords.md) 重标身体框。
+Open `work/tiny-swords/comparison/archer-vs-warhammer.png`. The comparison contains Pixel Frog's art and is generated locally. Reannotate the body boxes if your pack version uses a different canvas or pose. [Blue unit reference and frame sizes](../../skills/reference-game-characters/references/tiny-swords.en.md)
 
-## 实测：一条视频拆六个角色
+## Six characters from one generated video
 
-| 第一行（左 → 右） | 第二行（左 → 右） |
+| Top row, left to right | Bottom row, left to right |
 | --- | --- |
-| 战锤兵 · 投弹兵 · 旗手 | 战斧兵 · 弩兵 · 塔盾兵 |
-| 举锤下砸 · 过肩抛弹 · 举旗展开 | 横扫 · 发射弩矢 · 举盾格挡 |
+| Warhammer Infantry · Grenadier · Standard Bearer | Axe Infantry · Crossbow Infantry · Tower Shield Infantry |
+| Downward hammer strike · Overhand toss · Raise and unfurl flag | Axe sweep · Fire bolt · Raise shield and block |
 
-![同一次 Wan 任务的首帧、视频画面和透明帧导出](preview/blue-squad.png)
+![Actual SpriteFrame workspace with the generated clip and six imported crops](preview/blue-squad.png)
 
-- **输入**：[实际首帧](../../assets/video-inputs/blue-units-3x2-reference.png)，1280×720、3 列 2 行、洋红底 `#FF00FF`；[实际提交提示词](../../assets/video-inputs/blue-units-3x2-wan-prime-prompt.txt) 依次要求待机、原地步行和技能。
-- **成片**：[实际 Wan MP4](../../assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4)，854×480、30 fps、5 秒；配套使用 [这条成片的格位](wan-layout.json)。
-- **结果**：[SpriteFrame 工作台导出记录](spriteframe-export.json)。使用[本项目命令行](../../README.md#快速开始已有成片无需密钥)也复现了 6×50 张透明 PNG。列宽按视频为 285 / 284 / 285 px，高度为 240 px；六组都没有空帧。CLI 标记塔盾兵 `0041.png` 触及右边界，工作台历史记录标记的是帧索引 37 触及左边界。两套实现的抠像和取样判定有差异，建议把两个片段都加入人工检查。
-- **动作审查**：可在成片中看到战锤下砸、圆弹脱手、旗面抬升和盾面火星。提示词的时间段是生成目标，动作出现时间以成片为准。固定格位不会修复跨格的武器，也不会自动将弹道与角色分层。成片需要逐组确认装备连续性、接触姿势、去色边缘和循环点。
+The screenshots show the actual English workbench during [extraction](preview/blue-squad.png) and [frame curation](preview/spriteframe-curate.png).
 
-六名角色若逐个生成 5 秒视频，理论上需 6 次提交、共 30 秒成片；本例一批为 1 次、5 秒。这个对比只计算相同规格、无重试的视频用量，未计独立生图、返工和各平台定价。
+- **Input.** A 1280 × 720 first frame with three columns, two rows and a magenta key (`#FF00FF`). The submitted prompt sequences idle, walking and a skill. [First frame](../../assets/video-inputs/blue-units-3x2-reference.png) · [Exact submitted prompt](../../assets/video-inputs/blue-units-3x2-wan-prime-prompt.txt)
+- **Video.** The generated Wan MP4 is 854 × 480 at 30 fps and lasts five seconds. [Actual Wan MP4](../../assets/video-inputs/blue-units-3x2-wan-prime-480p.mp4) · [Matching layout](wan-layout.json)
+- **Output.** The CLI reproduced six sequences of 50 transparent PNGs each. The columns are 285, 284 and 285 px wide, and both rows are 240 px tall. All six sequences had zero empty frames. The CLI flagged Tower Shield frame `0041.png` touching the right boundary. SpriteFrame's historical export flagged index 37 touching the left boundary. The two implementations use different keying and sampling, so review both moments. [CLI command](../../README.md#reproduce-the-example-offline) · [SpriteFrame export record](spriteframe-export.json)
+- **Motion review.** The clip contains the hammer strike, bomb release, flag raise and shield sparks. Check the actual timing in the clip. A fixed cell can clip weapons that cross into another cell. Isolate projectiles manually and review equipment continuity, contact poses, keying edges and loop joins.
 
-[步行批次配置](batch-walk.json) 用于复现合图；[待机、步行、技能、独立特效的提示词](../../assets/video-inputs/blue-units-3x2-prompt.md) 是拆分制作方案。两者都独立于这条实测混合片。
+At the same settings with no retries, separate five-second clips would take six submissions and 30 generated seconds. The batch takes one submission and five generated seconds. Image generation, rework and provider pricing affect the total cost.
 
-## 从兵种扩展到整套美术
+Use the walk config to reproduce composition. The prompts for separate idle, walk, skill and standalone effects batches are production inputs for new clips. [Walk batch config](batch-walk.json) · [Five-second prompt set](../../assets/video-inputs/blue-units-3x2-prompt.en.md)
 
-边境哨站场景把同一套视角、色彩和像素处理应用到瞭望兵、裂石犰狳、哨站、补给箱、草地、面板、按钮和地面特效。建筑看入口与单位的相对尺度，地形看拼接，UI 看常态与按下态，独立特效看接触点和节奏。此图是场景合成预览，资产逐项来源和验收状态见[清单](../../assets/art-runs/frontier-outpost/manifest.json)。
+## Compare the original in Godot
 
-![原创边境哨站合成预览：建筑、单位、敌怪、地形和 UI](../../assets/art-runs/frontier-outpost/previews/frontier-scene.png)
+![Actual Godot playback of the six extracted sprite sequences](preview/godot-playback.gif)
+
+This capture shows six generated sequences playing in Godot. [MP4 capture](preview/godot-playback.mp4) · [Godot project](godot/project.godot)
+
+For the side-by-side review, extract the PNGs to `work/tiny-swords/frames` using the project quick start. Then run from the repository root with Godot 4.5 and your own Tiny Swords Free Pack. The scene plays the original Blue Archer idle on the left and the mixed Warhammer Infantry clip on the right. Both use nearest-neighbor sampling and a shared foot line. The Archer is enlarged 2× to bring the visible body sizes closer. Press Space or Enter to pause. [Extraction command](../../README.md#reproduce-the-example-offline)
+
+```sh
+godot --path examples/tiny-swords/godot -- --pack="/absolute/path/to/Tiny Swords (Free Pack)"
+```
+
+Record the comparison locally with Godot Movie Maker by adding `--write-movie "$PWD/work/tiny-swords/comparison.avi" --fixed-fps 10 --quit-after 50` before the `--` separator. The recording with Pixel Frog artwork belongs in the ignored `work/` directory. Compare the outline, feet, palette and pixel density. The Warhammer clip includes several actions and has some magenta spill on the edges.
+
+## Extending the style across asset types
+
+The frontier outpost applies the same camera, colors and pixel treatment to a lookout, stoneback armadillo, outpost, supply crate, grass, panel, button and ground-impact effect. Check the building entrance against unit height, tile seams, both button states, and the contact point and timing of the standalone effect. The asset manifest records each item's source and review status. [Frontier outpost asset manifest](../../assets/art-runs/frontier-outpost/manifest.json)
+
+![Frontier outpost composite with a building, unit, enemy, terrain and UI](../../assets/art-runs/frontier-outpost/previews/frontier-scene.png)

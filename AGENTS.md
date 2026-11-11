@@ -2,7 +2,7 @@
 
 本项目以 Pixel Frog 的 Tiny Swords 原始精灵为画风基准，并参考其动画节奏。先用一个角色确认与原包的画风匹配，再分批制作同风格的独立角色图。用户确认角色后，交付合并参考图和可直接粘贴的视频生成提示词。用户将图和提示词一起输入视频模型，之后从视频中拆出游戏用的逐帧 PNG。
 
-项目介绍与启动命令见 [中文版 README](README.md) 和 [English README](README.en.md)，实测数据与原版对比见 [Tiny Swords 案例](examples/tiny-swords/README.md)，本地参考图的分发约定见 [NOTICE](NOTICE.md)。
+项目介绍与启动命令见 [中文版 README](README.zh.md) 和 [English README](README.md)，实测数据与原版对比见 [Tiny Swords 案例](examples/tiny-swords/README.zh.md)，本地参考图的分发约定见 [NOTICE](NOTICE.md)。
 
 ## 整套游戏画风与素材
 
